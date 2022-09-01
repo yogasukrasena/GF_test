@@ -60,7 +60,7 @@ class DB_MySQL {
     return $this->Query_ID;
   }
 
-  function try_connect($DBHost     = "localhost", $DBPort = "", $DBUser     = "root", $DBPassword = "root") {
+  function try_connect($DBHost     = "172.17.0.2", $DBPort = "", $DBUser     = "root", $DBPassword = "gayait") {
     $this->Query_ID  = 0;
     /* Handle defaults */
     if ("" == $DBHost)       $DBHost     = $this->DBHost;
@@ -80,7 +80,7 @@ class DB_MySQL {
   }
 
   /* public: connection management */
-  function connect($DBDatabase = "", $DBHost     = "localhost", $DBPort = "", $DBUser     = "root", $DBPassword = "root") {
+  function connect($DBDatabase = "", $DBHost     = "172.17.0.2", $DBPort = "", $DBUser     = "root", $DBPassword = "gayait") {
     /* Handle defaults */
     if ("" == $DBDatabase)   $DBDatabase = $this->DBDatabase;
     if ("" == $DBPort)       $DBPort     = $this->DBPort;
