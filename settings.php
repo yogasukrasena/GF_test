@@ -9,7 +9,7 @@ $cfg_other="";
 $cfg_server="172.17.0.2";
 $cfg_database="gayafusionall";
 $cfg_username="root";
-$cfg_password="123456";
+$cfg_password="gayait";
 $cfg_tableprefix="";
 $cfg_DocNotes="PLEASE TRANSFER TO BENEFICIARY NAME : PT. GAYA INDRIA. A/C # : 580 2151 243 (U$) or 580 1268 252 (IDR). SWIFT CODE: BBBAIDJA 
 PERMATA BANK, BRANCH MENARA UBUD - BALI. ADDRESS:  JALAN RAYA UBUD 80571 BALI INDONESIA";
