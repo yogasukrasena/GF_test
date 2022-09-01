@@ -15,11 +15,11 @@
 class DB_MySQL {
   
   /* public: connection parameters */
-  public $DBHost     = "localhost";
+  public $DBHost     = "172.17.0.2";
   public $DBPort     = "";
   public $DBDatabase = "";
   public $DBUser     = "root";
-  public $DBPassword = "root";
+  public $DBPassword = "gayait";
   public $Persistent = false;
 
   /* public: configuration parameters */
