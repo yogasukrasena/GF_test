@@ -23,25 +23,25 @@ function Grid_BeforeShow(& $sender)
 //End Grid_BeforeShow
 
 //Custom Code @157-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 global $DetailPOL, $DetailPROF;
 $Pol_H_ID = $Grid->POL_H_ID->GetValue();
-$Proforma_H_ID = CCDLookUp("Proforma_H_ID", "tblAdminist_POL_H","POL_H_ID = ".$DBGayaFusionAll->ToSQL($Pol_H_ID, ccsInteger), $DBGayaFusionAll);
+$Proforma_H_ID = CCDLookUp("Proforma_H_ID", "tblAdminist_POL_H","POL_H_ID = ".$DBgayafusionall->ToSQL($Pol_H_ID, ccsInteger), $DBgayafusionall);
 if($Proforma_H_ID > 0){
   $sql = "SELECT tbladminist_deliverytime.DeliveryTime AS DeliveryTime,tbladminist_client.ClientCompany AS ClientCompany,tbladminist_proforma_h.Proforma_H_ID,
   tbladminist_proforma_h.ProformaNo AS ProformaNo,tbladminist_proforma_h.Rev,tbladminist_proforma_h.ClientOrderRef, tblAdminist_Proforma_h.ClientID AS ClientID 
   FROM tbladminist_proforma_h INNER JOIN tbladminist_client ON (tbladminist_proforma_h.ClientID=tbladminist_client.ClientID)
-  INNER JOIN tbladminist_deliverytime ON (tbladminist_proforma_h.DeliveryTimeID=tbladminist_deliverytime.DeliveryTimeID) WHERE Proforma_H_ID = ".$DBGayaFusionAll->ToSQL($Proforma_H_ID,ccsInteger);
-  $DBGayaFusionAll->query($sql);
-  $result = $DBGayaFusionAll->next_record();
+  INNER JOIN tbladminist_deliverytime ON (tbladminist_proforma_h.DeliveryTimeID=tbladminist_deliverytime.DeliveryTimeID) WHERE Proforma_H_ID = ".$DBgayafusionall->ToSQL($Proforma_H_ID,ccsInteger);
+  $DBgayafusionall->query($sql);
+  $result = $DBgayafusionall->next_record();
   if($result){
-    $ProDate = $DBGayaFusionAll->f("ProformaDate");
-    $Grid->ProformaNo->SetValue($DBGayaFusionAll->f("ProformaNo"));
+    $ProDate = $DBgayafusionall->f("ProformaDate");
+    $Grid->ProformaNo->SetValue($DBgayafusionall->f("ProformaNo"));
 	$Grid->ProformaNo->SetLink("ShowProforma.php?Proforma_H_ID=".$Proforma_H_ID);
-	$Grid->ProformaRef->SetValue($DBGayaFusionAll->f("Rev"));
-	$Grid->ClientCompany->SetValue($DBGayaFusionAll->f("ClientCompany"));
-	$Grid->DeliveryTime->SetValue($DBGayaFusionAll->f("DeliveryTime"));
-	$Grid->ClientOrderRef->SetValue($DBGayaFusionAll->f("ClientOrderRef"));
+	$Grid->ProformaRef->SetValue($DBgayafusionall->f("Rev"));
+	$Grid->ClientCompany->SetValue($DBgayafusionall->f("ClientCompany"));
+	$Grid->DeliveryTime->SetValue($DBgayafusionall->f("DeliveryTime"));
+	$Grid->ClientOrderRef->SetValue($DBgayafusionall->f("ClientOrderRef"));
   }
   $DetailPOL->Visible = false;
   $DetailPROF->Visible = true;
@@ -49,15 +49,15 @@ if($Proforma_H_ID > 0){
   $sql = "SELECT tbladminist_deliverytime.DeliveryTime AS DeliveryTime,tbladminist_client.ClientCompany AS ClientCompany,tbladminist_pol_h.Pol_H_ID,
   tbladminist_pol_h.PolNo AS PolNo,tbladminist_pol_h.ClientOrderRef
   FROM tbladminist_pol_h INNER JOIN tbladminist_client ON (tbladminist_pol_h.ClientID=tbladminist_client.ClientID)
-  INNER JOIN tbladminist_deliverytime ON (tbladminist_pol_h.DeliveryTimeID=tbladminist_deliverytime.DeliveryTimeID) WHERE Pol_H_ID = ".$DBGayaFusionAll->ToSQL($Pol_H_ID,ccsInteger);
-  $DBGayaFusionAll->query($sql);
-  $result = $DBGayaFusionAll->next_record();
+  INNER JOIN tbladminist_deliverytime ON (tbladminist_pol_h.DeliveryTimeID=tbladminist_deliverytime.DeliveryTimeID) WHERE Pol_H_ID = ".$DBgayafusionall->ToSQL($Pol_H_ID,ccsInteger);
+  $DBgayafusionall->query($sql);
+  $result = $DBgayafusionall->next_record();
   if($result){
     $Grid->ProformaNo->SetValue("");
 	$Grid->ProformaRef->SetValue("-");
-	$Grid->ClientCompany->SetValue($DBGayaFusionAll->f("ClientCompany"));
-	$Grid->DeliveryTime->SetValue($DBGayaFusionAll->f("DeliveryTime"));
-	$Grid->ClientOrderRef->SetValue($DBGayaFusionAll->f("ClientOrderRef"));
+	$Grid->ClientCompany->SetValue($DBgayafusionall->f("ClientCompany"));
+	$Grid->DeliveryTime->SetValue($DBgayafusionall->f("DeliveryTime"));
+	$Grid->ClientOrderRef->SetValue($DBgayafusionall->f("ClientOrderRef"));
   }
   $DetailPOL->Visible = true;
   $DetailPROF->Visible = false;
@@ -138,12 +138,12 @@ function DetailPROF_Navigator_BeforeShow(& $sender)
 //DEL
 
 //DEL  global $Grid;
-//DEL  global $DBGayaFusionAll;
+//DEL  global $DBgayafusionall;
 //DEL  //$POL_H_ID = CCGetFromGet("POL_H_ID",0);
 //DEL  $POL_D_ID = $Detail->POL_D_ID->GetValue();
 //DEL  $POL_H_ID = $Detail->POL_H_ID->GetValue();
-//DEL  $Proforma_H_ID = CCDLookUp("Proforma_H_ID","tblAdminist_POL_H","POL_H_ID = ".$DBGayaFusionAll->ToSQL($Pol_H_ID,ccsInteger), $DBGayaFusionAll);
-//DEL  $Proforma_D_ID = CCDLookUp("Proforma_D_ID","tblAdminist_Proforma_D","Proforma_H_ID = ".$DBGayaFusionAll->ToSQL($Proforma_H_ID,ccsInteger),$DBGayaFusionAll);
+//DEL  $Proforma_H_ID = CCDLookUp("Proforma_H_ID","tblAdminist_POL_H","POL_H_ID = ".$DBgayafusionall->ToSQL($Pol_H_ID,ccsInteger), $DBgayafusionall);
+//DEL  $Proforma_D_ID = CCDLookUp("Proforma_D_ID","tblAdminist_Proforma_D","Proforma_H_ID = ".$DBgayafusionall->ToSQL($Proforma_H_ID,ccsInteger),$DBgayafusionall);
 //DEL  
 //DEL  if($Proforma_H_ID > 0){
 //DEL  
@@ -156,18 +156,18 @@ function DetailPROF_Navigator_BeforeShow(& $sender)
 //DEL  tblcollect_master.NameCode = tblcollect_name.NameCode) INNER JOIN tblcollect_size ON
 //DEL  tblcollect_master.SizeCode = tblcollect_size.SizeCode) INNER JOIN tblcollect_texture ON
 //DEL  tblcollect_master.TextureCode = tblcollect_texture.TextureCode
-//DEL  WHERE tbladminist_proforma_d.Proforma_H_ID = ".$DBGayaFusionAll->ToSQL($Proforma_H_ID,ccsInteger);
-//DEL    $DBGayaFusionAll->query($sql);
-//DEL    $result = $DBGayaFusionAll->next_record();
+//DEL  WHERE tbladminist_proforma_d.Proforma_H_ID = ".$DBgayafusionall->ToSQL($Proforma_H_ID,ccsInteger);
+//DEL    $DBgayafusionall->query($sql);
+//DEL    $result = $DBgayafusionall->next_record();
 //DEL    if($result){
-//DEL      $Detail->NameDesc->SetValue($DBGayaFusionAll->f("NameDesc"));
-//DEL  	$Detail->CategoryName->SetValue($DBGayaFusionAll->f("CategoryName"));
-//DEL  	$Detail->SizeName->SetValue($DBGayaFusionAll->f("SizeName"));
-//DEL  	$Detail->TextureName->SetValue($DBGayaFusionAll->f("TextureName"));
-//DEL  	$Detail->ColorName->SetValue($DBGayaFusionAll->f("ColorName"));
-//DEL  	$Detail->MaterialName->SetValue($DBGayaFusionAll->f("MaterialName"));
-//DEL  	$Detail->Qty->SetValue($DBGayaFusionAll->f("Qty"));
-//DEL  	$Detail->Photo1->SetValue($DBGayaFusionAll->f("Photo1"));
+//DEL      $Detail->NameDesc->SetValue($DBgayafusionall->f("NameDesc"));
+//DEL  	$Detail->CategoryName->SetValue($DBgayafusionall->f("CategoryName"));
+//DEL  	$Detail->SizeName->SetValue($DBgayafusionall->f("SizeName"));
+//DEL  	$Detail->TextureName->SetValue($DBgayafusionall->f("TextureName"));
+//DEL  	$Detail->ColorName->SetValue($DBgayafusionall->f("ColorName"));
+//DEL  	$Detail->MaterialName->SetValue($DBgayafusionall->f("MaterialName"));
+//DEL  	$Detail->Qty->SetValue($DBgayafusionall->f("Qty"));
+//DEL  	$Detail->Photo1->SetValue($DBgayafusionall->f("Photo1"));
 //DEL  	
 //DEL    }
 //DEL  $Detail->Label3->SetValue($sql);
@@ -180,19 +180,19 @@ function DetailPROF_Navigator_BeforeShow(& $sender)
 //DEL  tblcollect_master.NameCode = tblcollect_name.NameCode) INNER JOIN tblcollect_size ON
 //DEL  tblcollect_master.SizeCode = tblcollect_size.SizeCode) INNER JOIN tblcollect_texture ON
 //DEL  tblcollect_master.TextureCode = tblcollect_texture.TextureCode) INNER JOIN tbladminist_pol_d ON
-//DEL  tbladminist_pol_d.CollectID = tblcollect_master.ID WHERE tbladminist_pol_d.POL_D_ID = ".$DBGayaFusionAll->ToSQL($POL_D_ID,ccsInteger);
+//DEL  tbladminist_pol_d.CollectID = tblcollect_master.ID WHERE tbladminist_pol_d.POL_D_ID = ".$DBgayafusionall->ToSQL($POL_D_ID,ccsInteger);
 //DEL  
-//DEL    $DBGayaFusionAll->query($sql);
-//DEL    //$result = $DBGayaFusionAll->next_record();
-//DEL    if($DBGayaFusionAll->next_record()){
-//DEL      $Detail->NameDesc->SetValue($DBGayaFusionAll->f("NameDesc"));
-//DEL  	$Detail->CategoryName->SetValue($DBGayaFusionAll->f("CategoryName"));
-//DEL  	$Detail->SizeName->SetValue($DBGayaFusionAll->f("SizeName"));
-//DEL  	$Detail->TextureName->SetValue($DBGayaFusionAll->f("TextureName"));
-//DEL  	$Detail->ColorName->SetValue($DBGayaFusionAll->f("ColorName"));
-//DEL  	$Detail->MaterialName->SetValue($DBGayaFusionAll->f("MaterialName"));
-//DEL  	$Detail->Qty->SetValue($DBGayaFusionAll->f("Qty"));
-//DEL  	$Detail->Photo1->SetValue($DBGayaFusionAll->f("Photo1"));
+//DEL    $DBgayafusionall->query($sql);
+//DEL    //$result = $DBgayafusionall->next_record();
+//DEL    if($DBgayafusionall->next_record()){
+//DEL      $Detail->NameDesc->SetValue($DBgayafusionall->f("NameDesc"));
+//DEL  	$Detail->CategoryName->SetValue($DBgayafusionall->f("CategoryName"));
+//DEL  	$Detail->SizeName->SetValue($DBgayafusionall->f("SizeName"));
+//DEL  	$Detail->TextureName->SetValue($DBgayafusionall->f("TextureName"));
+//DEL  	$Detail->ColorName->SetValue($DBgayafusionall->f("ColorName"));
+//DEL  	$Detail->MaterialName->SetValue($DBgayafusionall->f("MaterialName"));
+//DEL  	$Detail->Qty->SetValue($DBgayafusionall->f("Qty"));
+//DEL  	$Detail->Photo1->SetValue($DBgayafusionall->f("Photo1"));
 //DEL    }
 //DEL  }
 //DEL  

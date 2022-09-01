@@ -249,7 +249,7 @@ function GetPrimaryKey($keyName)
 
 } //End GroupHeader Class @51-FCB6E20C
 
-class clsGroupHeaderDataSource extends clsDBGayaFusionAll {  //GroupHeaderDataSource Class @51-868D1831
+class clsGroupHeaderDataSource extends clsDBgayafusionall {  //GroupHeaderDataSource Class @51-868D1831
 
 //DataSource Variables @51-1146C0AE
     public $Parent = "";
@@ -1043,7 +1043,7 @@ class clsEditableGridItemList { //ItemList Class @2-E9F80925
 
 } //End ItemList Class @2-FCB6E20C
 
-class clsItemListDataSource extends clsDBGayaFusionAll {  //ItemListDataSource Class @2-21A93E66
+class clsItemListDataSource extends clsDBgayafusionall {  //ItemListDataSource Class @2-21A93E66
 
 //DataSource Variables @2-C7B198C1
     public $Parent = "";
@@ -1302,8 +1302,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-74C96912
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -1349,7 +1349,7 @@ $ItemList->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($GroupHeader);
     unset($ItemList);
@@ -1369,7 +1369,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-A7203373
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($GroupHeader);
 unset($ItemList);
 unset($Tpl);

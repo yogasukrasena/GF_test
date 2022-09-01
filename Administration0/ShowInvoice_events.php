@@ -25,10 +25,10 @@ function Header_ProformaNo_BeforeShow(& $sender)
 //End Header_ProformaNo_BeforeShow
 
 //Custom Code @47-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $Proforma_H_ID = $Header->Proforma_H_ID->GetValue();
 if($Proforma_H_ID > 0){
-	$Header->ProformaNo->SetValue(CCDLookUp("ProformaNo","tblAdminist_Proforma_H","Proforma_H_ID = ".$DBGayaFusionAll->ToSQL($Proforma_H_ID,ccsInteger),$DBGayaFusionAll));
+	$Header->ProformaNo->SetValue(CCDLookUp("ProformaNo","tblAdminist_Proforma_H","Proforma_H_ID = ".$DBgayafusionall->ToSQL($Proforma_H_ID,ccsInteger),$DBgayafusionall));
 }else{
 	$Header->ProformaNo->SetValue("-");
 }
@@ -54,7 +54,7 @@ $Invoice_H_ID = CCGetFromGet("Invoice_H_ID","");
 
 $InvoiceContactID = $Header->InvoiceAddressContact->GetValue();
 if($InvoiceContactID > 0){
-  $NewConnection = new clsDBGayaFusionAll;
+  $NewConnection = new clsDBgayafusionall;
   $addquery = "SELECT tblAdminist_AddressBook_Contact.*, tblAdminist_AddressBook.* FROM tblAdminist_AddressBook_Contact INNER JOIN tblAdminist_AddressBook ON tblAdminist_AddressBook_Contact.AddressID = tblAdminist_AddressBook.AddressID WHERE ContactID = ".$InvoiceContactID;
   $NewConnection->query($addquery);
   $Result = $NewConnection->next_record();
@@ -74,7 +74,7 @@ if($InvoiceContactID > 0){
 
 $DeliveryContactID = $Header->DeliveryAddressContact->GetValue();
 if($DeliveryContactID > 0){
-  $NewConnection = new clsDBGayaFusionAll;
+  $NewConnection = new clsDBgayafusionall;
   $addquery = "SELECT tblAdminist_AddressBook_Contact.*, tblAdminist_AddressBook.* FROM tblAdminist_AddressBook_Contact INNER JOIN tblAdminist_AddressBook ON tblAdminist_AddressBook_Contact.AddressID = tblAdminist_AddressBook.AddressID WHERE ContactID = ".$DeliveryContactID;
   $NewConnection->query($addquery);
   $Result = $NewConnection->next_record();
@@ -130,8 +130,8 @@ function Detil_lblAdministrasi_BeforeShow(& $sender)
 
 //Custom Code @118-2A29BDB7
 global $Header;
-global $DBGayaFusionAll;
-$Detil->lblAdministrasi->SetValue(CCDLookUp("Firstname","tblUser","id = ".$DBGayaFusionAll->ToSQL(($Header->DocMaker->GetValue()),ccsInteger),$DBGayaFusionAll));
+global $DBgayafusionall;
+$Detil->lblAdministrasi->SetValue(CCDLookUp("Firstname","tblUser","id = ".$DBgayafusionall->ToSQL(($Header->DocMaker->GetValue()),ccsInteger),$DBgayafusionall));
 //End Custom Code
 
 //Close Detil_lblAdministrasi_BeforeShow @117-98ABBD6E
@@ -149,10 +149,10 @@ function Detil_lblCurrency_BeforeShow(& $sender)
 //End Detil_lblCurrency_BeforeShow
 
 //Custom Code @120-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $InvID = $Detil->Invoice_H_ID->GetValue();
-$id = CCDLookUp("CurrencyID","tblAdminist_Invoice_H","Invoice_H_ID = ".$DBGayaFusionAll->ToSQL($InvID,ccsInteger),$DBGayaFusionAll);
-$Detil->lblCurrency->SetValue(CCDLookUp("CurrencyCode","tbladminist_currency","CurrencyID = ".$DBGayaFusionAll->ToSQL($id,ccsInteger),$DBGayaFusionAll));
+$id = CCDLookUp("CurrencyID","tblAdminist_Invoice_H","Invoice_H_ID = ".$DBgayafusionall->ToSQL($InvID,ccsInteger),$DBgayafusionall);
+$Detil->lblCurrency->SetValue(CCDLookUp("CurrencyCode","tbladminist_currency","CurrencyID = ".$DBgayafusionall->ToSQL($id,ccsInteger),$DBgayafusionall));
 //End Custom Code
 
 //Close Detil_lblCurrency_BeforeShow @119-A25C728D
@@ -208,19 +208,19 @@ function Detil_BeforeShow(& $sender)
 
 //Custom Code @130-2A29BDB7
 global $Header, $Detil;
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $Invoice_H_ID = CCGetFromGet("Invoice_H_ID",0);
 $company = $Header->lblAddress->GetValue();
 $Detil->Company->SetValue($company);
-$Detil->PackCost->SetValue(CCDLookUp("PackagingCost","tblAdminist_Invoice_H","Invoice_H_ID = ".$DBGayaFusionAll->ToSQL($Invoice_H_ID, ccsInteger),$DBGayaFusionAll)."%");
-$DBGayaFusionAll->query("SELECT SubTotal,Discount,Packaging,Fumigation,GrandTotal FROM ar_invoice WHERE Invoice_H_ID = ".$DBGayaFusionAll->ToSQL($Invoice_H_ID, ccsInteger));
-$result = $DBGayaFusionAll->next_record();
+$Detil->PackCost->SetValue(CCDLookUp("PackagingCost","tblAdminist_Invoice_H","Invoice_H_ID = ".$DBgayafusionall->ToSQL($Invoice_H_ID, ccsInteger),$DBgayafusionall)."%");
+$DBgayafusionall->query("SELECT SubTotal,Discount,Packaging,Fumigation,GrandTotal FROM ar_invoice WHERE Invoice_H_ID = ".$DBgayafusionall->ToSQL($Invoice_H_ID, ccsInteger));
+$result = $DBgayafusionall->next_record();
 if($result){
-  $Detil->SubTotal->SetValue($DBGayaFusionAll->f("SubTotal"));
-  $Detil->Discount->SetValue($DBGayaFusionAll->f("Discount"));
-  $Detil->Packaging->SetValue($DBGayaFusionAll->f("Packaging"));
-  $Detil->Fumigation->SetValue($DBGayaFusionAll->f("Fumigation"));
-  $Detil->GrandTotal->SetValue($DBGayaFusionAll->f("GrandTotal"));
+  $Detil->SubTotal->SetValue($DBgayafusionall->f("SubTotal"));
+  $Detil->Discount->SetValue($DBgayafusionall->f("Discount"));
+  $Detil->Packaging->SetValue($DBgayafusionall->f("Packaging"));
+  $Detil->Fumigation->SetValue($DBgayafusionall->f("Fumigation"));
+  $Detil->GrandTotal->SetValue($DBgayafusionall->f("GrandTotal"));
 }
 //End Custom Code
 

@@ -99,7 +99,7 @@ class clsRecordCosting { //Costing Class @2-94E47BDD
             $this->ClayKG = new clsControl(ccsTextBox, "ClayKG", "Clay KG", ccsFloat, "", CCGetRequestParam("ClayKG", $Method, NULL), $this);
             $this->ClayType = new clsControl(ccsListBox, "ClayType", "Clay Type", ccsInteger, "", CCGetRequestParam("ClayType", $Method, NULL), $this);
             $this->ClayType->DSType = dsTable;
-            $this->ClayType->DataSource = new clsDBGayaFusionAll();
+            $this->ClayType->DataSource = new clsDBgayafusionall();
             $this->ClayType->ds = & $this->ClayType->DataSource;
             $this->ClayType->DataSource->SQL = "SELECT * \n" .
 "FROM tblcosting_clay {SQL_Where} {SQL_OrderBy}";
@@ -903,7 +903,7 @@ function GetPrimaryKey($keyName)
 
 } //End Costing Class @2-FCB6E20C
 
-class clsCostingDataSource extends clsDBGayaFusionAll {  //CostingDataSource Class @2-C1B73552
+class clsCostingDataSource extends clsDBgayafusionall {  //CostingDataSource Class @2-C1B73552
 
 //DataSource Variables @2-6A6B5BF5
     public $Parent = "";
@@ -1549,8 +1549,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-848BC8C9
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -1588,7 +1588,7 @@ $Costing->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($Costing);
     unset($Tpl);
@@ -1607,7 +1607,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-4B761D32
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($Costing);
 unset($Tpl);
 //End Unload Page

@@ -412,7 +412,7 @@ class clsGridGlazeGrid { //GlazeGrid class @6-57546D55
 
 } //End GlazeGrid Class @6-FCB6E20C
 
-class clsGlazeGridDataSource extends clsDBGayaFusionAll {  //GlazeGridDataSource Class @6-33A51C30
+class clsGlazeGridDataSource extends clsDBgayafusionall {  //GlazeGridDataSource Class @6-33A51C30
 
 //DataSource Variables @6-660953A1
     public $Parent = "";
@@ -540,8 +540,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-A4D2D29C
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -581,7 +581,7 @@ $tblglazeSearch->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tblglazeSearch);
     unset($GlazeGrid);
@@ -602,7 +602,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-F1E7CEF7
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tblglazeSearch);
 unset($GlazeGrid);
 unset($Tpl);

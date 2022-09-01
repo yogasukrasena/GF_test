@@ -260,7 +260,7 @@ function GetPrimaryKey($keyName)
 
 } //End tblestruder Class @2-FCB6E20C
 
-class clstblestruderDataSource extends clsDBGayaFusionAll {  //tblestruderDataSource Class @2-A80CA00D
+class clstblestruderDataSource extends clsDBgayafusionall {  //tblestruderDataSource Class @2-A80CA00D
 
 //DataSource Variables @2-6867F623
     public $Parent = "";
@@ -382,8 +382,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-113774E1
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -419,7 +419,7 @@ $tblestruder->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tblestruder);
     unset($Tpl);
@@ -438,7 +438,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-5CE539D2
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tblestruder);
 unset($Tpl);
 //End Unload Page

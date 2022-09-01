@@ -54,7 +54,7 @@ function AddNewHeader_BeforeShow(& $sender)
 
 //Custom Code @68-2A29BDB7
 global $AddNewHeader, $AddNewDetail;
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 if(!$AddNewHeader->EditMode){
   $AddNewDetail->Visible=false;
   $AddNewHeader->Invoice_H_ID->SetValue(CCGetFromGet("Invoice_H_ID",""));
@@ -73,14 +73,14 @@ if(!$AddNewHeader->EditMode){
   $AddNewHeader->PackingListNo->SetValue($NoTrans);
 }
 $PL_H_ID = CCGetFromGet("PL_H_ID",0);
-$AddressID = CCDLookUp("AddressID","tblAdminist_PackingList_H","PL_H_ID=".$DBGayaFusionAll->ToSQL($PL_H_ID,ccsInteger),$DBGayaFusionAll);
+$AddressID = CCDLookUp("AddressID","tblAdminist_PackingList_H","PL_H_ID=".$DBgayafusionall->ToSQL($PL_H_ID,ccsInteger),$DBgayafusionall);
 //$AddNewHeader->DumyAddress1->SetValue(CCGetFromGet("AddressID",""));ini langsung di set ke addressid
 $AddNewHeader->DumyAddress2->SetValue($AddressID);
 
 //to handle the address-attn
 $InvoiceContactID = CCGetFromGet("InvoiceContactID",0);
 if($InvoiceContactID > 0){
-  $NewConnection = new clsDBGayaFusionAll;
+  $NewConnection = new clsDBgayafusionall;
   $AddNewHeader->InvoiceAddressContact->Visible=false;
   $AddNewHeader->lblInvoiceAddressContact->Visible=true;
   $AddNewHeader->LinkChangeInvoiceContact->Visible = true;
@@ -107,7 +107,7 @@ if($InvoiceContactID > 0){
 
 $DeliveryContactID = CCGetFromGet("DeliveryContactID",0);
 if($DeliveryContactID > 0){
-  $NewConnection = new clsDBGayaFusionAll;
+  $NewConnection = new clsDBgayafusionall;
   $AddNewHeader->DeliveryAddressContact->Visible= false;
   $AddNewHeader->lblDeliveryAddressContact->Visible=true;
   $AddNewHeader->LinkChangeDeliveryContact->Visible=true;
@@ -151,7 +151,7 @@ function AddNewHeader_BeforeDelete(& $sender)
 $PL_H_ID = CCGetFromGet("PL_H_ID",0);	
 if(intval($PL_H_ID) >0){
 //Create a new database connection object
-  $NewConnection = new clsDBGayaFusionAll();
+  $NewConnection = new clsDBgayafusionall();
   $NewConnection->query("DELETE FROM tblAdminist_PackingList_D WHERE PL_H_ID=".$NewConnection->ToSQL($PL_H_ID,ccsInteger));
 }
 //Close and destroy the database connection object
@@ -173,11 +173,11 @@ function AddNewHeader_AfterInsert(& $sender)
 //End AddNewHeader_AfterInsert
 
 //Custom Code @70-2A29BDB7
-global $DBGayaFusionAll;	
+global $DBgayafusionall;	
 global $Redirect;
-$PL_H_ID = CCDLookUp("max(PL_H_ID)","tblAdminist_PackingList_H","", $DBGayaFusionAll);
-$InvoiceContactID = CCDLookUp("InvoiceContactID","tblAdminist_PackingList_H","PL_H_ID = ".$DBGayaFusionAll->ToSQL($PL_H_ID,ccsInteger),$DBGayaFusionAll);
-$DeliveryContactID = CCDLookUp("DeliveryContactID","tblAdminist_PackingList_H","PL_H_ID = ".$DBGayaFusionAll->ToSQL($PL_H_ID,ccsInteger),$DBGayaFusionAll);
+$PL_H_ID = CCDLookUp("max(PL_H_ID)","tblAdminist_PackingList_H","", $DBgayafusionall);
+$InvoiceContactID = CCDLookUp("InvoiceContactID","tblAdminist_PackingList_H","PL_H_ID = ".$DBgayafusionall->ToSQL($PL_H_ID,ccsInteger),$DBgayafusionall);
+$DeliveryContactID = CCDLookUp("DeliveryContactID","tblAdminist_PackingList_H","PL_H_ID = ".$DBgayafusionall->ToSQL($PL_H_ID,ccsInteger),$DBgayafusionall);
 $Redirect = "AddPackList.php"."?PL_H_ID=".$PL_H_ID."&InvoiceContactID=".$InvoiceContactID."&DeliveryContactID=".$DeliveryContactID;
 //End Custom Code
 
@@ -186,9 +186,9 @@ $Redirect = "AddPackList.php"."?PL_H_ID=".$PL_H_ID."&InvoiceContactID=".$Invoice
 }
 //End Close AddNewHeader_AfterInsert
 
-//DEL  global $DBGayaFusionAll;
+//DEL  global $DBgayafusionall;
 //DEL  $Box_H_ID = $AddNewDetail->Box_H_ID->GetValue();
-//DEL  $AddNewDetail->BoxNumber->SetValue(CCDLookUp("BoxNumber","tblAdminist_Box_H","Box_H_ID=".$DBGayaFusionAll->ToSQL($Box_H_ID,ccsInteger),$DBGayaFusionAll));
+//DEL  $AddNewDetail->BoxNumber->SetValue(CCDLookUp("BoxNumber","tblAdminist_Box_H","Box_H_ID=".$DBgayafusionall->ToSQL($Box_H_ID,ccsInteger),$DBgayafusionall));
 
 //AddNewDetail_BeforeShowRow @42-E5384DC1
 function AddNewDetail_BeforeShowRow(& $sender)
@@ -270,7 +270,7 @@ function Page_BeforeInitialize(& $sender)
 //End PTAutoFill2 Initialization
 
 //PTAutoFill2 DataSource @12-3D3BDCAD
-        $Service->DataSource = new clsDBGayaFusionAll();
+        $Service->DataSource = new clsDBgayafusionall();
         $Service->ds = & $Service->DataSource;
         $Service->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_addressbook_contact {SQL_Where} {SQL_OrderBy}";
@@ -299,7 +299,7 @@ function Page_BeforeInitialize(& $sender)
 //End PTAutoFill1 Initialization
 
 //PTAutoFill1 DataSource @23-3D3BDCAD
-        $Service->DataSource = new clsDBGayaFusionAll();
+        $Service->DataSource = new clsDBgayafusionall();
         $Service->ds = & $Service->DataSource;
         $Service->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_addressbook_contact {SQL_Where} {SQL_OrderBy}";

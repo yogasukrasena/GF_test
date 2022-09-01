@@ -66,7 +66,7 @@ function Panel1_BeforeShow(& $sender)
 //DEL  
 //DEL  	$GroupHID = CCGetfromGet("Group_H_ID",0);
 //DEL  	if($GroupHID > 0){
-//DEL      	$DB = new clsDBGayaFusionAll();
+//DEL      	$DB = new clsDBgayafusionall();
 //DEL  		$sql = "SELECT * FROM tblCollect_Group_H WHERE Group_H_ID =".$GroupHID;
 //DEL  		$DB->query($sql);
 //DEL  		$result = $DB->next_record();

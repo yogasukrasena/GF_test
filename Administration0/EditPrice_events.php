@@ -17,10 +17,10 @@ function tblcollect_master_BeforeUpdate(& $sender)
 //End tblcollect_master_BeforeUpdate
 
 //Custom Code @16-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $id = $tblcollect_master->ID->GetValue();
 $LastUpdate = $tblcollect_master->LastUpdate->GetValue();
-$DBGayaFusionAll->query("UPDATE tblCollect_master SET LastUpdate = ".$DBGayaFusionAll->ToSQL($LastUpdate,ccsDate)." WHERE ID = ".$DBGayaFusionAll->ToSQL($id,ccsInteger));
+$DBgayafusionall->query("UPDATE tblCollect_master SET LastUpdate = ".$DBgayafusionall->ToSQL($LastUpdate,ccsDate)." WHERE ID = ".$DBgayafusionall->ToSQL($id,ccsInteger));
 //End Custom Code
 
 //Close tblcollect_master_BeforeUpdate @2-996E2AD0

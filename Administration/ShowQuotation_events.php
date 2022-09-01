@@ -36,7 +36,7 @@ function Header_Client_BeforeShow(& $sender)
 //Custom Code @68-2A29BDB7
 $ID = $Container->ClientID->GetValue();
 if(!$ID == ""){
-  $db = new clsDBGayaFusionAll();
+  $db = new clsDBgayafusionall();
   $Component->SetValue(CCDLookUp("ClientCompany","tblAdminist_Client","ClientID = ".$db->ToSQL($ID,ccsInteger),$db));
   $db->close();
 }
@@ -59,7 +59,7 @@ function Header_Address_BeforeShow(& $sender)
 //Custom Code @70-2A29BDB7
 $ID = $Container->AddressID->GetValue();
 if(!$ID == ""){
-  $db = new clsDBGayaFusionAll();
+  $db = new clsDBgayafusionall();
   $Component->SetValue(CCDLookUp("Company","tblAdminist_AddressBook","AddressID = ".$db->ToSQL($ID,ccsInteger),$db));
   $db->close();
 }
@@ -82,7 +82,7 @@ function Header_QuotationContact_BeforeShow(& $sender)
 //Custom Code @72-2A29BDB7
 $ID = $Container->QuotationContactID->GetValue();
 if(!$ID == ""){
-  $db = new clsDBGayaFusionAll();
+  $db = new clsDBgayafusionall();
   $sql = "SELECT ContactName,Address,Email,Phone,Fax FROM tblAdminist_AddressBook_Contact WHERE ContactID = ".$db->ToSQL($ID,ccsInteger);
   $db->query($sql);
   $result = $db->next_record();
@@ -114,7 +114,7 @@ function Header_DeliveryContact_BeforeShow(& $sender)
 //Custom Code @82-2A29BDB7
 $ID = $Container->DeliveryContactID->GetValue();
 if(!$ID == ""){
-  $db = new clsDBGayaFusionAll();
+  $db = new clsDBgayafusionall();
   $sql = "SELECT ContactName,Address,Email,Phone,Fax FROM tblAdminist_AddressBook_Contact WHERE ContactID = ".$db->ToSQL($ID,ccsInteger);
   $db->query($sql);
   $result = $db->next_record();
@@ -146,7 +146,7 @@ function Header_DeliveryTem_BeforeShow(& $sender)
 //Custom Code @86-2A29BDB7
 $ID = $Container->DeliveryTermID->GetValue();
 if(!$ID == ""){
-  $db = new clsDBGayaFusionAll();
+  $db = new clsDBgayafusionall();
   $Component->SetValue(CCDLookUp("DeliveryTerm","tblAdminist_DeliveryTerm","DeliveryTermID = ".$db->ToSQL($ID,ccsInteger),$db));
   $db->close();
 }
@@ -169,7 +169,7 @@ function Header_DeliveryTime_BeforeShow(& $sender)
 //Custom Code @87-2A29BDB7
 $ID = $Container->DeliveryTimeID->GetValue();
 if(!$ID == ""){
-  $db = new clsDBGayaFusionAll();
+  $db = new clsDBgayafusionall();
   $Component->SetValue(CCDLookUp("DeliveryTime","tblAdminist_DeliveryTime","DeliveryTimeID = ".$db->ToSQL($ID,ccsInteger),$db));
   $db->close();
 }
@@ -192,7 +192,7 @@ function Header_PaymentTerm_BeforeShow(& $sender)
 //Custom Code @88-2A29BDB7
 $ID = $Container->PaymentTermID->GetValue();
 if(!$ID == ""){
-  $db = new clsDBGayaFusionAll();
+  $db = new clsDBgayafusionall();
   $Component->SetValue(CCDLookUp("PaymentTerm","tblAdminist_PaymentTerm","PaymentTermID = ".$db->ToSQL($ID,ccsInteger),$db));
   $db->close();
 }
@@ -215,7 +215,7 @@ function Header_DeliveryAddr_BeforeShow(& $sender)
 //Custom Code @93-2A29BDB7
 $ID = $Container->DeliveryAddressID->GetValue();
 if(!$ID == ""){
-  $db = new clsDBGayaFusionAll();
+  $db = new clsDBgayafusionall();
   $Component->SetValue(CCDLookUp("Company","tblAdminist_AddressBook","AddressID = ".$db->ToSQL($ID,ccsInteger),$db));
   $db->close();
 }
@@ -318,7 +318,7 @@ function lblAdministrasi_BeforeShow(& $sender)
 
 //Custom Code @89-2A29BDB7
 global $Header;
-$db = new clsDBGayaFusionAll();
+$db = new clsDBgayafusionall();
 $Component->SetValue(CCDLookUp("Firstname","tblUser","id = ".$db->ToSQL($Header->DocMaker->GetValue(),ccsInteger),$db));
 $db->close();
 //End Custom Code

@@ -282,7 +282,7 @@ function GetPrimaryKey($keyName)
 
 } //End tblcollect_master Class @2-FCB6E20C
 
-class clstblcollect_masterDataSource extends clsDBGayaFusionAll {  //tblcollect_masterDataSource Class @2-9A78A277
+class clstblcollect_masterDataSource extends clsDBgayafusionall {  //tblcollect_masterDataSource Class @2-9A78A277
 
 //DataSource Variables @2-EEF3A601
     public $Parent = "";
@@ -424,8 +424,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-091A0EDC
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -463,7 +463,7 @@ $tblcollect_master->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tblcollect_master);
     unset($Tpl);
@@ -482,7 +482,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-EA881DC6
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tblcollect_master);
 unset($Tpl);
 //End Unload Page

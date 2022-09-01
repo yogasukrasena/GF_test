@@ -37,9 +37,9 @@ function tblreference_SampleCode_BeforeShow(& $sender)
 //End tblreference_SampleCode_BeforeShow
 
 //Custom Code @15-2A29BDB7
-	global $DBGayaFusionAll;
+	global $DBgayafusionall;
 	$sID = $tblreference->sID->GetValue();
-	$tblreference->SampleCode->SetValue(CCDLookUp("SampleDescription","sampleceramic","sID = $sID",$DBGayaFusionAll));
+	$tblreference->SampleCode->SetValue(CCDLookUp("SampleDescription","sampleceramic","sID = $sID",$DBgayafusionall));
 //End Custom Code
 
 //Close tblreference_SampleCode_BeforeShow @13-EF14E21E
@@ -57,9 +57,9 @@ function tblreference_CollectCode_BeforeShow(& $sender)
 //End tblreference_CollectCode_BeforeShow
 
 //Custom Code @16-2A29BDB7
-	global $DBGayaFusionAll;
+	global $DBgayafusionall;
 	$CollectID = $tblreference->CollectID->GetValue();
-	$tblreference->CollectCode->SetValue(CCDLookUp("CollectCode","tblCollect_Master","ID = $CollectID",$DBGayaFusionAll));
+	$tblreference->CollectCode->SetValue(CCDLookUp("CollectCode","tblCollect_Master","ID = $CollectID",$DBgayafusionall));
 //End Custom Code
 
 //Close tblreference_CollectCode_BeforeShow @14-A5FCBE3A

@@ -44,7 +44,7 @@ function GridCollection_BeforeShow(& $sender)
 //End GridCollection_BeforeShow
 
 //Custom Code @247-2A29BDB7
-$db = new clsDBGayaFusionAll;
+$db = new clsDBgayafusionall;
 $sql = "SELECT tblcosting_rakubisque.PricePerFiring as RakuBisquePPF,tblcosting_standardbisque.PricePerFiring as StdBisquePPF,tblcosting_standardglaze.PricePerFiring as StdGlazePPF,tblcosting_rakuglaze.PricePerFiring as RakuGlazePPF 
 	FROM tblcosting_rakubisque,tblcosting_standardbisque,tblcosting_standardglaze,tblcosting_rakuglaze ";
 $db->query($sql);
@@ -73,7 +73,7 @@ function GridCollection_BeforeShowRow(& $sender)
 //End GridCollection_BeforeShowRow
 
 //Custom Code @248-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $ID = $GridCollection->ID->GetValue();
 $dm1 = $GridCollection->DesignMat1->GetValue();
 $dm2 = $GridCollection->DesignMat2->GetValue();
@@ -83,10 +83,10 @@ $QtyDesignMat1 = $GridCollection->DesignMatQty1->GetValue();
 $QtyDesignMat2 = $GridCollection->DesignMatQty2->GetValue();
 $QtyDesignMat3 = $GridCollection->DesignMatQty3->GetValue();
 $QtyDesignMat4 = $GridCollection->DesignMatQty4->GetValue();
-$dmPrice1 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBGayaFusionAll->ToSQL($dm1,ccsInteger), $DBGayaFusionAll);
-$dmPrice2 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBGayaFusionAll->ToSQL($dm2,ccsInteger), $DBGayaFusionAll);
-$dmPrice3 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBGayaFusionAll->ToSQL($dm3,ccsInteger), $DBGayaFusionAll);
-$dmPrice4 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBGayaFusionAll->ToSQL($dm4,ccsInteger), $DBGayaFusionAll);
+$dmPrice1 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBgayafusionall->ToSQL($dm1,ccsInteger), $DBgayafusionall);
+$dmPrice2 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBgayafusionall->ToSQL($dm2,ccsInteger), $DBgayafusionall);
+$dmPrice3 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBgayafusionall->ToSQL($dm3,ccsInteger), $DBgayafusionall);
+$dmPrice4 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBgayafusionall->ToSQL($dm4,ccsInteger), $DBgayafusionall);
 $TotDM1 = $QtyDesignMat1 * $dmPrice1;
 $TotDM2 = $QtyDesignMat2 * $dmPrice2;
 $TotDM3 = $QtyDesignMat3 * $dmPrice3;
@@ -119,7 +119,7 @@ $Total += $TotDM1 + $TotDM2 + $TotDM3 + $TotDM4 + $GridCollection->MovementCost-
 
 $Total = $Total + ($Total * 0.1) ;
 $GridCollection->RiskPrice->SetValue($Total);
-$RealPrice = CCDLookUp("RealSellingPrice", "tblCollect_Master","ID = ".$DBGayaFusionAll->ToSQL($ID, ccsInteger), $DBGayaFusionAll);
+$RealPrice = CCDLookUp("RealSellingPrice", "tblCollect_Master","ID = ".$DBgayafusionall->ToSQL($ID, ccsInteger), $DBgayafusionall);
 if($RealPrice < $Total){
   $GridCollection->RealPriceColor->SetValue("RED");
 }elseif($RealPrice == $Total){

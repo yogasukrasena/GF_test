@@ -395,7 +395,7 @@ class clsGridtblclay { //tblclay class @6-65E1A89A
 
 } //End tblclay Class @6-FCB6E20C
 
-class clstblclayDataSource extends clsDBGayaFusionAll {  //tblclayDataSource Class @6-232BD427
+class clstblclayDataSource extends clsDBgayafusionall {  //tblclayDataSource Class @6-232BD427
 
 //DataSource Variables @6-60F11FE6
     public $Parent = "";
@@ -523,8 +523,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-29B2B9D4
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -564,7 +564,7 @@ $tblclaySearch->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tblclaySearch);
     unset($tblclay);
@@ -585,7 +585,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-D06DD678
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tblclaySearch);
 unset($tblclay);
 unset($Tpl);

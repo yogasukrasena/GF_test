@@ -325,7 +325,7 @@ class clsGridsamplepackaging { //samplepackaging class @2-F8EB3018
 
 } //End samplepackaging Class @2-FCB6E20C
 
-class clssamplepackagingDataSource extends clsDBGayaFusionAll {  //samplepackagingDataSource Class @2-1A93D496
+class clssamplepackagingDataSource extends clsDBgayafusionall {  //samplepackagingDataSource Class @2-1A93D496
 
 //DataSource Variables @2-B334C3DD
     public $Parent = "";
@@ -713,8 +713,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-85A06E41
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -754,7 +754,7 @@ $samplepackagingSearch->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($samplepackaging);
     unset($samplepackagingSearch);
@@ -775,7 +775,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-A6D823A4
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($samplepackaging);
 unset($samplepackagingSearch);
 unset($Tpl);

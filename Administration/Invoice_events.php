@@ -38,7 +38,7 @@ function InvGrid_BeforeShowRow(& $sender)
 //End InvGrid_BeforeShowRow
 
 //Custom Code @137-2A29BDB7
-$db = new clsDBGayaFusionAll();
+$db = new clsDBgayafusionall();
 $Quotation_H_ID = $InvGrid->Quotation_H_ID->GetValue();
 $Proforma_H_ID = $InvGrid->Proforma_H_ID->GetValue();
 $QuoInPro = CCDLookUp("Quotation_H_ID","tblAdminist_Proforma_H","Proforma_H_ID=".$db->ToSQL($Proforma_H_ID,ccsInteger),$db);

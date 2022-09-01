@@ -400,7 +400,7 @@ class clsGridtblcollect_name { //tblcollect_name class @2-BB3249D6
 
 } //End tblcollect_name Class @2-FCB6E20C
 
-class clstblcollect_nameDataSource extends clsDBGayaFusionAll {  //tblcollect_nameDataSource Class @2-5FBE03A4
+class clstblcollect_nameDataSource extends clsDBgayafusionall {  //tblcollect_nameDataSource Class @2-5FBE03A4
 
 //DataSource Variables @2-493FE90A
     public $Parent = "";
@@ -771,7 +771,7 @@ function GetPrimaryKey($keyName)
 
 } //End tblcollect_name1 Class @19-FCB6E20C
 
-class clstblcollect_name1DataSource extends clsDBGayaFusionAll {  //tblcollect_name1DataSource Class @19-4DE29DF9
+class clstblcollect_name1DataSource extends clsDBgayafusionall {  //tblcollect_name1DataSource Class @19-4DE29DF9
 
 //DataSource Variables @19-374910AC
     public $Parent = "";
@@ -944,8 +944,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-02395CA2
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -994,7 +994,7 @@ $tblcollect_name1->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tblcollect_nameSearch);
     unset($tblcollect_name);
@@ -1015,7 +1015,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-C622DC03
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tblcollect_nameSearch);
 unset($tblcollect_name);
 unset($tblcollect_name1);

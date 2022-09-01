@@ -786,7 +786,7 @@ function GetPrimaryKey($keyName)
 
 } //End AddSampleCeramic Class @2-FCB6E20C
 
-class clsAddSampleCeramicDataSource extends clsDBGayaFusionAll {  //AddSampleCeramicDataSource Class @2-FBB4BE4C
+class clsAddSampleCeramicDataSource extends clsDBgayafusionall {  //AddSampleCeramicDataSource Class @2-FBB4BE4C
 
 //DataSource Variables @2-4D6A719C
     public $Parent = "";
@@ -1271,8 +1271,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-0DF67AFF
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -1310,7 +1310,7 @@ $AddSampleCeramic->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($AddSampleCeramic);
     unset($Tpl);
@@ -1329,7 +1329,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-3A806E66
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($AddSampleCeramic);
 unset($Tpl);
 //End Unload Page

@@ -17,7 +17,7 @@ function NewPol_BeforeShow(& $sender)
 //End NewPol_BeforeShow
 
 //Custom Code @6-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $Proforma_H_ID = CCGetFromGet("Proforma_H_ID", 0);
 if($Proforma_H_ID > 0){
 	$Prefix = "POL".date(Ym);
@@ -31,7 +31,7 @@ if($Proforma_H_ID > 0){
 		$NoTrans = $Prefix."01";
 	}
 	$tgl = date('Y-m-d');
-	$DBGayaFusionAll->query("INSERT INTO tblAdminist_Pol_H (PolNo, Proforma_H_ID, POLDate) VALUES (".$DBGayaFusionAll->ToSQL($NoTrans,ccsText).", ".$DBGayaFusionAll->ToSQL($Proforma_H_ID, ccsInteger).",".$DBGayaFusionAll->ToSQL($tgl,ccsDate).")");
+	$DBgayafusionall->query("INSERT INTO tblAdminist_Pol_H (PolNo, Proforma_H_ID, POLDate) VALUES (".$DBgayafusionall->ToSQL($NoTrans,ccsText).", ".$DBgayafusionall->ToSQL($Proforma_H_ID, ccsInteger).",".$DBgayafusionall->ToSQL($tgl,ccsDate).")");
 
 }
 //End Custom Code

@@ -26,10 +26,10 @@ function AddNewHeader_lblQuotation_BeforeShow(& $sender)
 //End AddNewHeader_lblQuotation_BeforeShow
 
 //Custom Code @81-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $Quotation_H_ID=$AddNewHeader->Quotation_H_ID->GetValue();
 if($Quotation_H_ID > 0){
-  $AddNewHeader->lblQuotation->SetValue(CCDLookUp("QuotationNo","tblAdminist_Quotation_H","Quotation_H_ID=".$DBGayaFusionAll->ToSQL($Quotation_H_ID,ccsInteger),$DBGayaFusionAll));
+  $AddNewHeader->lblQuotation->SetValue(CCDLookUp("QuotationNo","tblAdminist_Quotation_H","Quotation_H_ID=".$DBgayafusionall->ToSQL($Quotation_H_ID,ccsInteger),$DBgayafusionall));
 }else{
   $AddNewHeader->lblQuotation->SetValue("-");
 }
@@ -50,10 +50,10 @@ function AddNewHeader_lblProforma_BeforeShow(& $sender)
 //End AddNewHeader_lblProforma_BeforeShow
 
 //Custom Code @82-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $Proforma_H_ID=$AddNewHeader->Proforma_H_ID->GetValue();
 if($Proforma_H_ID > 0){
-  $AddNewHeader->lblProforma->SetValue(CCDLookUp("ProformaNo","tblAdminist_Proforma_H","Proforma_H_ID=".$DBGayaFusionAll->ToSQL($Proforma_H_ID,ccsInteger),$DBGayaFusionAll));
+  $AddNewHeader->lblProforma->SetValue(CCDLookUp("ProformaNo","tblAdminist_Proforma_H","Proforma_H_ID=".$DBgayafusionall->ToSQL($Proforma_H_ID,ccsInteger),$DBgayafusionall));
 }else{
   $AddNewHeader->lblProforma->SetValue("-");
 }
@@ -74,9 +74,9 @@ function AddNewHeader_lblClient_BeforeShow(& $sender)
 //End AddNewHeader_lblClient_BeforeShow
 
 //Custom Code @83-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $ClientID=$AddNewHeader->ClientID->GetValue();
-$AddNewHeader->lblClient->SetValue(CCDLookUp("ClientCompany","tblAdminist_Client","ClientID=".$DBGayaFusionAll->ToSQL($ClientID,ccsInteger),$DBGayaFusionAll));
+$AddNewHeader->lblClient->SetValue(CCDLookUp("ClientCompany","tblAdminist_Client","ClientID=".$DBgayafusionall->ToSQL($ClientID,ccsInteger),$DBgayafusionall));
 //End Custom Code
 
 //Close AddNewHeader_lblClient_BeforeShow @80-71C89AA3
@@ -94,9 +94,9 @@ function AddNewHeader_lblCurrency_BeforeShow(& $sender)
 //End AddNewHeader_lblCurrency_BeforeShow
 
 //Custom Code @86-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $CurrencyID=$AddNewHeader->CurrencyID->GetValue();
-$AddNewHeader->lblCurrency->SetValue(CCDLookUp("Currency","tblAdminist_Currency","CurrencyID=".$DBGayaFusionAll->ToSQL($CurrencyID,ccsInteger),$DBGayaFusionAll));
+$AddNewHeader->lblCurrency->SetValue(CCDLookUp("Currency","tblAdminist_Currency","CurrencyID=".$DBgayafusionall->ToSQL($CurrencyID,ccsInteger),$DBgayafusionall));
 //End Custom Code
 
 //Close AddNewHeader_lblCurrency_BeforeShow @84-91E10219
@@ -134,13 +134,13 @@ function AddNewHeader_AfterInsert(& $sender)
 //End AddNewHeader_AfterInsert
 
 //Custom Code @7-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 global $Redirect;
  
-  	$Invoice_SH_ID = CCDLookup("max(Invoice_SH_ID)","tblAdminist_invoice_SH","",$DBGayaFusionAll);
-  	$Proforma_H_ID = CCDLookUp("Proforma_H_ID","tblAdminist_Invoice_SH","invoice_SH_ID = ".$DBGayaFusionAll->ToSQL($Invoice_SH_ID, ccsInteger), $DBGayaFusionAll);
-	$Quotation_H_ID = CCDLookUp("Quotation_H_ID","tblAdminist_Invoice_SH","invoice_SH_ID = ".$DBGayaFusionAll->ToSQL($Invoice_SH_ID, ccsInteger), $DBGayaFusionAll);
-	$AddressID = CCDLookUp("AddressID","tblAdminist_Invoice_SH","invoice_SH_ID = ".$DBGayaFusionAll->ToSQL($Invoice_SH_ID, ccsInteger), $DBGayaFusionAll);
+  	$Invoice_SH_ID = CCDLookup("max(Invoice_SH_ID)","tblAdminist_invoice_SH","",$DBgayafusionall);
+  	$Proforma_H_ID = CCDLookUp("Proforma_H_ID","tblAdminist_Invoice_SH","invoice_SH_ID = ".$DBgayafusionall->ToSQL($Invoice_SH_ID, ccsInteger), $DBgayafusionall);
+	$Quotation_H_ID = CCDLookUp("Quotation_H_ID","tblAdminist_Invoice_SH","invoice_SH_ID = ".$DBgayafusionall->ToSQL($Invoice_SH_ID, ccsInteger), $DBgayafusionall);
+	$AddressID = CCDLookUp("AddressID","tblAdminist_Invoice_SH","invoice_SH_ID = ".$DBgayafusionall->ToSQL($Invoice_SH_ID, ccsInteger), $DBgayafusionall);
 	$ContactID = CCGetFromGet("ContactID",0);
 	if($Quotation_H_ID > 0){
 		$Redirect = "AddInvoice.php?Invoice_SH_ID=".$Invoice_SH_ID."&quotation_h_id=".$Quotation_H_ID."&addressid=".$AddressID."&contactid=".$ContactID;
@@ -172,7 +172,7 @@ function AddNewHeader_BeforeShow(& $sender)
 
 	if(!$AddNewHeader->EditMode){
 		$Grid->Visible = false;
-		$db = new clsDBGayaFusionAll;
+		$db = new clsDBgayafusionall;
 		$ClientID = CCGetFromGet("ClientID","");
 		$AddressID = CCGetFromGet("AddressID","");
 		$Quotation_H_ID = CCGetFromGet("Quotation_H_ID", "");

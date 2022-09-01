@@ -36,7 +36,7 @@ function GridList_BeforeShowRow(& $sender)
 //End GridList_BeforeShowRow
 
 //Custom Code @61-2A29BDB7
-	$db = new clsDBGayaFusionAll;
+	$db = new clsDBgayafusionall;
 	$IDna = $GridList->Quotation_H_ID->GetValue();
 	$sql = "SELECT Proforma_H_ID,ProformaNo,ContactID FROM tblAdminist_Proforma_H WHERE Quotation_H_ID = $IDna";
 	$db->query($sql);

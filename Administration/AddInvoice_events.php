@@ -64,7 +64,7 @@ if($InvoiceContactID == "") $AddNewDetail->Visible = false;
 $AddressID = CCGetFromGet("AddressID",0);
 $DeliveryAddressID = CCGetFromGet("DeliveryAddressID",0);
 //$Container->SpecialInstruction->SetValue($AddressID);
-$NewConnection = new clsDBGayaFusionAll();
+$NewConnection = new clsDBgayafusionall();
 if ($AddressID > 0){
   $Container->lblAddress->Visible = true;
   $Container->AddressID->Visible = false;
@@ -85,7 +85,7 @@ $NewConnection->close();
 //to handle the address-attn
 $InvoiceContactID = CCGetFromGet("InvoiceContactID",0);
 if($InvoiceContactID > 0){
-	$NewConnection = new clsDBGayaFusionAll();
+	$NewConnection = new clsDBgayafusionall();
 	$AddNewHeader->Attn->Visible = false;
 	$AddNewHeader->lblAttn->Visible = true;//lblattn = quotationcontactname
 	$AddNewHeader->LinkChange->Visible = true;
@@ -115,7 +115,7 @@ else{
 }
 $DeliveryContactID = CCGetFromGet("DeliveryContactID",0);
 if ($DeliveryContactID > 0){
-$NewConnection = new clsDBGayaFusionAll;
+$NewConnection = new clsDBgayafusionall;
   $AddNewHeader->DeliveryContactID->Visible= false;
   $AddNewHeader->lblDeliveryAddressContact->Visible=true;
   $AddNewHeader->LinkChangeDeliveryContact->Visible=true;
@@ -159,7 +159,7 @@ function AddNewHeader_AfterInsert(& $sender)
 //End AddNewHeader_AfterInsert
 
 //Custom Code @198-2A29BDB7
-$db = new clsDBGayaFusionAll();
+$db = new clsDBgayafusionall();
 global $Redirect,$FileName;
 
 $ClientID = $AddNewHeader->ClientID->GetValue();
@@ -180,7 +180,7 @@ $sql = "INSERT INTO ar_proforma (Client_ID, Proforma_H_ID, pre_date,Currency,Rat
 $db->query($sql);
 		
 $ContactID = CCDLookUp("ContactID","tblAdminist_Proforma_H","Proforma_H_ID = ".$db->ToSQL($Proforma_H_ID,ccsInteger),$db);
-$Redirect = $FileName."?Proforma_H_ID=".$Proforma_H_ID."&ContactID=".$ContactID;//CCDLookUp("max(Proforma_H_ID)","tblAdminist_Proforma_H","", $DBGayaFusionAll);
+$Redirect = $FileName."?Proforma_H_ID=".$Proforma_H_ID."&ContactID=".$ContactID;//CCDLookUp("max(Proforma_H_ID)","tblAdminist_Proforma_H","", $DBgayafusionall);
 $db->close();
 //End Custom Code
 
@@ -202,7 +202,7 @@ function AddNewHeader_BeforeDelete(& $sender)
 $Proforma_H_ID = CCGetFromGet("Proforma_H_ID",0);
 if(intval($Proforma_H_ID) >0){
 //Create a new database connection object
-	$NewConnection = new clsDBGayaFusionAll();
+	$NewConnection = new clsDBgayafusionall();
 	$NewConnection->query("DELETE FROM tblAdminist_Proforma_D WHERE Proforma_H_ID=".$NewConnection->ToSQL($Proforma_H_ID,ccsInteger));
 	$NewConnection->query("DELETE FROM ar_proforma WHERE Proforma_H_ID = ".$NewConnection->ToSQL($Proforma_H_ID,ccsInteger));
 }
@@ -224,7 +224,7 @@ function AddNewHeader_AfterUpdate(& $sender)
 //End AddNewHeader_AfterUpdate
 
 //Custom Code @201-2A29BDB7
-$db = new clsDBGayaFusionAll;
+$db = new clsDBgayafusionall;
 $ClientID = $AddNewHeader->ClientID->GetValue();
 $predate = $AddNewHeader->PreviewDPDate->GetValue();
 $proforma_H_ID = $AddNewHeader->Proforma_H_ID->GetValue();
@@ -252,17 +252,17 @@ $db->close();
 
 //DEL  
 //DEL  if(!$AddNewHeader->EditMode){
-//DEL  	global $DBGayaFusionAll;
+//DEL  	global $DBgayafusionall;
 //DEL  	$Proforma_H_ID = $AddNewHeader->Proforma_H_ID->GetValue();
 //DEL  	if($Proforma_H_ID > 0){
-//DEL  		$AddNewHeader->PackagingCost->SetValue(CCDLookUp("PackagingCost","tblAdminist_Proforma_H","Proforma_H_ID = $Proforma_H_ID",$DBGayaFusionAll));
+//DEL  		$AddNewHeader->PackagingCost->SetValue(CCDLookUp("PackagingCost","tblAdminist_Proforma_H","Proforma_H_ID = $Proforma_H_ID",$DBgayafusionall));
 //DEL  	}else{
 //DEL  		$AddNewHeader->PackagingCost->SetValue("0");
 //DEL  	}
 //DEL  }
 
 //DEL  global $AddNewHeader, $AddNewDetail;
-//DEL  global $DBGayaFusionAll;
+//DEL  global $DBgayafusionall;
 //DEL  
 //DEL  //$AddNewHeader->Label1->SetValue(CCGetFromGet("sql",""));
 //DEL  //if(!$AddNewHeader->EditMode){
@@ -272,16 +272,16 @@ $db->close();
 //DEL  if($InvoiceContactID == "") $AddNewDetail->Visible = false;
 //DEL  
 //DEL  $Invoice_H_ID = CCGetFromGet("Invoice_H_ID","");
-//DEL  //$InvoiceNo = CCDLookUp("InvoiceNo","tblAdminist_Invoice_h","Invoice_H_ID=".$Invoice_H_ID,$DBGayaFusionAll);
-//DEL  //$Proforma_H_ID = CCDLookUp("Proforma_H_ID","tblAdminist_Invoice_H","Invoice_H_ID = ".$DBGayaFusionAll->ToSQL($Invoice_H_ID, ccsInteger), $DBGayaFusionAll);
-//DEL  //$CurrencyID = CCDLookUp("CurrencyID","tblAdminist_Invoice_H","Invoice_H_ID=".$DBGayaFusionAll->ToSQL($Invoice_H_ID,ccsInteger),$DBGayaFusionAll);
+//DEL  //$InvoiceNo = CCDLookUp("InvoiceNo","tblAdminist_Invoice_h","Invoice_H_ID=".$Invoice_H_ID,$DBgayafusionall);
+//DEL  //$Proforma_H_ID = CCDLookUp("Proforma_H_ID","tblAdminist_Invoice_H","Invoice_H_ID = ".$DBgayafusionall->ToSQL($Invoice_H_ID, ccsInteger), $DBgayafusionall);
+//DEL  //$CurrencyID = CCDLookUp("CurrencyID","tblAdminist_Invoice_H","Invoice_H_ID=".$DBgayafusionall->ToSQL($Invoice_H_ID,ccsInteger),$DBgayafusionall);
 //DEL  //$AddNewHeader->InvoiceNo->SetValue($InvoiceNo);
 //DEL  //$AddNewHeader->Proforma_H_ID->SetValue($Proforma_H_ID);
-//DEL  //$AddNewHeader->lblCurrency->SetValue(CCDLookUp("Currency","tblAdminist_Currency","CurrencyID=".$DBGayaFusionAll->ToSQL($CurrencyID,ccsInteger),$DBGayaFusionAll));
+//DEL  //$AddNewHeader->lblCurrency->SetValue(CCDLookUp("Currency","tblAdminist_Currency","CurrencyID=".$DBgayafusionall->ToSQL($CurrencyID,ccsInteger),$DBgayafusionall));
 //DEL  
 //DEL  $AddressID = CCGetFromGet("InvoiceAddressID",0);
 //DEL  $DeliveryAddressID = CCGetFromGet("DeliveryAddressID",0);
-//DEL  $NewConnection = new clsDBGayaFusionAll();
+//DEL  $NewConnection = new clsDBgayafusionall();
 //DEL  if ($AddressID > 0){
 //DEL    $Container->lblAddress->Visible = true;
 //DEL    $Container->AddressID->Visible = false;
@@ -302,7 +302,7 @@ $db->close();
 //DEL  //to handle the address-attn
 //DEL  $InvoiceContactID = CCGetFromGet("InvoiceContactID",0);
 //DEL  if($InvoiceContactID > 0){
-//DEL    $NewConnection = new clsDBGayaFusionAll;
+//DEL    $NewConnection = new clsDBgayafusionall;
 //DEL    $AddNewHeader->InvoiceAddressContact->Visible=false;
 //DEL    $AddNewHeader->lblInvoiceAddressContact->Visible=true;
 //DEL    $AddNewHeader->LinkChangeInvoiceContact->Visible = true;
@@ -329,7 +329,7 @@ $db->close();
 //DEL  
 //DEL  $DeliveryContactID = CCGetFromGet("DeliveryContactID",0);
 //DEL  if($DeliveryContactID > 0){
-//DEL    $NewConnection = new clsDBGayaFusionAll;
+//DEL    $NewConnection = new clsDBgayafusionall;
 //DEL    $AddNewHeader->DeliveryAddressContact->Visible= false;
 //DEL    $AddNewHeader->lblDeliveryAddressContact->Visible=true;
 //DEL    $AddNewHeader->LinkChangeDeliveryContact->Visible=true;
@@ -358,27 +358,27 @@ $db->close();
 //DEL     
 //DEL  if(intval($Invoice_H_ID) >0){
 //DEL  //Create a new database connection object
-//DEL    $NewConnection = new clsDBGayaFusionAll();
+//DEL    $NewConnection = new clsDBgayafusionall();
 //DEL    $NewConnection->query("DELETE FROM tblAdminist_Invoice_D WHERE Invoice_H_ID=".$NewConnection->ToSQL($Invoice_H_ID,ccsInteger));
 //DEL  }
 //DEL  //Close and destroy the database connection object
 //DEL  $NewConnection->close();
 
-//DEL  global $DBGayaFusionAll;
+//DEL  global $DBgayafusionall;
 //DEL  global $Redirect,$FileName;
 //DEL  
 //DEL  $Invoice_H_ID = $AddNewHeader->Invoice_H_ID->GetValue();
 //DEL  $Proforma_H_ID = $AddNewHeader->Proforma_H_ID->GetValue();
 //DEL  $ClientID = $AddNewHeader->ClientID->GetValue();
 //DEL  if($Proforma_H_ID == "") ($Proforma_H_ID = 0);
-//DEL  $DueDate = CCDLookUp("duedate","tblAdminist_Invoice_H","Invoice_H_ID=".$DBGayaFusionAll->ToSQL($Invoice_H_ID,ccsInteger),$DBGayaFusionAll);
-//DEL  $CurrencyID = CCDLookUp("CurrencyID","tblAdminist_Invoice_H","Invoice_H_ID=".$DBGayaFusionAll->ToSQL($Invoice_H_ID,ccsInteger),$DBGayaFusionAll);
-//DEL  $CurrencyRate = CCDLookUp("Rate","tblAdminist_Currency","CurrencyID = ".$DBGayaFusionAll->ToSQL($CurrencyID,ccsInteger),$DBGayaFusionAll);
-//DEL  $sql = "UPDATE ar_Invoice SET ClientID = ".$DBGayaFusionAll->ToSQL($ClientID,csInteger).",due_date = ".$DBGayaFusionAll->ToSQL($DueDate,ccsDate).",Currency=".$DBGayaFusionAll->ToSQL($CurrencyID,ccsInteger).",Rate=".$DBGayaFusionAll->ToSQL($CurrencyRate,ccsFloat)." WHERE Invoice_H_ID=".$DBGayaFusionAll->ToSQL($Invoice_H_ID,ccsInteger);
-//DEL  $DBGayaFusionAll->query($sql);
+//DEL  $DueDate = CCDLookUp("duedate","tblAdminist_Invoice_H","Invoice_H_ID=".$DBgayafusionall->ToSQL($Invoice_H_ID,ccsInteger),$DBgayafusionall);
+//DEL  $CurrencyID = CCDLookUp("CurrencyID","tblAdminist_Invoice_H","Invoice_H_ID=".$DBgayafusionall->ToSQL($Invoice_H_ID,ccsInteger),$DBgayafusionall);
+//DEL  $CurrencyRate = CCDLookUp("Rate","tblAdminist_Currency","CurrencyID = ".$DBgayafusionall->ToSQL($CurrencyID,ccsInteger),$DBgayafusionall);
+//DEL  $sql = "UPDATE ar_Invoice SET ClientID = ".$DBgayafusionall->ToSQL($ClientID,csInteger).",due_date = ".$DBgayafusionall->ToSQL($DueDate,ccsDate).",Currency=".$DBgayafusionall->ToSQL($CurrencyID,ccsInteger).",Rate=".$DBgayafusionall->ToSQL($CurrencyRate,ccsFloat)." WHERE Invoice_H_ID=".$DBgayafusionall->ToSQL($Invoice_H_ID,ccsInteger);
+//DEL  $DBgayafusionall->query($sql);
 //DEL  
-//DEL  $InvoiceContactID = CCDLookUp("InvoiceContactID","tblAdminist_Invoice_H","Invoice_H_ID = ".$DBGayaFusionAll->ToSQL($Invoice_H_ID,ccsInteger),$DBGayaFusionAll);
-//DEL  $DeliveryContactID = CCDLookUp("DeliveryContactID","tblAdminist_Invoice_H","Invoice_H_ID = ".$DBGayaFusionAll->ToSQL($Invoice_H_ID,ccsInteger),$DBGayaFusionAll);
+//DEL  $InvoiceContactID = CCDLookUp("InvoiceContactID","tblAdminist_Invoice_H","Invoice_H_ID = ".$DBgayafusionall->ToSQL($Invoice_H_ID,ccsInteger),$DBgayafusionall);
+//DEL  $DeliveryContactID = CCDLookUp("DeliveryContactID","tblAdminist_Invoice_H","Invoice_H_ID = ".$DBgayafusionall->ToSQL($Invoice_H_ID,ccsInteger),$DBgayafusionall);
 //DEL  $Redirect = $FileName."?Invoice_H_ID=".$Invoice_H_ID."&InvoiceContactID=".$InvoiceContactID."&DeliveryContactID=".$DeliveryContactID;
 
 //AddNewDetail_BeforeShowRow @51-E5384DC1
@@ -393,7 +393,7 @@ function AddNewDetail_BeforeShowRow(& $sender)
 //Custom Code @72-2A29BDB7
 global $AddNewDetail;
 global $RowNumber;
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $RowNumber++;
 $AddNewDetail->RowIDAttribute->SetValue($RowNumber);
   
@@ -410,19 +410,19 @@ if( ($RowNumber <= $AddNewDetail->ds->RecordsCount) && ($RowNumber <= $AddNewDet
 }
 
 $CollectID = $AddNewDetail->CollectID->GetValue();
-$DBGayaFusionAll->query("SELECT DesignCode, NameCode, CategoryCode, SizeCode, TextureCode, ColorCode, MaterialCode FROM tblCollect_Master
-	WHERE ID = ".$DBGayaFusionAll->ToSQL($CollectID,ccsInteger));
-$Result = $DBGayaFusionAll->next_record();
+$DBgayafusionall->query("SELECT DesignCode, NameCode, CategoryCode, SizeCode, TextureCode, ColorCode, MaterialCode FROM tblCollect_Master
+	WHERE ID = ".$DBgayafusionall->ToSQL($CollectID,ccsInteger));
+$Result = $DBgayafusionall->next_record();
 if($Result){
-	$DesignCode = $DBGayaFusionAll->f("DesignCode");
-	$NameCode = $DBGayaFusionAll->f("NameCode");
-	$CategoryCode = $DBGayaFusionAll->f("CategoryCode");
-	$SizeCode = $DBGayaFusionAll->f("SizeCode");
-	$TextureCode = $DBGayaFusionAll->f("TextureCode");
-	$ColorCode = $DBGayaFusionAll->f("ColorCode");
-	$MaterialCode = $DBGayaFusionAll->f("MaterialCode");
+	$DesignCode = $DBgayafusionall->f("DesignCode");
+	$NameCode = $DBgayafusionall->f("NameCode");
+	$CategoryCode = $DBgayafusionall->f("CategoryCode");
+	$SizeCode = $DBgayafusionall->f("SizeCode");
+	$TextureCode = $DBgayafusionall->f("TextureCode");
+	$ColorCode = $DBgayafusionall->f("ColorCode");
+	$MaterialCode = $DBgayafusionall->f("MaterialCode");
 }
-$DB = new clsDBGayaFusionAll;
+$DB = new clsDBgayafusionall;
 $query = "SELECT CategoryName, ColorName, DesignName, MaterialName, NameDesc, SizeName, TextureName 
 FROM ((((((tblcollect_master INNER JOIN tblcollect_category ON
 tblcollect_master.CategoryCode = tblcollect_category.CategoryCode) INNER JOIN tblcollect_color ON
@@ -499,7 +499,7 @@ function Page_BeforeInitialize(& $sender)
 //End PTAutoFill2 Initialization
 
 //PTAutoFill2 DataSource @155-3D3BDCAD
-        $Service->DataSource = new clsDBGayaFusionAll();
+        $Service->DataSource = new clsDBgayafusionall();
         $Service->ds = & $Service->DataSource;
         $Service->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_addressbook_contact {SQL_Where} {SQL_OrderBy}";
@@ -529,7 +529,7 @@ function Page_BeforeInitialize(& $sender)
 //End PTAutoFill3 Initialization
 
 //PTAutoFill3 DataSource @176-3D3BDCAD
-        $Service->DataSource = new clsDBGayaFusionAll();
+        $Service->DataSource = new clsDBgayafusionall();
         $Service->ds = & $Service->DataSource;
         $Service->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_addressbook_contact {SQL_Where} {SQL_OrderBy}";

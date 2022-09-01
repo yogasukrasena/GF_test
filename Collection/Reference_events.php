@@ -39,9 +39,9 @@ function tblreference_SampleCode_BeforeShow(& $sender)
 //End tblreference_SampleCode_BeforeShow
 
 //Custom Code @25-2A29BDB7
-	global $DBGayaFusionAll;
+	global $DBgayafusionall;
 	$sID = $tblreference->sID->GetValue();
-	$tblreference->SampleCode->SetValue(CCDLookUp("SampleDescription","sampleceramic","sID = $sID",$DBGayaFusionAll));
+	$tblreference->SampleCode->SetValue(CCDLookUp("SampleDescription","sampleceramic","sID = $sID",$DBgayafusionall));
 //End Custom Code
 
 //Close tblreference_SampleCode_BeforeShow @24-EF14E21E
@@ -59,9 +59,9 @@ function tblreference_CollectCode_BeforeShow(& $sender)
 //End tblreference_CollectCode_BeforeShow
 
 //Custom Code @27-2A29BDB7
-	global $DBGayaFusionAll;
+	global $DBgayafusionall;
 	$CollectID = $tblreference->CollectID->GetValue();
-	$tblreference->CollectCode->SetValue(CCDLookUp("CollectCode","tblCollect_Master","ID = $CollectID",$DBGayaFusionAll));
+	$tblreference->CollectCode->SetValue(CCDLookUp("CollectCode","tblCollect_Master","ID = $CollectID",$DBgayafusionall));
 //End Custom Code
 
 //Close tblreference_CollectCode_BeforeShow @26-A5FCBE3A
@@ -79,7 +79,7 @@ function Record_ds_BeforeExecuteDelete(& $sender)
 //End Record_ds_BeforeExecuteDelete
 
 //Custom Code @22-2A29BDB7
-	$db = new clsDBGayaFusionAll;
+	$db = new clsDBgayafusionall;
 	$CollectID = $Record->CollectID->GetValue();
 	$Update = "UPDATE tblCollect_Master SET RefID = '' WHERE ID = $CollectID";
 	$db->query($Update);

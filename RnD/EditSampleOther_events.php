@@ -24,7 +24,7 @@ function AddSamplePackaging_DesMat1_BeforeShow(& $sender)
 //Custom Code @109-2A29BDB7
 $ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$DB = new clsDBGayaFusionAll;
+		$DB = new clsDBgayafusionall;
 		global $AddSamplePackaging;
 		$IDnya = $AddSamplePackaging->DesMat1->GetValue();
 		$sql = "SELECT tblsupplier.SupCompany, tbldesignmat.DesignMatID, tbldesignmat.DesignMatCode, tbldesignmat.DesignMatDescription, ";
@@ -61,7 +61,7 @@ function AddSamplePackaging_DesMat2_BeforeShow(& $sender)
 //Custom Code @110-2A29BDB7
 $ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$DB = new clsDBGayaFusionAll;
+		$DB = new clsDBgayafusionall;
 		global $AddSamplePackaging;
 		$IDnya = $AddSamplePackaging->DesMat2->GetValue();
 		$sql = "SELECT tblsupplier.SupCompany, tbldesignmat.DesignMatID, tbldesignmat.DesignMatCode, tbldesignmat.DesignMatDescription, ";
@@ -98,7 +98,7 @@ function AddSamplePackaging_DesMat3_BeforeShow(& $sender)
 //Custom Code @111-2A29BDB7
 $ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$DB = new clsDBGayaFusionAll;
+		$DB = new clsDBgayafusionall;
 		global $AddSamplePackaging;
 		$IDnya = $AddSamplePackaging->DesMat3->GetValue();
 		$sql = "SELECT tblsupplier.SupCompany, tbldesignmat.DesignMatID, tbldesignmat.DesignMatCode, tbldesignmat.DesignMatDescription, ";
@@ -135,7 +135,7 @@ function AddSamplePackaging_DesMat4_BeforeShow(& $sender)
 //Custom Code @112-2A29BDB7
 $ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$DB = new clsDBGayaFusionAll;
+		$DB = new clsDBgayafusionall;
 		global $AddSamplePackaging;
 		$IDnya = $AddSamplePackaging->DesMat4->GetValue();
 		$sql = "SELECT tblsupplier.SupCompany, tbldesignmat.DesignMatID, tbldesignmat.DesignMatCode, tbldesignmat.DesignMatDescription, ";
@@ -172,7 +172,7 @@ function AddSamplePackaging_DesMat5_BeforeShow(& $sender)
 //Custom Code @113-2A29BDB7
 $ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$DB = new clsDBGayaFusionAll;
+		$DB = new clsDBgayafusionall;
 		global $AddSamplePackaging;
 		$IDnya = $AddSamplePackaging->DesMat5->GetValue();
 		$sql = "SELECT tblsupplier.SupCompany, tbldesignmat.DesignMatID, tbldesignmat.DesignMatCode, tbldesignmat.DesignMatDescription, ";
@@ -211,27 +211,27 @@ function AddSamplePackaging_BeforeShow(& $sender)
 //Custom Code @103-2A29BDB7
 //before show, select design mat name & the suppliers based on their id
 	global $AddSamplePackaging;
-	global $DBGayaFusionAll;
+	global $DBgayafusionall;
 
 	$id = CCGetFromGet("ID", 0);
 	for($i=1 ; $i<=5; $i++){
 		$fieldsupname = "Supplier".$i;
-		$SupplierID = CCDLookUp($fieldsupname,"samplepackaging","ID = $id",$DBGayaFusionAll);
+		$SupplierID = CCDLookUp($fieldsupname,"samplepackaging","ID = $id",$DBgayafusionall);
 		switch($i) {
 			case 1:
-				$AddSamplePackaging->SupDesc1->SetValue(CCDLookUp("SupCompany","tblSupplier","ID = $SupplierID",$DBGayaFusionAll));
+				$AddSamplePackaging->SupDesc1->SetValue(CCDLookUp("SupCompany","tblSupplier","ID = $SupplierID",$DBgayafusionall));
 				break;
 			case 2:
-				$AddSamplePackaging->SupDesc2->SetValue(CCDLookUp("SupCompany","tblSupplier","ID = $SupplierID",$DBGayaFusionAll));
+				$AddSamplePackaging->SupDesc2->SetValue(CCDLookUp("SupCompany","tblSupplier","ID = $SupplierID",$DBgayafusionall));
 				break;
 			case 3:
-				$AddSamplePackaging->SupDesc3->SetValue(CCDLookUp("SupCompany","tblSupplier","ID = $SupplierID",$DBGayaFusionAll));
+				$AddSamplePackaging->SupDesc3->SetValue(CCDLookUp("SupCompany","tblSupplier","ID = $SupplierID",$DBgayafusionall));
 				break;
 			case 4:
-				$AddSamplePackaging->SupDesc4->SetValue(CCDLookUp("SupCompany","tblSupplier","ID = $SupplierID",$DBGayaFusionAll));
+				$AddSamplePackaging->SupDesc4->SetValue(CCDLookUp("SupCompany","tblSupplier","ID = $SupplierID",$DBgayafusionall));
 				break;
 			case 5:
-				$AddSamplePackaging->SupDesc5->SetValue(CCDLookUp("SupCompany","tblSupplier","ID = $SupplierID",$DBGayaFusionAll));
+				$AddSamplePackaging->SupDesc5->SetValue(CCDLookUp("SupCompany","tblSupplier","ID = $SupplierID",$DBgayafusionall));
 				break;
 		}
 
@@ -241,11 +241,11 @@ $dm2 = $AddSamplePackaging->DesMat2->GetValue();
 $dm3 = $AddSamplePackaging->DesMat3->GetValue();
 $dm4 = $AddSamplePackaging->DesMat4->GetValue();
 $dm5 = $AddSamplePackaging->DesMat5->GetValue();
-$dmPrice1 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBGayaFusionAll->ToSQL($dm1, ccsInteger), $DBGayaFusionAll);
-$dmPrice2 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBGayaFusionAll->ToSQL($dm2, ccsInteger), $DBGayaFusionAll);
-$dmPrice3 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBGayaFusionAll->ToSQL($dm3, ccsInteger), $DBGayaFusionAll);
-$dmPrice4 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBGayaFusionAll->ToSQL($dm4, ccsInteger), $DBGayaFusionAll);
-$dmPrice5 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBGayaFusionAll->ToSQL($dm5, ccsInteger), $DBGayaFusionAll);
+$dmPrice1 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBgayafusionall->ToSQL($dm1, ccsInteger), $DBgayafusionall);
+$dmPrice2 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBgayafusionall->ToSQL($dm2, ccsInteger), $DBgayafusionall);
+$dmPrice3 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBgayafusionall->ToSQL($dm3, ccsInteger), $DBgayafusionall);
+$dmPrice4 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBgayafusionall->ToSQL($dm4, ccsInteger), $DBgayafusionall);
+$dmPrice5 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBgayafusionall->ToSQL($dm5, ccsInteger), $DBgayafusionall);
 $TotDM1 = $AddSamplePackaging->QtyDesMat1->GetValue() * $dmPrice1;
 $TotDM2 = $AddSamplePackaging->QtyDesMat2->GetValue() * $dmPrice2;
 $TotDM3 = $AddSamplePackaging->QtyDesMat3->GetValue() * $dmPrice3;

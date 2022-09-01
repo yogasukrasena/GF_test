@@ -89,7 +89,7 @@ class clsRecordSearch { //Search Class @31-39E8735D
             $this->Button_DoSearch = new clsButton("Button_DoSearch", $Method, $this);
             $this->s_ClientID = new clsControl(ccsListBox, "s_ClientID", "s_ClientID", ccsInteger, "", CCGetRequestParam("s_ClientID", $Method, NULL), $this);
             $this->s_ClientID->DSType = dsTable;
-            $this->s_ClientID->DataSource = new clsDBGayaFusionAll();
+            $this->s_ClientID->DataSource = new clsDBgayafusionall();
             $this->s_ClientID->ds = & $this->s_ClientID->DataSource;
             $this->s_ClientID->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_client {SQL_Where} {SQL_OrderBy}";
@@ -407,7 +407,7 @@ class clsGridtbladminist_client { //tbladminist_client class @30-9947B13C
 
 } //End tbladminist_client Class @30-FCB6E20C
 
-class clstbladminist_clientDataSource extends clsDBGayaFusionAll {  //tbladminist_clientDataSource Class @30-CDC5F061
+class clstbladminist_clientDataSource extends clsDBgayafusionall {  //tbladminist_clientDataSource Class @30-CDC5F061
 
 //DataSource Variables @30-B42DBD51
     public $Parent = "";
@@ -748,7 +748,7 @@ function GetPrimaryKey($keyName)
 
 } //End Add Class @46-FCB6E20C
 
-class clsAddDataSource extends clsDBGayaFusionAll {  //AddDataSource Class @46-1F150DA3
+class clsAddDataSource extends clsDBgayafusionall {  //AddDataSource Class @46-1F150DA3
 
 //DataSource Variables @46-C88B9C75
     public $Parent = "";
@@ -893,8 +893,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-0853433A
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -943,7 +943,7 @@ $Add->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($Search);
     unset($tbladminist_client);
@@ -964,7 +964,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-3053D154
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($Search);
 unset($tbladminist_client);
 unset($Add);

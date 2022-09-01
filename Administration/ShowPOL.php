@@ -191,7 +191,7 @@ class clsGridGrid { //Grid class @2-76129994
 
 } //End Grid Class @2-FCB6E20C
 
-class clsGridDataSource extends clsDBGayaFusionAll {  //GridDataSource Class @2-7708C172
+class clsGridDataSource extends clsDBgayafusionall {  //GridDataSource Class @2-7708C172
 
 //DataSource Variables @2-8021E57A
     public $Parent = "";
@@ -933,7 +933,7 @@ class clsReportDetailPOL { //DetailPOL Class @264-E129159F
 
 } //End DetailPOL Class @264-FCB6E20C
 
-class clsDetailPOLDataSource extends clsDBGayaFusionAll {  //DetailPOLDataSource Class @264-340547B3
+class clsDetailPOLDataSource extends clsDBgayafusionall {  //DetailPOLDataSource Class @264-340547B3
 
 //DataSource Variables @264-9EE87509
     public $Parent = "";
@@ -1696,7 +1696,7 @@ class clsReportDetailPROF { //DetailPROF Class @291-BF59995C
 
 } //End DetailPROF Class @291-FCB6E20C
 
-class clsDetailPROFDataSource extends clsDBGayaFusionAll {  //DetailPROFDataSource Class @291-C7F58061
+class clsDetailPROFDataSource extends clsDBgayafusionall {  //DetailPROFDataSource Class @291-C7F58061
 
 //DataSource Variables @291-6985AE07
     public $Parent = "";
@@ -1852,8 +1852,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-12152935
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -1899,7 +1899,7 @@ $Attributes->Show();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($Grid);
     unset($DetailPOL);
@@ -1923,7 +1923,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-E14360B6
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($Grid);
 unset($DetailPOL);
 unset($DetailPROF);

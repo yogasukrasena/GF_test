@@ -424,7 +424,7 @@ class clsGridtblfiringplan { //tblfiringplan class @2-CEB62CAB
 
 } //End tblfiringplan Class @2-FCB6E20C
 
-class clstblfiringplanDataSource extends clsDBGayaFusionAll {  //tblfiringplanDataSource Class @2-50D90770
+class clstblfiringplanDataSource extends clsDBgayafusionall {  //tblfiringplanDataSource Class @2-50D90770
 
 //DataSource Variables @2-9A0F4534
     public $Parent = "";
@@ -784,7 +784,7 @@ function GetPrimaryKey($keyName)
 
 } //End tblfiringplan1 Class @24-FCB6E20C
 
-class clstblfiringplan1DataSource extends clsDBGayaFusionAll {  //tblfiringplan1DataSource Class @24-CC53EC30
+class clstblfiringplan1DataSource extends clsDBgayafusionall {  //tblfiringplan1DataSource Class @24-CC53EC30
 
 //DataSource Variables @24-A018F98A
     public $Parent = "";
@@ -937,8 +937,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-A4B8AF08
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -987,7 +987,7 @@ $tblfiringplan1->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tblfiringplanSearch);
     unset($tblfiringplan);
@@ -1008,7 +1008,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-5BC27518
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tblfiringplanSearch);
 unset($tblfiringplan);
 unset($tblfiringplan1);

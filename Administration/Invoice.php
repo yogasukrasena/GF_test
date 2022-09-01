@@ -243,7 +243,7 @@ class clsGridInvGrid { //InvGrid class @2-6B3C3173
 
 } //End InvGrid Class @2-FCB6E20C
 
-class clsInvGridDataSource extends clsDBGayaFusionAll {  //InvGridDataSource Class @2-1C25AB17
+class clsInvGridDataSource extends clsDBgayafusionall {  //InvGridDataSource Class @2-1C25AB17
 
 //DataSource Variables @2-E15F14A6
     public $Parent = "";
@@ -417,7 +417,7 @@ class clsRecordInvSearch { //InvSearch Class @17-1AA853D5
             $this->s_InvoiceNo = new clsControl(ccsTextBox, "s_InvoiceNo", "s_InvoiceNo", ccsText, "", CCGetRequestParam("s_InvoiceNo", $Method, NULL), $this);
             $this->s_ClientCompany = new clsControl(ccsListBox, "s_ClientCompany", "s_ClientCompany", ccsText, "", CCGetRequestParam("s_ClientCompany", $Method, NULL), $this);
             $this->s_ClientCompany->DSType = dsTable;
-            $this->s_ClientCompany->DataSource = new clsDBGayaFusionAll();
+            $this->s_ClientCompany->DataSource = new clsDBgayafusionall();
             $this->s_ClientCompany->ds = & $this->s_ClientCompany->DataSource;
             $this->s_ClientCompany->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_client {SQL_Where} {SQL_OrderBy}";
@@ -589,8 +589,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-ED91C89A
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -630,7 +630,7 @@ $InvSearch->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($InvGrid);
     unset($InvSearch);
@@ -651,7 +651,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-34DFC949
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($InvGrid);
 unset($InvSearch);
 unset($Tpl);

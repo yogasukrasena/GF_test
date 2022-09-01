@@ -47,7 +47,7 @@ function AddNewHeader_BeforeShow(& $sender)
 	global $NoTrans;
 	global $ContactID;//this is to get the contact id
 	$Prefik = "QUO".date(Ym);
-	$NewConnection = new clsDBGayaFusionAll();
+	$NewConnection = new clsDBgayafusionall();
 
    	if(!$AddNewHeader->EditMode){ 
 		$dbf = new db_functions("localhost","root","","gayafusionall","","","");
@@ -136,10 +136,10 @@ function AddNewHeader_AfterInsert(& $sender)
 
 //Custom Code @49-2A29BDB7
 // -------------------------
-global $DBGayaFusionAll;	
+global $DBgayafusionall;	
 global $Redirect,$FileName;  
-$Quotation_H_ID = CCDLookUp("max(Quotation_H_ID)","tblAdminist_Quotation_H","", $DBGayaFusionAll);
-$ContactID = CCDLookUp("ContactID","tblAdminist_Quotation_H","Quotation_H_ID = ".$DBGayaFusionAll->ToSQL($Quotation_H_ID,ccsInteger),$DBGayaFusionAll);
+$Quotation_H_ID = CCDLookUp("max(Quotation_H_ID)","tblAdminist_Quotation_H","", $DBgayafusionall);
+$ContactID = CCDLookUp("ContactID","tblAdminist_Quotation_H","Quotation_H_ID = ".$DBgayafusionall->ToSQL($Quotation_H_ID,ccsInteger),$DBgayafusionall);
 $Redirect = $FileName."?Quotation_H_ID=".$Quotation_H_ID."&ContactID=".$ContactID;
   // -------------------------
 //End Custom Code
@@ -162,7 +162,7 @@ function AddNewHeader_BeforeDelete(& $sender)
 $Quotation_H_ID = CCGetFromGet("Quotation_H_ID",0);	
    
 if(intval($Quotation_H_ID) >0){
-	$NewConnection = new clsDBGayaFusionAll();
+	$NewConnection = new clsDBgayafusionall();
     $NewConnection->query("DELETE FROM tblAdminist_Quotation_D WHERE Quotation_H_ID=".$NewConnection->ToSQL($Quotation_H_ID,ccsInteger));
 }
 $NewConnection->close();
@@ -268,7 +268,7 @@ function Page_BeforeInitialize(& $sender)
 //End PTAutoFill2 Initialization
 
 //PTAutoFill2 DataSource @152-3D3BDCAD
-        $Service->DataSource = new clsDBGayaFusionAll();
+        $Service->DataSource = new clsDBgayafusionall();
         $Service->ds = & $Service->DataSource;
         $Service->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_addressbook_contact {SQL_Where} {SQL_OrderBy}";

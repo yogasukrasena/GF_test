@@ -253,7 +253,7 @@ function GetPrimaryKey($keyName)
 
 } //End RevRecord Class @2-FCB6E20C
 
-class clsRevRecordDataSource extends clsDBGayaFusionAll {  //RevRecordDataSource Class @2-497C0B20
+class clsRevRecordDataSource extends clsDBgayafusionall {  //RevRecordDataSource Class @2-497C0B20
 
 //DataSource Variables @2-E293FC3D
     public $Parent = "";
@@ -374,8 +374,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-990C29A7
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -413,7 +413,7 @@ $RevRecord->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($RevRecord);
     unset($Tpl);
@@ -433,7 +433,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-26FD0114
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($RevRecord);
 unset($Tpl);
 //End Unload Page

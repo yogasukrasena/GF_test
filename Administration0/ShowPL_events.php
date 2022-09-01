@@ -28,7 +28,7 @@ $PL_H_ID = CCGetFromGet("PL_H_ID",0);
 //to handle the address-attn
 $InvoiceContactID = $Header->InvoiceAddressContact->GetValue();
 if($InvoiceContactID > 0){
-  $NewConnection = new clsDBGayaFusionAll;
+  $NewConnection = new clsDBgayafusionall;
   $addquery = "SELECT tblAdminist_AddressBook_Contact.*, tblAdminist_AddressBook.* FROM tblAdminist_AddressBook_Contact INNER JOIN tblAdminist_AddressBook ON tblAdminist_AddressBook_Contact.AddressID = tblAdminist_AddressBook.AddressID WHERE ContactID = ".$InvoiceContactID;
   $NewConnection->query($addquery);
   $Result = $NewConnection->next_record();
@@ -48,7 +48,7 @@ if($InvoiceContactID > 0){
 
 $DeliveryContactID = $Header->DeliveryAddressContact->GetValue();
 if($DeliveryContactID > 0){
-  $NewConnection = new clsDBGayaFusionAll;
+  $NewConnection = new clsDBgayafusionall;
   $addquery = "SELECT tblAdminist_AddressBook_Contact.*, tblAdminist_AddressBook.* FROM tblAdminist_AddressBook_Contact INNER JOIN tblAdminist_AddressBook ON tblAdminist_AddressBook_Contact.AddressID = tblAdminist_AddressBook.AddressID WHERE ContactID = ".$DeliveryContactID;
   $NewConnection->query($addquery);
   $Result = $NewConnection->next_record();
@@ -85,8 +85,8 @@ function Detil_lblAdministrasi_BeforeShow(& $sender)
 
 //Custom Code @74-2A29BDB7
 global $Header;
-global $DBGayaFusionAll;
-//$Detil->lblAdministrasi->SetValue(CCDLookUp("Firstname","tblUser","id = ".$DBGayaFusionAll->ToSQL(($Header->DocMaker->GetValue()),ccsInteger),$DBGayaFusionAll));
+global $DBgayafusionall;
+//$Detil->lblAdministrasi->SetValue(CCDLookUp("Firstname","tblUser","id = ".$DBgayafusionall->ToSQL(($Header->DocMaker->GetValue()),ccsInteger),$DBgayafusionall));
 //End Custom Code
 
 //Close Detil_lblAdministrasi_BeforeShow @73-98ABBD6E
@@ -123,11 +123,11 @@ function Detil_BeforeShow(& $sender)
 
 //Custom Code @86-2A29BDB7
 global $Header, $Detil;
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $Invoice_H_ID = CCGetFromGet("Invoice_H_ID",0);
 //$company = $Header->lblAddress->GetValue();
 //$Detil->Company->SetValue($company);
-//$Detil->PackCost->SetValue(CCDLookUp("PackagingCost","tblAdminist_Invoice_H","Invoice_H_ID = ".$DBGayaFusionAll->ToSQL($Invoice_H_ID, ccsInteger),$DBGayaFusionAll)."%");
+//$Detil->PackCost->SetValue(CCDLookUp("PackagingCost","tblAdminist_Invoice_H","Invoice_H_ID = ".$DBgayafusionall->ToSQL($Invoice_H_ID, ccsInteger),$DBgayafusionall)."%");
 
 //End Custom Code
 

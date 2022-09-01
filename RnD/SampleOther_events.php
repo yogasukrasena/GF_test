@@ -17,17 +17,17 @@ function samplepackaging_BeforeShowRow(& $sender)
 //End samplepackaging_BeforeShowRow
 
 //Custom Code @56-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $dm1 = $samplepackaging->DesMat1->GetValue();
 $dm2 = $samplepackaging->DesMat2->GetValue();
 $dm3 = $samplepackaging->DesMat3->GetValue();
 $dm4 = $samplepackaging->DesMat4->GetValue();
 $dm5 = $samplepackaging->DesMat5->GetValue();
-$dmPrice1 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBGayaFusionAll->ToSQL($dm1, ccsInteger), $DBGayaFusionAll);
-$dmPrice2 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBGayaFusionAll->ToSQL($dm2, ccsInteger), $DBGayaFusionAll);
-$dmPrice3 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBGayaFusionAll->ToSQL($dm3, ccsInteger), $DBGayaFusionAll);
-$dmPrice4 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBGayaFusionAll->ToSQL($dm4, ccsInteger), $DBGayaFusionAll);
-$dmPrice5 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBGayaFusionAll->ToSQL($dm5, ccsInteger), $DBGayaFusionAll);
+$dmPrice1 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBgayafusionall->ToSQL($dm1, ccsInteger), $DBgayafusionall);
+$dmPrice2 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBgayafusionall->ToSQL($dm2, ccsInteger), $DBgayafusionall);
+$dmPrice3 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBgayafusionall->ToSQL($dm3, ccsInteger), $DBgayafusionall);
+$dmPrice4 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBgayafusionall->ToSQL($dm4, ccsInteger), $DBgayafusionall);
+$dmPrice5 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBgayafusionall->ToSQL($dm5, ccsInteger), $DBgayafusionall);
 $TotDM1 = $samplepackaging->QtyDesMat1->GetValue() * $dmPrice1;
 $TotDM2 = $samplepackaging->QtyDesMat2->GetValue() * $dmPrice2;
 $TotDM3 = $samplepackaging->QtyDesMat3->GetValue() * $dmPrice3;

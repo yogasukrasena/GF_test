@@ -38,7 +38,7 @@ function Grid_Reference_BeforeShow(& $sender)
 //End Grid_Reference_BeforeShow
 
 //Custom Code @182-2A29BDB7
-$db = new clsDBGayaFusionAll();
+$db = new clsDBgayafusionall();
 $CollectID = $Container->CollectID->GetValue();
 $sql = "SELECT SID FROM tblReference WHERE CollectID = ".$db->ToSQL($CollectID,ccsInteger);
 $db->query($sql);
@@ -46,7 +46,7 @@ $result = $db->next_record();
 if ($result){
   $SID = $db->f("SID");
   $sql = "SELECT SampleCode FROM SampleCeramic WHERE SID = ".$db->ToSQL($SID,ccsInteger);
-  $bd = new clsDBGayaFusionAll();
+  $bd = new clsDBgayafusionall();
   $bd->query($sql);
   $hasil = $bd->next_record();
   if ($hasil){

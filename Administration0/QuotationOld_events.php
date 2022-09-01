@@ -68,10 +68,10 @@ function AddQuotation_AfterInsert(& $sender)
 
 //Custom Code @55-2A29BDB7
  // -------------------------
-    global $DBGayaFusionAll;	
+    global $DBgayafusionall;	
   	global $Redirect,$FileName;
   
-    	$Redirect = $FileName."?Quotation_H_ID=".CCDLookUp("max(Quotation_H_ID)","tblAdminist_Quotation_H","", $DBGayaFusionAll);
+    	$Redirect = $FileName."?Quotation_H_ID=".CCDLookUp("max(Quotation_H_ID)","tblAdminist_Quotation_H","", $DBgayafusionall);
   // -------------------------
 
 //End Custom Code
@@ -96,7 +96,7 @@ function AddQuotation_BeforeDelete(& $sender)
    
     	if(intval($Quotation_H_ID) >0){
  		//Create a new database connection object
-      	$NewConnection = new clsDBGayaFusionAll();
+      	$NewConnection = new clsDBgayafusionall();
       	$NewConnection->query("DELETE FROM tblAdminist_Quotation_D WHERE Quotation_H_ID=".$NewConnection->ToSQL($Quotation_H_ID,ccsInteger));
   		}
       	//Close and destroy the database connection object
@@ -123,7 +123,7 @@ function AddQuotation_ds_BeforeBuildInsert(& $sender)
     global $QuotationNo;
 	global $AddQuotation;
 	global $NoTrans;
-	$NewConnection = new clsDBGayaFusionAll();
+	$NewConnection = new clsDBgayafusionall();
 	$Prefik = "QUO".date(Ym);
 	
 	$sqlquery = "SELECT * FROM tblAdminist_Quotation_H WHERE QuotationNo LIKE '".$Prefik."%'";
@@ -158,7 +158,7 @@ function AddItem_DescArray_BeforeShow(& $sender)
 	global $AddItem;	    
   	$Rnd_Desc_Var = "";
   
-      $NewConnection = new clsDBGayaFusionAll();
+      $NewConnection = new clsDBgayafusionall();
   	$RnD_Desc_Var = "<script language='JavaScript'> RnD_Desc = new Array ();";
           
       $NewConnection->query("SELECT sID, SampleDescription FROM SampleCeramic");
@@ -193,7 +193,7 @@ function AddItem_PriceArray_BeforeShow(& $sender)
    	global $AddItem;	    
   	$Price_Var = "";
   
-    $NewConnection = new clsDBGayaFusionAll();
+    $NewConnection = new clsDBgayafusionall();
   	$Price_Var = "<script language='JavaScript'> PriceList = new Array ();";
           
       $NewConnection->query("SELECT sID, RealSellingPrice FROM SampleCeramic");

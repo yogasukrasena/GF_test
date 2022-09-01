@@ -38,7 +38,7 @@ $Container = & CCGetParentContainer($sender);
 global $Grid; //Compatibility
 //End Grid_lblQuotation_BeforeShow
 //Custom Code @116-2A29BDB7
-$db = new clsDBGayaFusionAll;
+$db = new clsDBgayafusionall;
 $QuotationID = $Grid->Quotation_H_ID->GetValue();
 $sql = "SELECT QuotationNo,AddressID,ContactID  FROM tblAdminist_Quotation_H WHERE Quotation_H_ID = $QuotationID";
 $db->query($sql);

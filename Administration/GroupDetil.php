@@ -220,7 +220,7 @@ class clsGridGrid { //Grid class @2-76129994
 
 } //End Grid Class @2-FCB6E20C
 
-class clsGridDataSource extends clsDBGayaFusionAll {  //GridDataSource Class @2-7708C172
+class clsGridDataSource extends clsDBgayafusionall {  //GridDataSource Class @2-7708C172
 
 //DataSource Variables @2-D7DA63AE
     public $Parent = "";
@@ -592,7 +592,7 @@ class clsGridGridCollection { //GridCollection class @27-113CD797
 
 } //End GridCollection Class @27-FCB6E20C
 
-class clsGridCollectionDataSource extends clsDBGayaFusionAll {  //GridCollectionDataSource Class @27-AC452327
+class clsGridCollectionDataSource extends clsDBgayafusionall {  //GridCollectionDataSource Class @27-AC452327
 
 //DataSource Variables @27-9B8ACD23
     public $Parent = "";
@@ -798,8 +798,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-A6CEC540
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -836,7 +836,7 @@ $Attributes->Show();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($Grid);
     unset($GridCollection);
@@ -857,7 +857,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-528E6031
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($Grid);
 unset($GridCollection);
 unset($Tpl);

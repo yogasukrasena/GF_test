@@ -62,7 +62,7 @@ function AddNewHeader_BeforeDelete(& $sender)
 $POL_H_ID = CCGetFromGet("POL_H_ID",0);
 if(intval($POL_H_ID) >0){
 //Create a new database connection object
-	$NewConnection = new clsDBGayaFusionAll();
+	$NewConnection = new clsDBgayafusionall();
 	$NewConnection->query("DELETE FROM tblAdminist_POL_D WHERE POL_H_ID=".$NewConnection->ToSQL($POL_H_ID,ccsInteger));
 }
 //Close and destroy the database connection object
@@ -84,11 +84,11 @@ function AddNewHeader_AfterInsert(& $sender)
 //End AddNewHeader_AfterInsert
 
 //Custom Code @96-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 global $Redirect,$FileName;
 
-$POL_H_ID = CCDLookUp("last_insert_id()","tblAdminist_POL_H","",$DBGayaFusionAll);	
-$Redirect = $FileName."?POL_H_ID=".$POL_H_ID;//CCDLookUp("max(Proforma_H_ID)","tblAdminist_Proforma_H","", $DBGayaFusionAll);
+$POL_H_ID = CCDLookUp("last_insert_id()","tblAdminist_POL_H","",$DBgayafusionall);	
+$Redirect = $FileName."?POL_H_ID=".$POL_H_ID;//CCDLookUp("max(Proforma_H_ID)","tblAdminist_Proforma_H","", $DBgayafusionall);
 //End Custom Code
 
 //Close AddNewHeader_AfterInsert @2-55234D2C
@@ -108,7 +108,7 @@ function AddNewDetail_BeforeShowRow(& $sender)
 //Custom Code @49-2A29BDB7
 global $AddNewDetail;
 global $RowNumber;
-global $DBGayaFusionAll;    
+global $DBgayafusionall;    
 $RowNumber++;
 $AddNewDetail->RowIDAttribute->SetValue($RowNumber);
 
@@ -123,19 +123,19 @@ if( ($RowNumber <= $AddNewDetail->ds->RecordsCount) && ($RowNumber <= $AddNewDet
     }
 }
 $CollectID = $AddNewDetail->CollectID->GetValue();
-$DBGayaFusionAll->query("SELECT DesignCode, NameCode, CategoryCode, SizeCode, TextureCode, ColorCode, MaterialCode FROM tblCollect_Master
-	WHERE ID = ".$DBGayaFusionAll->ToSQL($CollectID,ccsInteger));
-$Result = $DBGayaFusionAll->next_record();
+$DBgayafusionall->query("SELECT DesignCode, NameCode, CategoryCode, SizeCode, TextureCode, ColorCode, MaterialCode FROM tblCollect_Master
+	WHERE ID = ".$DBgayafusionall->ToSQL($CollectID,ccsInteger));
+$Result = $DBgayafusionall->next_record();
 if($Result){
-	$DesignCode = $DBGayaFusionAll->f("DesignCode");
-	$NameCode = $DBGayaFusionAll->f("NameCode");
-	$CategoryCode = $DBGayaFusionAll->f("CategoryCode");
-	$SizeCode = $DBGayaFusionAll->f("SizeCode");
-	$TextureCode = $DBGayaFusionAll->f("TextureCode");
-	$ColorCode = $DBGayaFusionAll->f("ColorCode");
-	$MaterialCode = $DBGayaFusionAll->f("MaterialCode");
+	$DesignCode = $DBgayafusionall->f("DesignCode");
+	$NameCode = $DBgayafusionall->f("NameCode");
+	$CategoryCode = $DBgayafusionall->f("CategoryCode");
+	$SizeCode = $DBgayafusionall->f("SizeCode");
+	$TextureCode = $DBgayafusionall->f("TextureCode");
+	$ColorCode = $DBgayafusionall->f("ColorCode");
+	$MaterialCode = $DBgayafusionall->f("MaterialCode");
 }
-$DB = new clsDBGayaFusionAll;
+$DB = new clsDBgayafusionall;
 $query = "SELECT CategoryName, ColorName, DesignName, MaterialName, NameDesc, SizeName, TextureName, CollectCode  
 FROM ((((((tblcollect_master INNER JOIN tblcollect_category ON
 tblcollect_master.CategoryCode = tblcollect_category.CategoryCode) INNER JOIN tblcollect_color ON

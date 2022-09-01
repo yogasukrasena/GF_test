@@ -72,7 +72,7 @@ class clsRecordSearchCollection { //SearchCollection Class @18-E666F49B
             $this->Button_DoSearch = new clsButton("Button_DoSearch", $Method, $this);
             $this->s_tblcollect_color_ColorCode = new clsControl(ccsListBox, "s_tblcollect_color_ColorCode", "s_tblcollect_color_ColorCode", ccsText, "", CCGetRequestParam("s_tblcollect_color_ColorCode", $Method, NULL), $this);
             $this->s_tblcollect_color_ColorCode->DSType = dsTable;
-            $this->s_tblcollect_color_ColorCode->DataSource = new clsDBGayaFusionAll();
+            $this->s_tblcollect_color_ColorCode->DataSource = new clsDBgayafusionall();
             $this->s_tblcollect_color_ColorCode->ds = & $this->s_tblcollect_color_ColorCode->DataSource;
             $this->s_tblcollect_color_ColorCode->DataSource->SQL = "SELECT * \n" .
 "FROM tblcollect_color {SQL_Where} {SQL_OrderBy}";
@@ -81,7 +81,7 @@ class clsRecordSearchCollection { //SearchCollection Class @18-E666F49B
             $this->s_tblcollect_color_ColorCode->DataSource->Order = "ColorName";
             $this->s_tblcollect_category_CategoryCode = new clsControl(ccsListBox, "s_tblcollect_category_CategoryCode", "s_tblcollect_category_CategoryCode", ccsText, "", CCGetRequestParam("s_tblcollect_category_CategoryCode", $Method, NULL), $this);
             $this->s_tblcollect_category_CategoryCode->DSType = dsTable;
-            $this->s_tblcollect_category_CategoryCode->DataSource = new clsDBGayaFusionAll();
+            $this->s_tblcollect_category_CategoryCode->DataSource = new clsDBgayafusionall();
             $this->s_tblcollect_category_CategoryCode->ds = & $this->s_tblcollect_category_CategoryCode->DataSource;
             $this->s_tblcollect_category_CategoryCode->DataSource->SQL = "SELECT * \n" .
 "FROM tblcollect_category {SQL_Where} {SQL_OrderBy}";
@@ -90,7 +90,7 @@ class clsRecordSearchCollection { //SearchCollection Class @18-E666F49B
             $this->s_tblcollect_category_CategoryCode->DataSource->Order = "CategoryName";
             $this->s_tblcollect_design_DesignCode = new clsControl(ccsListBox, "s_tblcollect_design_DesignCode", "s_tblcollect_design_DesignCode", ccsText, "", CCGetRequestParam("s_tblcollect_design_DesignCode", $Method, NULL), $this);
             $this->s_tblcollect_design_DesignCode->DSType = dsTable;
-            $this->s_tblcollect_design_DesignCode->DataSource = new clsDBGayaFusionAll();
+            $this->s_tblcollect_design_DesignCode->DataSource = new clsDBgayafusionall();
             $this->s_tblcollect_design_DesignCode->ds = & $this->s_tblcollect_design_DesignCode->DataSource;
             $this->s_tblcollect_design_DesignCode->DataSource->SQL = "SELECT * \n" .
 "FROM tblcollect_design {SQL_Where} {SQL_OrderBy}";
@@ -99,7 +99,7 @@ class clsRecordSearchCollection { //SearchCollection Class @18-E666F49B
             $this->s_tblcollect_design_DesignCode->DataSource->Order = "DesignName";
             $this->s_tblcollect_material_MaterialCode = new clsControl(ccsListBox, "s_tblcollect_material_MaterialCode", "s_tblcollect_material_MaterialCode", ccsText, "", CCGetRequestParam("s_tblcollect_material_MaterialCode", $Method, NULL), $this);
             $this->s_tblcollect_material_MaterialCode->DSType = dsTable;
-            $this->s_tblcollect_material_MaterialCode->DataSource = new clsDBGayaFusionAll();
+            $this->s_tblcollect_material_MaterialCode->DataSource = new clsDBgayafusionall();
             $this->s_tblcollect_material_MaterialCode->ds = & $this->s_tblcollect_material_MaterialCode->DataSource;
             $this->s_tblcollect_material_MaterialCode->DataSource->SQL = "SELECT * \n" .
 "FROM tblcollect_material {SQL_Where} {SQL_OrderBy}";
@@ -108,7 +108,7 @@ class clsRecordSearchCollection { //SearchCollection Class @18-E666F49B
             $this->s_tblcollect_material_MaterialCode->DataSource->Order = "MaterialName";
             $this->s_tblcollect_texture_TextureCode = new clsControl(ccsListBox, "s_tblcollect_texture_TextureCode", "s_tblcollect_texture_TextureCode", ccsText, "", CCGetRequestParam("s_tblcollect_texture_TextureCode", $Method, NULL), $this);
             $this->s_tblcollect_texture_TextureCode->DSType = dsTable;
-            $this->s_tblcollect_texture_TextureCode->DataSource = new clsDBGayaFusionAll();
+            $this->s_tblcollect_texture_TextureCode->DataSource = new clsDBgayafusionall();
             $this->s_tblcollect_texture_TextureCode->ds = & $this->s_tblcollect_texture_TextureCode->DataSource;
             $this->s_tblcollect_texture_TextureCode->DataSource->SQL = "SELECT * \n" .
 "FROM tblcollect_texture {SQL_Where} {SQL_OrderBy}";
@@ -117,7 +117,7 @@ class clsRecordSearchCollection { //SearchCollection Class @18-E666F49B
             $this->s_tblcollect_texture_TextureCode->DataSource->Order = "TextureName";
             $this->s_tblcollect_size_SizeCode = new clsControl(ccsListBox, "s_tblcollect_size_SizeCode", "s_tblcollect_size_SizeCode", ccsText, "", CCGetRequestParam("s_tblcollect_size_SizeCode", $Method, NULL), $this);
             $this->s_tblcollect_size_SizeCode->DSType = dsTable;
-            $this->s_tblcollect_size_SizeCode->DataSource = new clsDBGayaFusionAll();
+            $this->s_tblcollect_size_SizeCode->DataSource = new clsDBgayafusionall();
             $this->s_tblcollect_size_SizeCode->ds = & $this->s_tblcollect_size_SizeCode->DataSource;
             $this->s_tblcollect_size_SizeCode->DataSource->SQL = "SELECT * \n" .
 "FROM tblcollect_size {SQL_Where} {SQL_OrderBy}";
@@ -126,7 +126,7 @@ class clsRecordSearchCollection { //SearchCollection Class @18-E666F49B
             $this->s_tblcollect_size_SizeCode->DataSource->Order = "SizeName";
             $this->s_tblcollect_name_NameCode = new clsControl(ccsListBox, "s_tblcollect_name_NameCode", "s_tblcollect_name_NameCode", ccsText, "", CCGetRequestParam("s_tblcollect_name_NameCode", $Method, NULL), $this);
             $this->s_tblcollect_name_NameCode->DSType = dsTable;
-            $this->s_tblcollect_name_NameCode->DataSource = new clsDBGayaFusionAll();
+            $this->s_tblcollect_name_NameCode->DataSource = new clsDBgayafusionall();
             $this->s_tblcollect_name_NameCode->ds = & $this->s_tblcollect_name_NameCode->DataSource;
             $this->s_tblcollect_name_NameCode->DataSource->SQL = "SELECT * \n" .
 "FROM tblcollect_name {SQL_Where} {SQL_OrderBy}";
@@ -687,7 +687,7 @@ class clsGridGridCollection { //GridCollection class @2-113CD797
 
 } //End GridCollection Class @2-FCB6E20C
 
-class clsGridCollectionDataSource extends clsDBGayaFusionAll {  //GridCollectionDataSource Class @2-AC452327
+class clsGridCollectionDataSource extends clsDBgayafusionall {  //GridCollectionDataSource Class @2-AC452327
 
 //DataSource Variables @2-ED7F3153
     public $Parent = "";
@@ -1005,8 +1005,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-A82D6209
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -1050,7 +1050,7 @@ $SearchCollection->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($SearchCollection);
     unset($GridCollection);
@@ -1070,7 +1070,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-62A4F880
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($SearchCollection);
 unset($GridCollection);
 unset($Tpl);

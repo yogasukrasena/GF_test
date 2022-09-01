@@ -243,7 +243,7 @@ class clsGridGridList { //GridList class @2-AF2A901A
 
 } //End GridList Class @2-FCB6E20C
 
-class clsGridListDataSource extends clsDBGayaFusionAll {  //GridListDataSource Class @2-3BF17B41
+class clsGridListDataSource extends clsDBgayafusionall {  //GridListDataSource Class @2-3BF17B41
 
 //DataSource Variables @2-71727DB8
     public $Parent = "";
@@ -595,8 +595,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-CD53C97D
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -636,7 +636,7 @@ $Search->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($GridList);
     unset($Search);
@@ -657,7 +657,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-9E96BB98
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($GridList);
 unset($Search);
 unset($Tpl);

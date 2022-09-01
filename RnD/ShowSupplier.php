@@ -265,7 +265,7 @@ function GetPrimaryKey($keyName)
 
 } //End tblsupplier Class @2-FCB6E20C
 
-class clstblsupplierDataSource extends clsDBGayaFusionAll {  //tblsupplierDataSource Class @2-A709D700
+class clstblsupplierDataSource extends clsDBgayafusionall {  //tblsupplierDataSource Class @2-A709D700
 
 //DataSource Variables @2-2443A5AC
     public $Parent = "";
@@ -391,8 +391,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-AA512045
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -428,7 +428,7 @@ $tblsupplier->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tblsupplier);
     unset($Tpl);
@@ -447,7 +447,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-8F99269A
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tblsupplier);
 unset($Tpl);
 //End Unload Page

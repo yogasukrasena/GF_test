@@ -441,7 +441,7 @@ class clsGridtbldesignmatGrid { //tbldesignmatGrid class @2-647398B7
 
 } //End tbldesignmatGrid Class @2-FCB6E20C
 
-class clstbldesignmatGridDataSource extends clsDBGayaFusionAll {  //tbldesignmatGridDataSource Class @2-08B37D5B
+class clstbldesignmatGridDataSource extends clsDBgayafusionall {  //tbldesignmatGridDataSource Class @2-08B37D5B
 
 //DataSource Variables @2-D7F15935
     public $Parent = "";
@@ -828,7 +828,7 @@ function GetPrimaryKey($keyName)
 
 } //End tbldesignmat Class @33-FCB6E20C
 
-class clstbldesignmatDataSource extends clsDBGayaFusionAll {  //tbldesignmatDataSource Class @33-AC733C40
+class clstbldesignmatDataSource extends clsDBgayafusionall {  //tbldesignmatDataSource Class @33-AC733C40
 
 //DataSource Variables @33-ACFF9A0D
     public $Parent = "";
@@ -1001,8 +1001,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-22D58232
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -1051,7 +1051,7 @@ $tbldesignmat->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tbldesignmat_tblsupplier);
     unset($tbldesignmatGrid);
@@ -1072,7 +1072,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-5C900C3D
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tbldesignmat_tblsupplier);
 unset($tbldesignmatGrid);
 unset($tbldesignmat);

@@ -72,7 +72,7 @@ class clsRecordSearchAddress { //SearchAddress Class @3-2556994A
             $this->Button_DoSearch = new clsButton("Button_DoSearch", $Method, $this);
             $this->s_Company = new clsControl(ccsListBox, "s_Company", "s_Company", ccsText, "", CCGetRequestParam("s_Company", $Method, NULL), $this);
             $this->s_Company->DSType = dsTable;
-            $this->s_Company->DataSource = new clsDBGayaFusionAll();
+            $this->s_Company->DataSource = new clsDBgayafusionall();
             $this->s_Company->ds = & $this->s_Company->DataSource;
             $this->s_Company->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_addressbook {SQL_Where} {SQL_OrderBy}";
@@ -390,7 +390,7 @@ class clsGridAddressGrid { //AddressGrid class @2-F80E666D
 
 } //End AddressGrid Class @2-FCB6E20C
 
-class clsAddressGridDataSource extends clsDBGayaFusionAll {  //AddressGridDataSource Class @2-EE438D8A
+class clsAddressGridDataSource extends clsDBgayafusionall {  //AddressGridDataSource Class @2-EE438D8A
 
 //DataSource Variables @2-3240EEB2
     public $Parent = "";
@@ -756,7 +756,7 @@ function GetPrimaryKey($keyName)
 
 } //End AddNewHeader Class @15-FCB6E20C
 
-class clsAddNewHeaderDataSource extends clsDBGayaFusionAll {  //AddNewHeaderDataSource Class @15-B5B08D50
+class clsAddNewHeaderDataSource extends clsDBgayafusionall {  //AddNewHeaderDataSource Class @15-B5B08D50
 
 //DataSource Variables @15-2FF0CD43
     public $Parent = "";
@@ -1512,7 +1512,7 @@ class clsEditableGridContactGrid { //ContactGrid Class @22-FDCF5BB1
 
 } //End ContactGrid Class @22-FCB6E20C
 
-class clsContactGridDataSource extends clsDBGayaFusionAll {  //ContactGridDataSource Class @22-A9F33CBA
+class clsContactGridDataSource extends clsDBgayafusionall {  //ContactGridDataSource Class @22-A9F33CBA
 
 //DataSource Variables @22-D03CCA2A
     public $Parent = "";
@@ -1753,8 +1753,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-AC2530C1
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -1808,7 +1808,7 @@ $ContactGrid->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($SearchAddress);
     unset($AddressGrid);
@@ -1831,7 +1831,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-69F748BD
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($SearchAddress);
 unset($AddressGrid);
 unset($AddNewHeader);

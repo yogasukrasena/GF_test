@@ -43,12 +43,12 @@ function GridCollection_BeforeShowRow(& $sender)
 //End GridCollection_BeforeShowRow
 
 //Custom Code @172-2A29BDB7
-	global $DBGayaFusionAll;
+	global $DBgayafusionall;
 	$RefID = $GridCollection->RefID->GetValue();
 	if($RefID > 0){
 		$GridCollection->lblRef->Visible = false;
 		$GridCollection->LnkRef->Visible = true;
-		//$GridCollection->LnkRef->SetValue(CCDLookUp("RefCode","tblReference","ID = $RefID",$DBGayaFusionAll));
+		//$GridCollection->LnkRef->SetValue(CCDLookUp("RefCode","tblReference","ID = $RefID",$DBgayafusionall));
 	}else{
 		$GridCollection->lblRef->Visible = true;
 		$GridCollection->LnkRef->Visible = false;

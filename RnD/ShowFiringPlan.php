@@ -260,7 +260,7 @@ function GetPrimaryKey($keyName)
 
 } //End tblfiringplan Class @2-FCB6E20C
 
-class clstblfiringplanDataSource extends clsDBGayaFusionAll {  //tblfiringplanDataSource Class @2-50D90770
+class clstblfiringplanDataSource extends clsDBgayafusionall {  //tblfiringplanDataSource Class @2-50D90770
 
 //DataSource Variables @2-ED2766B0
     public $Parent = "";
@@ -382,8 +382,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-0839EA48
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -419,7 +419,7 @@ $tblfiringplan->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tblfiringplan);
     unset($Tpl);
@@ -438,7 +438,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-39883983
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tblfiringplan);
 unset($Tpl);
 //End Unload Page

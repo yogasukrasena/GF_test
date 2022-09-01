@@ -300,7 +300,7 @@ class clsGridHeader { //Header class @2-C9AA34A2
 
 } //End Header Class @2-FCB6E20C
 
-class clsHeaderDataSource extends clsDBGayaFusionAll {  //HeaderDataSource Class @2-AB3B61E5
+class clsHeaderDataSource extends clsDBgayafusionall {  //HeaderDataSource Class @2-AB3B61E5
 
 //DataSource Variables @2-FC088511
     public $Parent = "";
@@ -1038,7 +1038,7 @@ class clsReportDetil { //Detil Class @22-25ACCD95
 
 } //End Detil Class @22-FCB6E20C
 
-class clsDetilDataSource extends clsDBGayaFusionAll {  //DetilDataSource Class @22-28B8FEE9
+class clsDetilDataSource extends clsDBgayafusionall {  //DetilDataSource Class @22-28B8FEE9
 
 //DataSource Variables @22-6CF7B2F4
     public $Parent = "";
@@ -1175,8 +1175,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-0ED15434
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -1223,7 +1223,7 @@ $Attributes->Show();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($Header);
     unset($Detil);
@@ -1247,7 +1247,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-AE87764E
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($Header);
 unset($Detil);
 unset($Tpl);

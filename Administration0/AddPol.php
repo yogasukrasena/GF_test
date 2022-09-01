@@ -79,7 +79,7 @@ class clsRecordAddNewHeader { //AddNewHeader Class @2-5850F9DE
             $this->Button_Update = new clsButton("Button_Update", $Method, $this);
             $this->ClientID = new clsControl(ccsListBox, "ClientID", "Client ID", ccsInteger, "", CCGetRequestParam("ClientID", $Method, NULL), $this);
             $this->ClientID->DSType = dsTable;
-            $this->ClientID->DataSource = new clsDBGayaFusionAll();
+            $this->ClientID->DataSource = new clsDBgayafusionall();
             $this->ClientID->ds = & $this->ClientID->DataSource;
             $this->ClientID->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_client {SQL_Where} {SQL_OrderBy}";
@@ -90,7 +90,7 @@ class clsRecordAddNewHeader { //AddNewHeader Class @2-5850F9DE
             $this->DatePicker_POLDate = new clsDatePicker("DatePicker_POLDate", "AddNewHeader", "POLDate", $this);
             $this->DeliveryTimeID = new clsControl(ccsListBox, "DeliveryTimeID", "Delivery Time ID", ccsInteger, "", CCGetRequestParam("DeliveryTimeID", $Method, NULL), $this);
             $this->DeliveryTimeID->DSType = dsTable;
-            $this->DeliveryTimeID->DataSource = new clsDBGayaFusionAll();
+            $this->DeliveryTimeID->DataSource = new clsDBgayafusionall();
             $this->DeliveryTimeID->ds = & $this->DeliveryTimeID->DataSource;
             $this->DeliveryTimeID->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_deliverytime {SQL_Where} {SQL_OrderBy}";
@@ -343,7 +343,7 @@ function GetPrimaryKey($keyName)
 
 } //End AddNewHeader Class @2-FCB6E20C
 
-class clsAddNewHeaderDataSource extends clsDBGayaFusionAll {  //AddNewHeaderDataSource Class @2-B5B08D50
+class clsAddNewHeaderDataSource extends clsDBgayafusionall {  //AddNewHeaderDataSource Class @2-B5B08D50
 
 //DataSource Variables @2-C033E7A6
     public $Parent = "";
@@ -1235,7 +1235,7 @@ class clsEditableGridAddNewDetail { //AddNewDetail Class @11-254BF570
 
 } //End AddNewDetail Class @11-FCB6E20C
 
-class clsAddNewDetailDataSource extends clsDBGayaFusionAll {  //AddNewDetailDataSource Class @11-9729D968
+class clsAddNewDetailDataSource extends clsDBgayafusionall {  //AddNewDetailDataSource Class @11-9729D968
 
 //DataSource Variables @11-539DD433
     public $Parent = "";
@@ -1475,8 +1475,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-D7B2DEB3
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -1518,7 +1518,7 @@ $AddNewDetail->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($AddNewHeader);
     unset($AddNewDetail);
@@ -1539,7 +1539,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-142ABB44
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($AddNewHeader);
 unset($AddNewDetail);
 unset($Tpl);

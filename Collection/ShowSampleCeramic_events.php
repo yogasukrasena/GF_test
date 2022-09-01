@@ -59,7 +59,7 @@ function AddSampleCeramic_ToolsPic1_BeforeShow(& $sender)
 //Custom Code @251-2A29BDB7
 $ID = CCGetFromGet("ID",0);
 if($ID > 0){
-	$db = new clsDBGayaFusionAll();
+	$db = new clsDBgayafusionall();
 	$IDnya = $Container->Tools1->GetValue();
 	$ToolsPhoto="../upload/".CCDLookUp("ToolsPhoto1","tblTools","ID = $IDnya",$db);
 	$Container->ToolsPic1->SetValue($ToolsPhoto);
@@ -84,7 +84,7 @@ function AddSampleCeramic_ToolsPic2_BeforeShow(& $sender)
 //Custom Code @252-2A29BDB7
 $ID = CCGetFromGet("ID",0);
 if($ID > 0){
-	$db = new clsDBGayaFusionAll();
+	$db = new clsDBgayafusionall();
 	$IDnya = $Container->Tools2->GetValue();
 	$ToolsPhoto="../upload/".CCDLookUp("ToolsPhoto1","tblTools","ID = $IDnya",$db);
 	$Container->ToolsPic2->SetValue($ToolsPhoto);
@@ -109,7 +109,7 @@ function AddSampleCeramic_ToolsPic3_BeforeShow(& $sender)
 //Custom Code @253-2A29BDB7
 $ID = CCGetFromGet("ID",0);
 if($ID > 0){
-	$db = new clsDBGayaFusionAll();
+	$db = new clsDBgayafusionall();
 	$IDnya = $Container->Tools3->GetValue();
 	$ToolsPhoto="../upload/".CCDLookUp("ToolsPhoto1","tblTools","ID = $IDnya",$db);
 	$Container->ToolsPic3->SetValue($ToolsPhoto);
@@ -134,7 +134,7 @@ function AddSampleCeramic_ToolsPic4_BeforeShow(& $sender)
 //Custom Code @254-2A29BDB7
 $ID = CCGetFromGet("ID",0);
 if($ID > 0){
-	$db = new clsDBGayaFusionAll();
+	$db = new clsDBgayafusionall();
 	$IDnya = $Container->Tools4->GetValue();
 	$ToolsPhoto="../upload/".CCDLookUp("ToolsPhoto1","tblTools","ID = $IDnya",$db);
 	$Container->ToolsPic4->SetValue($ToolsPhoto);
@@ -159,7 +159,7 @@ function AddSampleCeramic_Casting1Desc_BeforeShow(& $sender)
 //Custom Code @86-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->Casting1->GetValue();
 		$Isinya = CCDLookUp("CastingDescription","tblCasting","ID = $IDnya",$db)." - ".CCDLookUp("CastingCode","tblCasting","ID = $IDnya",$db);
 		$Container->Casting1Desc->SetValue($Isinya);
@@ -184,7 +184,7 @@ function AddSampleCeramic_Casting2Desc_BeforeShow(& $sender)
 //Custom Code @88-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->Casting2->GetValue();
 		$Isinya = CCDLookUp("CastingDescription","tblCasting","ID = $IDnya",$db)." - ".CCDLookUp("CastingCode","tblCasting","ID = $IDnya",$db);
 		$Container->Casting2Desc->SetValue($Isinya);
@@ -209,7 +209,7 @@ function AddSampleCeramic_Casting3Desc_BeforeShow(& $sender)
 //Custom Code @90-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->Casting3->GetValue();
 		$Isinya = CCDLookUp("CastingDescription","tblCasting","ID = $IDnya",$db)." - ".CCDLookUp("CastingCode","tblCasting","ID = $IDnya",$db);
 		$Container->Casting3Desc->SetValue($Isinya);
@@ -234,7 +234,7 @@ function AddSampleCeramic_Casting4Desc_BeforeShow(& $sender)
 //Custom Code @92-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->Casting4->GetValue();
 		$Isinya = CCDLookUp("CastingDescription","tblCasting","ID = $IDnya",$db)." - ".CCDLookUp("CastingCode","tblCasting","ID = $IDnya",$db);
 		$Container->Casting4Desc->SetValue($Isinya);
@@ -259,7 +259,7 @@ function AddSampleCeramic_Estruder1Desc_BeforeShow(& $sender)
 //Custom Code @94-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->Estruder1->GetValue();
 		$Isinya = CCDLookUp("EstruderDescription","tblEstruder","ID = $IDnya",$db)." - ".CCDLookUp("EstruderCode","tblEstruder","ID = $IDnya",$db);
 		$Container->Estruder1Desc->SetValue($Isinya);
@@ -284,7 +284,7 @@ function AddSampleCeramic_Estruder2Desc_BeforeShow(& $sender)
 //Custom Code @96-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->Estruder2->GetValue();
 		$Isinya = CCDLookUp("EstruderDescription","tblEstruder","ID = $IDnya",$db)." - ".CCDLookUp("EstruderCode","tblEstruder","ID = $IDnya",$db);
 		$Container->Estruder2Desc->SetValue($Isinya);
@@ -309,7 +309,7 @@ function AddSampleCeramic_Estruder3Desc_BeforeShow(& $sender)
 //Custom Code @98-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->Estruder3->GetValue();
 		$Isinya = CCDLookUp("EstruderDescription","tblEstruder","ID = $IDnya",$db)." - ".CCDLookUp("EstruderCode","tblEstruder","ID = $IDnya",$db);
 		$Container->Estruder3Desc->SetValue($Isinya);
@@ -334,7 +334,7 @@ function AddSampleCeramic_Estruder4Desc_BeforeShow(& $sender)
 //Custom Code @100-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->Estruder4->GetValue();
 		$Isinya = CCDLookUp("EstruderDescription","tblEstruder","ID = $IDnya",$db)." - ".CCDLookUp("EstruderCode","tblEstruder","ID = $IDnya",$db);
 		$Container->Estruder4Desc->SetValue($Isinya);
@@ -359,7 +359,7 @@ function AddSampleCeramic_Texture1Desc_BeforeShow(& $sender)
 //Custom Code @102-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->Texture1->GetValue();
 		$Isinya = CCDLookUp("TextureDescription","tblTexture","ID = $IDnya",$db)." - ".CCDLookUp("TextureCode","tblTexture","ID = $IDnya",$db);
 		$Container->Texture1Desc->SetValue($Isinya);
@@ -384,7 +384,7 @@ function AddSampleCeramic_Texture2Desc_BeforeShow(& $sender)
 //Custom Code @104-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->Texture2->GetValue();
 		$Isinya = CCDLookUp("TextureDescription","tblTexture","ID = $IDnya",$db)." - ".CCDLookUp("TextureCode","tblTexture","ID = $IDnya",$db);
 		$Container->Texture2Desc->SetValue($Isinya);
@@ -409,7 +409,7 @@ function AddSampleCeramic_Texture3Desc_BeforeShow(& $sender)
 //Custom Code @106-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->Texture3->GetValue();
 		$Isinya = CCDLookUp("TextureDescription","tblTexture","ID = $IDnya",$db)." - ".CCDLookUp("TextureCode","tblTexture","ID = $IDnya",$db);
 		$Container->Texture3Desc->SetValue($Isinya);
@@ -434,7 +434,7 @@ function AddSampleCeramic_Texture4Desc_BeforeShow(& $sender)
 //Custom Code @108-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->Texture4->GetValue();
 		$Isinya = CCDLookUp("TextureDescription","tblTexture","ID = $IDnya",$db)." - ".CCDLookUp("TextureCode","tblTexture","ID = $IDnya",$db);
 		$Container->Texture4Desc->SetValue($Isinya);
@@ -459,7 +459,7 @@ function AddSampleCeramic_Engobe1Desc_BeforeShow(& $sender)
 //Custom Code @110-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->Engobe1->GetValue();
 		$Isinya = CCDLookUp("EngobeDescription","tblEngobe","ID = $IDnya",$db)." - ".CCDLookUp("EngobeCode","tblEngobe","ID = $IDnya",$db);
 		$Container->Engobe1Desc->SetValue($Isinya);
@@ -484,7 +484,7 @@ function AddSampleCeramic_Engobe2Desc_BeforeShow(& $sender)
 //Custom Code @112-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->Engobe2->GetValue();
 		$Isinya = CCDLookUp("EngobeDescription","tblEngobe","ID = $IDnya",$db)." - ".CCDLookUp("EngobeCode","tblEngobe","ID = $IDnya",$db);
 		$Container->Engobe2Desc->SetValue($Isinya);
@@ -509,7 +509,7 @@ function AddSampleCeramic_Engobe3Desc_BeforeShow(& $sender)
 //Custom Code @114-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->Engobe3->GetValue();
 		$Isinya = CCDLookUp("EngobeDescription","tblEngobe","ID = $IDnya",$db)." - ".CCDLookUp("EngobeCode","tblEngobe","ID = $IDnya",$db);
 		$Container->Engobe3Desc->SetValue($Isinya);
@@ -534,7 +534,7 @@ function AddSampleCeramic_Engobe4Desc_BeforeShow(& $sender)
 //Custom Code @116-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->Engobe4->GetValue();
 		$Isinya = CCDLookUp("EngobeDescription","tblEngobe","ID = $IDnya",$db)." - ".CCDLookUp("EngobeCode","tblEngobe","ID = $IDnya",$db);
 		$Container->Engobe4Desc->SetValue($Isinya);
@@ -559,7 +559,7 @@ function AddSampleCeramic_StainOxide1Desc_BeforeShow(& $sender)
 //Custom Code @118-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->StainOxide1->GetValue();
 		$Isinya = CCDLookUp("StainOxideDescription","tblStainOxide","ID = $IDnya",$db)." - ".CCDLookUp("StainOxideCode","tblStainOxide","ID = $IDnya",$db);
 		$Container->StainOxide1Desc->SetValue($Isinya);
@@ -584,7 +584,7 @@ function AddSampleCeramic_StainOxide2Desc_BeforeShow(& $sender)
 //Custom Code @120-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->StainOxide2->GetValue();
 		$Isinya = CCDLookUp("StainOxideDescription","tblStainOxide","ID = $IDnya",$db)." - ".CCDLookUp("StainOxideCode","tblStainOxide","ID = $IDnya",$db);
 		$Container->StainOxide2Desc->SetValue($Isinya);
@@ -609,7 +609,7 @@ function AddSampleCeramic_StainOxide3Desc_BeforeShow(& $sender)
 //Custom Code @122-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->StainOxide3->GetValue();
 		$Isinya = CCDLookUp("StainOxideDescription","tblStainOxide","ID = $IDnya",$db)." - ".CCDLookUp("StainOxideCode","tblStainOxide","ID = $IDnya",$db);
 		$Container->StainOxide3Desc->SetValue($Isinya);
@@ -634,7 +634,7 @@ function AddSampleCeramic_StainOxide4Desc_BeforeShow(& $sender)
 //Custom Code @124-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->StainOxide4->GetValue();
 		$Isinya = CCDLookUp("StainOxideDescription","tblStainOxide","ID = $IDnya",$db)." - ".CCDLookUp("StainOxideCode","tblStainOxide","ID = $IDnya",$db);
 		$Container->StainOxide4Desc->SetValue($Isinya);
@@ -659,7 +659,7 @@ function AddSampleCeramic_Glaze1Desc_BeforeShow(& $sender)
 //Custom Code @126-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->Glaze1->GetValue();
 		$Isinya = CCDLookUp("GlazeDescription","tblGlaze","ID = $IDnya",$db)." - ".CCDLookUp("GlazeCode","tblGlaze","ID = $IDnya",$db);
 		$Container->Glaze1Desc->SetValue($Isinya);
@@ -684,7 +684,7 @@ function AddSampleCeramic_Glaze2Desc_BeforeShow(& $sender)
 //Custom Code @128-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->Glaze2->GetValue();
 		$Isinya = CCDLookUp("GlazeDescription","tblGlaze","ID = $IDnya",$db)." - ".CCDLookUp("GlazeCode","tblGlaze","ID = $IDnya",$db);
 		$Container->Glaze2Desc->SetValue($Isinya);
@@ -709,7 +709,7 @@ function AddSampleCeramic_Glaze3Desc_BeforeShow(& $sender)
 //Custom Code @130-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->Glaze3->GetValue();
 		$Isinya = CCDLookUp("GlazeDescription","tblGlaze","ID = $IDnya",$db)." - ".CCDLookUp("GlazeCode","tblGlaze","ID = $IDnya",$db);
 		$Container->Glaze3Desc->SetValue($Isinya);
@@ -734,7 +734,7 @@ function AddSampleCeramic_Glaze4Desc_BeforeShow(& $sender)
 //Custom Code @132-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->Glaze4->GetValue();
 		$Isinya = CCDLookUp("GlazeDescription","tblGlaze","ID = $IDnya",$db)." - ".CCDLookUp("GlazeCode","tblGlaze","ID = $IDnya",$db);
 		$Container->Glaze4Desc->SetValue($Isinya);
@@ -759,7 +759,7 @@ function AddSampleCeramic_DesignMat1Desc_BeforeShow(& $sender)
 //Custom Code @134-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->DesignMat1->GetValue();
 		$Isinya = CCDLookUp("DesignMatDescription","tblDesignMat","ID = $IDnya",$db)." - ".CCDLookUp("DesignMatCode","tblDesignMat","ID = $IDnya",$db);
 		$Container->DesignMat1Desc->SetValue($Isinya);
@@ -784,7 +784,7 @@ function AddSampleCeramic_DesignMat2Desc_BeforeShow(& $sender)
 //Custom Code @136-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->DesignMat2->GetValue();
 		$Isinya = CCDLookUp("DesignMatDescription","tblDesignMat","ID = $IDnya",$db)." - ".CCDLookUp("DesignMatCode","tblDesignMat","ID = $IDnya",$db);
 		$Container->DesignMat2Desc->SetValue($Isinya);
@@ -809,7 +809,7 @@ function AddSampleCeramic_DesignMat3Desc_BeforeShow(& $sender)
 //Custom Code @138-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->DesignMat3->GetValue();
 		$Isinya = CCDLookUp("DesignMatDescription","tblDesignMat","ID = $IDnya",$db)." - ".CCDLookUp("DesignMatCode","tblDesignMat","ID = $IDnya",$db);
 		$Container->DesignMat3Desc->SetValue($Isinya);
@@ -834,7 +834,7 @@ function AddSampleCeramic_DesignMat4Desc_BeforeShow(& $sender)
 //Custom Code @140-2A29BDB7
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		$db = new clsDBGayaFusionAll();
+		$db = new clsDBgayafusionall();
 		$IDnya = $Container->DesignMat4->GetValue();
 		$Isinya = CCDLookUp("DesignMatDescription","tblDesignMat","ID = $IDnya",$db)." - ".CCDLookUp("DesignMatCode","tblDesignMat","ID = $IDnya",$db);
 		$Container->DesignMat4Desc->SetValue($Isinya);
@@ -857,10 +857,10 @@ function AddSampleCeramic_DesignDesc_BeforeShow(& $sender)
 //End AddSampleCeramic_DesignDesc_BeforeShow
 
 //Custom Code @156-2A29BDB7
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		global $AddSampleCeramic;
 		$IDnya = CCGetFromGet("DesignCode","");
-		$AddSampleCeramic->DesignDesc->SetValue(CCDLookUp("DesignName","tblCollect_Design", "DesignCode = ".$DBGayaFusionAll->ToSQL($IDnya,ccsString),$DBGayaFusionAll));
+		$AddSampleCeramic->DesignDesc->SetValue(CCDLookUp("DesignName","tblCollect_Design", "DesignCode = ".$DBgayafusionall->ToSQL($IDnya,ccsString),$DBgayafusionall));
 //End Custom Code
 
 //Close AddSampleCeramic_DesignDesc_BeforeShow @143-D824D90C
@@ -878,10 +878,10 @@ function AddSampleCeramic_NameCode_BeforeShow(& $sender)
 //End AddSampleCeramic_NameCode_BeforeShow
 
 //Custom Code @157-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 		global $AddSampleCeramic;
 		$IDnya = CCGetFromGet("NameCode","");
-		$AddSampleCeramic->NameDesc->SetValue(CCDLookUp("NameDesc","tblCollect_Name", "NameCode = ".$DBGayaFusionAll->ToSQL($IDnya,ccsString),$DBGayaFusionAll));
+		$AddSampleCeramic->NameDesc->SetValue(CCDLookUp("NameDesc","tblCollect_Name", "NameCode = ".$DBgayafusionall->ToSQL($IDnya,ccsString),$DBgayafusionall));
 //End Custom Code
 
 //Close AddSampleCeramic_NameCode_BeforeShow @144-698EDD41
@@ -899,10 +899,10 @@ function AddSampleCeramic_CategoryDesc_BeforeShow(& $sender)
 //End AddSampleCeramic_CategoryDesc_BeforeShow
 
 //Custom Code @158-2A29BDB7
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		global $AddSampleCeramic;
 		$IDnya = CCGetFromGet("CategoryCode","");
-		$AddSampleCeramic->CategoryDesc->SetValue(CCDLookUp("CategoryName","tblCollect_Category", "CategoryCode = ".$DBGayaFusionAll->ToSQL($IDnya,ccsString),$DBGayaFusionAll));
+		$AddSampleCeramic->CategoryDesc->SetValue(CCDLookUp("CategoryName","tblCollect_Category", "CategoryCode = ".$DBgayafusionall->ToSQL($IDnya,ccsString),$DBgayafusionall));
 //End Custom Code
 
 //Close AddSampleCeramic_CategoryDesc_BeforeShow @147-EFCBEB4A
@@ -920,10 +920,10 @@ function AddSampleCeramic_SizeDesc_BeforeShow(& $sender)
 //End AddSampleCeramic_SizeDesc_BeforeShow
 
 //Custom Code @159-2A29BDB7
-	global $DBGayaFusionAll;
+	global $DBgayafusionall;
 		global $AddSampleCeramic;
 		$IDnya = CCGetFromGet("SizeCode","");
-		$AddSampleCeramic->SizeDesc->SetValue(CCDLookUp("SizeName","tblCollect_Size", "SizeCode = ".$DBGayaFusionAll->ToSQL($IDnya,ccsString),$DBGayaFusionAll));
+		$AddSampleCeramic->SizeDesc->SetValue(CCDLookUp("SizeName","tblCollect_Size", "SizeCode = ".$DBgayafusionall->ToSQL($IDnya,ccsString),$DBgayafusionall));
 //End Custom Code
 
 //Close AddSampleCeramic_SizeDesc_BeforeShow @149-BD9C3A89
@@ -941,10 +941,10 @@ function AddSampleCeramic_TextureDesc_BeforeShow(& $sender)
 //End AddSampleCeramic_TextureDesc_BeforeShow
 
 //Custom Code @160-2A29BDB7
-	global $DBGayaFusionAll;
+	global $DBgayafusionall;
 		global $AddSampleCeramic;
 		$IDnya = CCGetFromGet("TextureCode","");
-		$AddSampleCeramic->TextureDesc->SetValue(CCDLookUp("TextureName","tblCollect_Texture", "TextureCode = ".$DBGayaFusionAll->ToSQL($IDnya,ccsString),$DBGayaFusionAll));
+		$AddSampleCeramic->TextureDesc->SetValue(CCDLookUp("TextureName","tblCollect_Texture", "TextureCode = ".$DBgayafusionall->ToSQL($IDnya,ccsString),$DBgayafusionall));
 //End Custom Code
 
 //Close AddSampleCeramic_TextureDesc_BeforeShow @151-D77C8271
@@ -962,10 +962,10 @@ function AddSampleCeramic_ColorDesc_BeforeShow(& $sender)
 //End AddSampleCeramic_ColorDesc_BeforeShow
 
 //Custom Code @161-2A29BDB7
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		global $AddSampleCeramic;
 		$IDnya = CCGetFromGet("ColorCode","");
-		$AddSampleCeramic->ColorDesc->SetValue(CCDLookUp("ColorName","tblCollect_Color", "ColorCode = ".$DBGayaFusionAll->ToSQL($IDnya,ccsString),$DBGayaFusionAll));
+		$AddSampleCeramic->ColorDesc->SetValue(CCDLookUp("ColorName","tblCollect_Color", "ColorCode = ".$DBgayafusionall->ToSQL($IDnya,ccsString),$DBgayafusionall));
 //End Custom Code
 
 //Close AddSampleCeramic_ColorDesc_BeforeShow @153-069AE744
@@ -983,10 +983,10 @@ function AddSampleCeramic_MaterialDesc_BeforeShow(& $sender)
 //End AddSampleCeramic_MaterialDesc_BeforeShow
 
 //Custom Code @162-2A29BDB7
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		global $AddSampleCeramic;
 		$IDnya = CCGetFromGet("MaterialCode","");
-		$AddSampleCeramic->MaterialDesc->SetValue(CCDLookUp("MaterialName","tblCollect_Material", "MaterialCode = ".$DBGayaFusionAll->ToSQL($IDnya,ccsString),$DBGayaFusionAll));
+		$AddSampleCeramic->MaterialDesc->SetValue(CCDLookUp("MaterialName","tblCollect_Material", "MaterialCode = ".$DBgayafusionall->ToSQL($IDnya,ccsString),$DBgayafusionall));
 //End Custom Code
 
 //Close AddSampleCeramic_MaterialDesc_BeforeShow @155-90B29C1B
@@ -1004,7 +1004,7 @@ function AddSampleCeramic_lblClay_BeforeShow(& $sender)
 //End AddSampleCeramic_lblClay_BeforeShow
 
 //Custom Code @250-2A29BDB7
-	$db = new clsDBGayaFusionAll();
+	$db = new clsDBgayafusionall();
 	$ClayID = $AddSampleCeramic->Clay->GetValue();
 	$Claynya = CCDLookUp("ClayDescription","tblClay","ID = ".$db->ToSQL($ClayID,ccsInteger),$db);
 	$Claynya = $Claynya." - ".CCDLookUp("ClayCode","tblClay","ID = ".$db->ToSQL($ClayID,ccsInteger),$db);
@@ -1030,10 +1030,10 @@ function AddSampleCeramic_BeforeShow(& $sender)
 	global $Tpl;
 	$ID = CCGetFromGet("ID", 0);
 	if($ID > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		global $AddSampleCeramic;
 		$IDnya = $AddSampleCeramic->Tools1->GetValue();
-		$ToolsPhoto1=CCDLookUp("ToolsPhoto1","tblTools","ID = $IDnya",$DBGayaFusionAll);
+		$ToolsPhoto1=CCDLookUp("ToolsPhoto1","tblTools","ID = $IDnya",$DBgayafusionall);
 		$Tpl->setvar("TollsPic1", $ToolsPhoto1);
 	}
 //End Custom Code

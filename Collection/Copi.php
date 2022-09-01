@@ -240,7 +240,7 @@ function GetPrimaryKey($keyName)
 
 } //End copy Class @5-FCB6E20C
 
-class clscopyDataSource extends clsDBGayaFusionAll {  //copyDataSource Class @5-CFE51CBB
+class clscopyDataSource extends clsDBgayafusionall {  //copyDataSource Class @5-CFE51CBB
 
 //DataSource Variables @5-9A892368
     public $Parent = "";
@@ -369,8 +369,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-1AD9AC77
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -408,7 +408,7 @@ $copy->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($copy);
     unset($Tpl);
@@ -427,7 +427,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-0E0CDCE7
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($copy);
 unset($Tpl);
 //End Unload Page

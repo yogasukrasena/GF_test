@@ -62,7 +62,7 @@ function AddQuotation_BeforeShow(& $sender)
 //DEL    	if(intval($Quotation_H_ID) >0){
 //DEL      
 //DEL  		//Create a new database connection object
-//DEL      	$NewConnection = new clsDBGayaFusionAll();
+//DEL      	$NewConnection = new clsDBgayafusionall();
 //DEL      	$NewConnection->query("DELETE FROM tblAdminist_Quotation_D WHERE Quotation_H_ID=".$NewConnection->ToSQL($Quotation_H_ID,ccsInteger));
 //DEL  
 //DEL      	//Close and destroy the database connection object
@@ -110,10 +110,10 @@ function AddQuotation_BeforeDelete(& $sender)
 //End Close AddQuotation_BeforeDelete
 
 //DEL  // -------------------------
-//DEL      global $DBGayaFusionAll;	
+//DEL      global $DBgayafusionall;	
 //DEL  	global $Redirect,$FileName;
 //DEL  
-//DEL    	$Redirect = $FileName."?Quotation_H_ID=".CCDLookUp("max(Quotation_H_ID)","tblAdminist_Quotation_H","", $DBGayaFusionAll);
+//DEL    	$Redirect = $FileName."?Quotation_H_ID=".CCDLookUp("max(Quotation_H_ID)","tblAdminist_Quotation_H","", $DBgayafusionall);
 //DEL  // -------------------------
 
 //AddItem_DescArray_BeforeShow @45-2FD39BF3
@@ -129,7 +129,7 @@ function AddItem_DescArray_BeforeShow(& $sender)
 	global $AddItem;	    
   	$Rnd_Desc_Var = "";
   
-      $NewConnection = new clsDBGayaFusionAll();
+      $NewConnection = new clsDBgayafusionall();
   	$RnD_Desc_Var = "<script language='JavaScript'> RnD_Desc = new Array ();";
           
       $NewConnection->query("SELECT sID, SampleDescription FROM SampleCeramic");
@@ -164,7 +164,7 @@ function AddItem_PriceArray_BeforeShow(& $sender)
    	global $AddItem;	    
   	$Price_Var = "";
   
-    $NewConnection = new clsDBGayaFusionAll();
+    $NewConnection = new clsDBgayafusionall();
   	$Price_Var = "<script language='JavaScript'> PriceList = new Array ();";
           
       $NewConnection->query("SELECT sID, RealSellingPrice FROM SampleCeramic");

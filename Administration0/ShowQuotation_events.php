@@ -23,10 +23,10 @@ function Detil_lblCurrency_BeforeShow(& $sender)
 //End Detil_lblCurrency_BeforeShow
 
 //Custom Code @137-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $quoID = $Detil->Quotation_H_ID->GetValue();
-$id = CCDLookUp("Currency","tblAdminist_Quotation_H","Quotation_H_ID = ".$DBGayaFusionAll->ToSQL($quoID,ccsInteger),$DBGayaFusionAll);
-$Detil->lblCurrency->SetValue(CCDLookUp("CurrencyCode","tbladminist_currency","CurrencyID = ".$DBGayaFusionAll->ToSQL($id,ccsInteger),$DBGayaFusionAll));
+$id = CCDLookUp("Currency","tblAdminist_Quotation_H","Quotation_H_ID = ".$DBgayafusionall->ToSQL($quoID,ccsInteger),$DBgayafusionall);
+$Detil->lblCurrency->SetValue(CCDLookUp("CurrencyCode","tbladminist_currency","CurrencyID = ".$DBgayafusionall->ToSQL($id,ccsInteger),$DBgayafusionall));
 //End Custom Code
 
 //Close Detil_lblCurrency_BeforeShow @136-A25C728D
@@ -63,8 +63,8 @@ function lblAdministrasi_BeforeShow(& $sender)
 
 //Custom Code @133-2A29BDB7
 global $Header;
-global $DBGayaFusionAll;
-$lblAdministrasi->SetValue(CCDLookUp("Firstname","tblUser","id = ".$DBGayaFusionAll->ToSQL(($Header->DocMaker->GetValue()),ccsInteger),$DBGayaFusionAll));
+global $DBgayafusionall;
+$lblAdministrasi->SetValue(CCDLookUp("Firstname","tblUser","id = ".$DBgayafusionall->ToSQL(($Header->DocMaker->GetValue()),ccsInteger),$DBgayafusionall));
 //End Custom Code
 
 //Close lblAdministrasi_BeforeShow @129-E5CCD1BF

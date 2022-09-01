@@ -188,7 +188,7 @@ class clsGridtblcosting_claypreparatio { //tblcosting_claypreparatio class @2-F1
 
 } //End tblcosting_claypreparatio Class @2-FCB6E20C
 
-class clstblcosting_claypreparatioDataSource extends clsDBGayaFusionAll {  //tblcosting_claypreparatioDataSource Class @2-7DE1C2DE
+class clstblcosting_claypreparatioDataSource extends clsDBgayafusionall {  //tblcosting_claypreparatioDataSource Class @2-7DE1C2DE
 
 //DataSource Variables @2-CC765B5D
     var $Parent = "";
@@ -501,7 +501,7 @@ function GetPrimaryKey($keyName)
 
 } //End tblcosting_claypreparatio1 Class @12-FCB6E20C
 
-class clstblcosting_claypreparatio1DataSource extends clsDBGayaFusionAll {  //tblcosting_claypreparatio1DataSource Class @12-FD105A1A
+class clstblcosting_claypreparatio1DataSource extends clsDBgayafusionall {  //tblcosting_claypreparatio1DataSource Class @12-FD105A1A
 
 //DataSource Variables @12-7E1E73E4
     var $Parent = "";
@@ -618,8 +618,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-471B958F
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -658,7 +658,7 @@ $tblcosting_claypreparatio1->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tblcosting_claypreparatio);
     unset($tblcosting_claypreparatio1);
@@ -680,7 +680,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-5CE63557
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tblcosting_claypreparatio);
 unset($tblcosting_claypreparatio1);
 unset($Tpl);

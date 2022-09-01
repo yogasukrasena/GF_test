@@ -36,7 +36,7 @@ function Grid_BeforeShowRow(& $sender)
 //End Grid_BeforeShowRow
 
 //Custom Code @25-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $Proforma_H_ID = $Grid->Proforma_H_ID->GetValue();
 $Pol_H_ID = $Grid->POL_H_ID->GetValue();
 
@@ -44,33 +44,33 @@ if($Proforma_H_ID > 0){
   $sql = "SELECT tbladminist_deliverytime.DeliveryTime AS DeliveryTime,tbladminist_client.ClientCompany AS ClientCompany,tbladminist_proforma_h.Proforma_H_ID,
   tbladminist_proforma_h.ProformaNo AS ProformaNo,tbladminist_proforma_h.Rev,tbladminist_proforma_h.ClientOrderRef, tblAdminist_Proforma_h.ClientID AS ClientID 
   FROM tbladminist_proforma_h INNER JOIN tbladminist_client ON (tbladminist_proforma_h.ClientID=tbladminist_client.ClientID)
-  INNER JOIN tbladminist_deliverytime ON (tbladminist_proforma_h.DeliveryTimeID=tbladminist_deliverytime.DeliveryTimeID) WHERE Proforma_H_ID = ".$DBGayaFusionAll->ToSQL($Proforma_H_ID,ccsInteger);
-  $DBGayaFusionAll->query($sql);
-  $result = $DBGayaFusionAll->next_record();
+  INNER JOIN tbladminist_deliverytime ON (tbladminist_proforma_h.DeliveryTimeID=tbladminist_deliverytime.DeliveryTimeID) WHERE Proforma_H_ID = ".$DBgayafusionall->ToSQL($Proforma_H_ID,ccsInteger);
+  $DBgayafusionall->query($sql);
+  $result = $DBgayafusionall->next_record();
   if($result){
-    $ProDate = $DBGayaFusionAll->f("ProformaDate");
-    $Grid->ProformaNo->SetValue($DBGayaFusionAll->f("ProformaNo"));
+    $ProDate = $DBgayafusionall->f("ProformaDate");
+    $Grid->ProformaNo->SetValue($DBgayafusionall->f("ProformaNo"));
 	$Grid->ProformaNo->SetLink("ShowProforma.php?Proforma_H_ID=".$Proforma_H_ID);
-	$Grid->ProformaRef->SetValue($DBGayaFusionAll->f("Rev"));
-	$Grid->ClientCompany->SetValue($DBGayaFusionAll->f("ClientCompany"));
-	$Grid->DeliveryTime->SetValue($DBGayaFusionAll->f("DeliveryTime"));
-	$Grid->ClientOrderRef->SetValue($DBGayaFusionAll->f("ClientOrderRef"));
-	$Grid->POL_H_ID->SetLink("AddProforma.php?Proforma_H_ID=".$Proforma_H_ID."&ContactID=".$DBGayaFusionAll->f("ClientID"));
+	$Grid->ProformaRef->SetValue($DBgayafusionall->f("Rev"));
+	$Grid->ClientCompany->SetValue($DBgayafusionall->f("ClientCompany"));
+	$Grid->DeliveryTime->SetValue($DBgayafusionall->f("DeliveryTime"));
+	$Grid->ClientOrderRef->SetValue($DBgayafusionall->f("ClientOrderRef"));
+	$Grid->POL_H_ID->SetLink("AddProforma.php?Proforma_H_ID=".$Proforma_H_ID."&ContactID=".$DBgayafusionall->f("ClientID"));
 	$Grid->POLNo->SetLink("ShowPOL.php?POL_H_ID=".$Pol_H_ID."&Proforma_H_ID=".$Proforma_H_ID);
   }
 }else{
   $sql = "SELECT tbladminist_deliverytime.DeliveryTime AS DeliveryTime,tbladminist_client.ClientCompany AS ClientCompany,tbladminist_pol_h.Pol_H_ID,
   tbladminist_pol_h.PolNo AS PolNo,tbladminist_pol_h.ClientOrderRef
   FROM tbladminist_pol_h INNER JOIN tbladminist_client ON (tbladminist_pol_h.ClientID=tbladminist_client.ClientID)
-  INNER JOIN tbladminist_deliverytime ON (tbladminist_pol_h.DeliveryTimeID=tbladminist_deliverytime.DeliveryTimeID) WHERE Pol_H_ID = ".$DBGayaFusionAll->ToSQL($Pol_H_ID,ccsInteger);
-  $DBGayaFusionAll->query($sql);
-  $result = $DBGayaFusionAll->next_record();
+  INNER JOIN tbladminist_deliverytime ON (tbladminist_pol_h.DeliveryTimeID=tbladminist_deliverytime.DeliveryTimeID) WHERE Pol_H_ID = ".$DBgayafusionall->ToSQL($Pol_H_ID,ccsInteger);
+  $DBgayafusionall->query($sql);
+  $result = $DBgayafusionall->next_record();
   if($result){
     $Grid->ProformaNo->SetValue("");
 	$Grid->ProformaRef->SetValue("-");
-	$Grid->ClientCompany->SetValue($DBGayaFusionAll->f("ClientCompany"));
-	$Grid->DeliveryTime->SetValue($DBGayaFusionAll->f("DeliveryTime"));
-	$Grid->ClientOrderRef->SetValue($DBGayaFusionAll->f("ClientOrderRef"));
+	$Grid->ClientCompany->SetValue($DBgayafusionall->f("ClientCompany"));
+	$Grid->DeliveryTime->SetValue($DBgayafusionall->f("DeliveryTime"));
+	$Grid->ClientOrderRef->SetValue($DBgayafusionall->f("ClientOrderRef"));
 	$Grid->POL_H_ID->SetLink("AddPol.php?POL_H_ID=".$Pol_H_ID);
 	$Grid->POLNo->SetLink("ShowPOL.php?POL_H_ID=".$Pol_H_ID);
   }

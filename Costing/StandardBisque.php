@@ -188,7 +188,7 @@ class clsGridtblcosting_standardbisque { //tblcosting_standardbisque class @2-E0
 
 } //End tblcosting_standardbisque Class @2-FCB6E20C
 
-class clstblcosting_standardbisqueDataSource extends clsDBGayaFusionAll {  //tblcosting_standardbisqueDataSource Class @2-64202232
+class clstblcosting_standardbisqueDataSource extends clsDBgayafusionall {  //tblcosting_standardbisqueDataSource Class @2-64202232
 
 //DataSource Variables @2-69C33758
     var $Parent = "";
@@ -501,7 +501,7 @@ function GetPrimaryKey($keyName)
 
 } //End tblcosting_standardbisque1 Class @12-FCB6E20C
 
-class clstblcosting_standardbisque1DataSource extends clsDBGayaFusionAll {  //tblcosting_standardbisque1DataSource Class @12-54B535A9
+class clstblcosting_standardbisque1DataSource extends clsDBgayafusionall {  //tblcosting_standardbisque1DataSource Class @12-54B535A9
 
 //DataSource Variables @12-DBCC5458
     var $Parent = "";
@@ -618,8 +618,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-90A9C57C
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -658,7 +658,7 @@ $tblcosting_standardbisque1->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tblcosting_standardbisque);
     unset($tblcosting_standardbisque1);
@@ -680,7 +680,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-237B647D
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tblcosting_standardbisque);
 unset($tblcosting_standardbisque1);
 unset($Tpl);

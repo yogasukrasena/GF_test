@@ -82,7 +82,7 @@ class clsRecordAddNewHeader { //AddNewHeader Class @2-5850F9DE
             $this->DatePicker_DueDate = new clsDatePicker("DatePicker_DueDate", "AddNewHeader", "DueDate", $this);
             $this->InvoiceAddressContact = new clsControl(ccsListBox, "InvoiceAddressContact", "Invoice Address", ccsInteger, "", CCGetRequestParam("InvoiceAddressContact", $Method, NULL), $this);
             $this->InvoiceAddressContact->DSType = dsTable;
-            $this->InvoiceAddressContact->DataSource = new clsDBGayaFusionAll();
+            $this->InvoiceAddressContact->DataSource = new clsDBgayafusionall();
             $this->InvoiceAddressContact->ds = & $this->InvoiceAddressContact->DataSource;
             $this->InvoiceAddressContact->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_addressbook_contact {SQL_Where} {SQL_OrderBy}";
@@ -95,7 +95,7 @@ class clsRecordAddNewHeader { //AddNewHeader Class @2-5850F9DE
                  $this->InvoiceAddressContact->DataSource->wp->Criterion[1];
             $this->DeliveryAddressContact = new clsControl(ccsListBox, "DeliveryAddressContact", "Delivery Address", ccsInteger, "", CCGetRequestParam("DeliveryAddressContact", $Method, NULL), $this);
             $this->DeliveryAddressContact->DSType = dsTable;
-            $this->DeliveryAddressContact->DataSource = new clsDBGayaFusionAll();
+            $this->DeliveryAddressContact->DataSource = new clsDBgayafusionall();
             $this->DeliveryAddressContact->ds = & $this->DeliveryAddressContact->DataSource;
             $this->DeliveryAddressContact->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_addressbook_contact {SQL_Where} {SQL_OrderBy}";
@@ -108,14 +108,14 @@ class clsRecordAddNewHeader { //AddNewHeader Class @2-5850F9DE
                  $this->DeliveryAddressContact->DataSource->wp->Criterion[1];
             $this->DeliveryTerm = new clsControl(ccsListBox, "DeliveryTerm", "DeliveryTerm", ccsText, "", CCGetRequestParam("DeliveryTerm", $Method, NULL), $this);
             $this->DeliveryTerm->DSType = dsTable;
-            $this->DeliveryTerm->DataSource = new clsDBGayaFusionAll();
+            $this->DeliveryTerm->DataSource = new clsDBgayafusionall();
             $this->DeliveryTerm->ds = & $this->DeliveryTerm->DataSource;
             $this->DeliveryTerm->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_deliveryterm {SQL_Where} {SQL_OrderBy}";
             list($this->DeliveryTerm->BoundColumn, $this->DeliveryTerm->TextColumn, $this->DeliveryTerm->DBFormat) = array("DeliveryTermID", "DeliveryTerm", "");
             $this->PaymentTerm = new clsControl(ccsListBox, "PaymentTerm", "PaymentTerm", ccsText, "", CCGetRequestParam("PaymentTerm", $Method, NULL), $this);
             $this->PaymentTerm->DSType = dsTable;
-            $this->PaymentTerm->DataSource = new clsDBGayaFusionAll();
+            $this->PaymentTerm->DataSource = new clsDBgayafusionall();
             $this->PaymentTerm->ds = & $this->PaymentTerm->DataSource;
             $this->PaymentTerm->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_paymentterm {SQL_Where} {SQL_OrderBy}";
@@ -123,7 +123,7 @@ class clsRecordAddNewHeader { //AddNewHeader Class @2-5850F9DE
             $this->ClientOrderRef = new clsControl(ccsTextBox, "ClientOrderRef", "ClientOrderRef", ccsText, "", CCGetRequestParam("ClientOrderRef", $Method, NULL), $this);
             $this->AddressID = new clsControl(ccsListBox, "AddressID", "AddressID", ccsInteger, "", CCGetRequestParam("AddressID", $Method, NULL), $this);
             $this->AddressID->DSType = dsTable;
-            $this->AddressID->DataSource = new clsDBGayaFusionAll();
+            $this->AddressID->DataSource = new clsDBgayafusionall();
             $this->AddressID->ds = & $this->AddressID->DataSource;
             $this->AddressID->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_addressbook {SQL_Where} {SQL_OrderBy}";
@@ -150,14 +150,14 @@ class clsRecordAddNewHeader { //AddNewHeader Class @2-5850F9DE
             $this->Quotation_H_ID = new clsControl(ccsHidden, "Quotation_H_ID", "Quotation_H_ID", ccsInteger, "", CCGetRequestParam("Quotation_H_ID", $Method, NULL), $this);
             $this->ClientID = new clsControl(ccsListBox, "ClientID", "ClientID", ccsText, "", CCGetRequestParam("ClientID", $Method, NULL), $this);
             $this->ClientID->DSType = dsTable;
-            $this->ClientID->DataSource = new clsDBGayaFusionAll();
+            $this->ClientID->DataSource = new clsDBgayafusionall();
             $this->ClientID->ds = & $this->ClientID->DataSource;
             $this->ClientID->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_client {SQL_Where} {SQL_OrderBy}";
             list($this->ClientID->BoundColumn, $this->ClientID->TextColumn, $this->ClientID->DBFormat) = array("ClientID", "ClientCompany", "");
             $this->lblCurrency = new clsControl(ccsListBox, "lblCurrency", "lblCurrency", ccsText, "", CCGetRequestParam("lblCurrency", $Method, NULL), $this);
             $this->lblCurrency->DSType = dsTable;
-            $this->lblCurrency->DataSource = new clsDBGayaFusionAll();
+            $this->lblCurrency->DataSource = new clsDBgayafusionall();
             $this->lblCurrency->ds = & $this->lblCurrency->DataSource;
             $this->lblCurrency->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_currency {SQL_Where} {SQL_OrderBy}";
@@ -521,7 +521,7 @@ function GetPrimaryKey($keyName)
 
 } //End AddNewHeader Class @2-FCB6E20C
 
-class clsAddNewHeaderDataSource extends clsDBGayaFusionAll {  //AddNewHeaderDataSource Class @2-B5B08D50
+class clsAddNewHeaderDataSource extends clsDBgayafusionall {  //AddNewHeaderDataSource Class @2-B5B08D50
 
 //DataSource Variables @2-7651FDCF
     public $Parent = "";
@@ -1522,7 +1522,7 @@ class clsEditableGridAddNewDetail { //AddNewDetail Class @51-254BF570
 
 } //End AddNewDetail Class @51-FCB6E20C
 
-class clsAddNewDetailDataSource extends clsDBGayaFusionAll {  //AddNewDetailDataSource Class @51-9729D968
+class clsAddNewDetailDataSource extends clsDBgayafusionall {  //AddNewDetailDataSource Class @51-9729D968
 
 //DataSource Variables @51-12A7F46B
     public $Parent = "";
@@ -1786,8 +1786,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-D7B2DEB3
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -1829,7 +1829,7 @@ $AddNewDetail->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($AddNewHeader);
     unset($AddNewDetail);
@@ -1850,7 +1850,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-142ABB44
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($AddNewHeader);
 unset($AddNewDetail);
 unset($Tpl);

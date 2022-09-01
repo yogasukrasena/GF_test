@@ -81,7 +81,7 @@ class clsRecordAddCollect { //AddCollect Class @2-D9822AE0
             $this->Button_Delete = new clsButton("Button_Delete", $Method, $this);
             $this->DesignCode = new clsControl(ccsListBox, "DesignCode", "Design Code", ccsText, "", CCGetRequestParam("DesignCode", $Method, NULL), $this);
             $this->DesignCode->DSType = dsTable;
-            $this->DesignCode->DataSource = new clsDBGayaFusionAll();
+            $this->DesignCode->DataSource = new clsDBgayafusionall();
             $this->DesignCode->ds = & $this->DesignCode->DataSource;
             //$this->DesignCode->DataSource->SQL = "SELECT * \n" . "FROM tblcollect_design {SQL_Where} {SQL_OrderBy}";
 			$this->DesignCode->DataSource->SQL = "SELECT * \n" . "FROM tblcollect_design {SQL_Where} ORDER BY DesignName ASC";
@@ -89,42 +89,42 @@ class clsRecordAddCollect { //AddCollect Class @2-D9822AE0
             $this->DesignCode->Required = true;
             $this->NameCode = new clsControl(ccsListBox, "NameCode", "Name Code", ccsText, "", CCGetRequestParam("NameCode", $Method, NULL), $this);
             $this->NameCode->DSType = dsTable;
-            $this->NameCode->DataSource = new clsDBGayaFusionAll();
+            $this->NameCode->DataSource = new clsDBgayafusionall();
             $this->NameCode->ds = & $this->NameCode->DataSource;
             $this->NameCode->DataSource->SQL = "SELECT * \n" . "FROM tblcollect_name {SQL_Where} ORDER BY NameDesc ASC";
             list($this->NameCode->BoundColumn, $this->NameCode->TextColumn, $this->NameCode->DBFormat) = array("NameCode", "NameDesc", "");
             $this->NameCode->Required = true;
             $this->CategoryCode = new clsControl(ccsListBox, "CategoryCode", "Category Code", ccsText, "", CCGetRequestParam("CategoryCode", $Method, NULL), $this);
             $this->CategoryCode->DSType = dsTable;
-            $this->CategoryCode->DataSource = new clsDBGayaFusionAll();
+            $this->CategoryCode->DataSource = new clsDBgayafusionall();
             $this->CategoryCode->ds = & $this->CategoryCode->DataSource;
             $this->CategoryCode->DataSource->SQL = "SELECT * \n" . "FROM tblcollect_category {SQL_Where} ORDER BY CategoryName ASC";
             list($this->CategoryCode->BoundColumn, $this->CategoryCode->TextColumn, $this->CategoryCode->DBFormat) = array("CategoryCode", "CategoryName", "");
             $this->CategoryCode->Required = true;
             $this->TextureCode = new clsControl(ccsListBox, "TextureCode", "Texture Code", ccsText, "", CCGetRequestParam("TextureCode", $Method, NULL), $this);
             $this->TextureCode->DSType = dsTable;
-            $this->TextureCode->DataSource = new clsDBGayaFusionAll();
+            $this->TextureCode->DataSource = new clsDBgayafusionall();
             $this->TextureCode->ds = & $this->TextureCode->DataSource;
             $this->TextureCode->DataSource->SQL = "SELECT * \n" . "FROM tblcollect_texture {SQL_Where} ORDER BY TextureName ASC";
             list($this->TextureCode->BoundColumn, $this->TextureCode->TextColumn, $this->TextureCode->DBFormat) = array("TextureCode", "TextureName", "");
             $this->TextureCode->Required = true;
             $this->ColorCode = new clsControl(ccsListBox, "ColorCode", "Color Code", ccsText, "", CCGetRequestParam("ColorCode", $Method, NULL), $this);
             $this->ColorCode->DSType = dsTable;
-            $this->ColorCode->DataSource = new clsDBGayaFusionAll();
+            $this->ColorCode->DataSource = new clsDBgayafusionall();
             $this->ColorCode->ds = & $this->ColorCode->DataSource;
             $this->ColorCode->DataSource->SQL = "SELECT * \n" . "FROM tblcollect_color {SQL_Where} ORDER BY ColorName ASC";
             list($this->ColorCode->BoundColumn, $this->ColorCode->TextColumn, $this->ColorCode->DBFormat) = array("ColorCode", "ColorName", "");
             $this->ColorCode->Required = true;
             $this->MaterialCode = new clsControl(ccsListBox, "MaterialCode", "Material Code", ccsText, "", CCGetRequestParam("MaterialCode", $Method, NULL), $this);
             $this->MaterialCode->DSType = dsTable;
-            $this->MaterialCode->DataSource = new clsDBGayaFusionAll();
+            $this->MaterialCode->DataSource = new clsDBgayafusionall();
             $this->MaterialCode->ds = & $this->MaterialCode->DataSource;
             $this->MaterialCode->DataSource->SQL = "SELECT * \n" . "FROM tblcollect_material {SQL_Where} ORDER BY MaterialName ASC";
             list($this->MaterialCode->BoundColumn, $this->MaterialCode->TextColumn, $this->MaterialCode->DBFormat) = array("MaterialCode", "MaterialName", "");
             $this->MaterialCode->Required = true;
             $this->SizeCode = new clsControl(ccsListBox, "SizeCode", "Size Code", ccsText, "", CCGetRequestParam("SizeCode", $Method, NULL), $this);
             $this->SizeCode->DSType = dsTable;
-            $this->SizeCode->DataSource = new clsDBGayaFusionAll();
+            $this->SizeCode->DataSource = new clsDBgayafusionall();
             $this->SizeCode->ds = & $this->SizeCode->DataSource;
             //$this->SizeCode->DataSource->SQL = "SELECT * \n" . "FROM tblcollect_size {SQL_Where} {SQL_OrderBy}";
 			$this->SizeCode->DataSource->SQL = "SELECT * \n" . "FROM tblcollect_size {SQL_Where} ORDER BY SizeName ASC";
@@ -405,7 +405,7 @@ function GetPrimaryKey($keyName)
 
 } //End AddCollect Class @2-FCB6E20C
 
-class clsAddCollectDataSource extends clsDBGayaFusionAll {  //AddCollectDataSource Class @2-AB51F1D4
+class clsAddCollectDataSource extends clsDBgayafusionall {  //AddCollectDataSource Class @2-AB51F1D4
 
 //DataSource Variables @2-C00921B0
     public $Parent = "";
@@ -617,8 +617,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-A2EE6AE0
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -656,7 +656,7 @@ $AddCollect->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($AddCollect);
     unset($Tpl);
@@ -675,7 +675,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-77BFBC16
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($AddCollect);
 unset($Tpl);
 //End Unload Page

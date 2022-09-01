@@ -221,7 +221,7 @@ class clsGridtblcosting_productivehour { //tblcosting_productivehour class @2-DC
 
 } //End tblcosting_productivehour Class @2-FCB6E20C
 
-class clstblcosting_productivehourDataSource extends clsDBGayaFusionAll {  //tblcosting_productivehourDataSource Class @2-0C21A320
+class clstblcosting_productivehourDataSource extends clsDBgayafusionall {  //tblcosting_productivehourDataSource Class @2-0C21A320
 
 //DataSource Variables @2-8A0478FC
     public $Parent = "";
@@ -561,7 +561,7 @@ function GetPrimaryKey($keyName)
 
 } //End tblcosting_productivehour1 Class @18-FCB6E20C
 
-class clstblcosting_productivehour1DataSource extends clsDBGayaFusionAll {  //tblcosting_productivehour1DataSource Class @18-A7644560
+class clstblcosting_productivehour1DataSource extends clsDBgayafusionall {  //tblcosting_productivehour1DataSource Class @18-A7644560
 
 //DataSource Variables @18-7C054D40
     public $Parent = "";
@@ -690,8 +690,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-DBF14ED3
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -730,7 +730,7 @@ $tblcosting_productivehour1->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tblcosting_productivehour);
     unset($tblcosting_productivehour1);
@@ -751,7 +751,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-B5999CAE
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tblcosting_productivehour);
 unset($tblcosting_productivehour1);
 unset($Tpl);

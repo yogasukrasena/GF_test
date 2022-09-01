@@ -844,7 +844,7 @@ class clsReportGrid { //Grid Class @2-64989BB0
 
 } //End Grid Class @2-FCB6E20C
 
-class clsGridDataSource extends clsDBGayaFusionAll {  //GridDataSource Class @2-7708C172
+class clsGridDataSource extends clsDBgayafusionall {  //GridDataSource Class @2-7708C172
 
 //DataSource Variables @2-2B3529D1
     public $Parent = "";
@@ -1060,7 +1060,7 @@ class clsRecordSearch { //Search Class @41-39E8735D
             $this->Button_DoSearch = new clsButton("Button_DoSearch", $Method, $this);
             $this->s_ClientID = new clsControl(ccsListBox, "s_ClientID", "s_ClientID", ccsInteger, "", CCGetRequestParam("s_ClientID", $Method, NULL), $this);
             $this->s_ClientID->DSType = dsTable;
-            $this->s_ClientID->DataSource = new clsDBGayaFusionAll();
+            $this->s_ClientID->DataSource = new clsDBgayafusionall();
             $this->s_ClientID->ds = & $this->s_ClientID->DataSource;
             $this->s_ClientID->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_client {SQL_Where} {SQL_OrderBy}";
@@ -1265,8 +1265,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-571795B0
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -1311,7 +1311,7 @@ $Search->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($Grid);
     unset($Search);
@@ -1333,7 +1333,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-F8DFA0A3
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($Grid);
 unset($Search);
 unset($Tpl);

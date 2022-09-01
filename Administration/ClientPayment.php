@@ -205,7 +205,7 @@ class clsGridtbladminist_client { //tbladminist_client class @2-9947B13C
 
 } //End tbladminist_client Class @2-FCB6E20C
 
-class clstbladminist_clientDataSource extends clsDBGayaFusionAll {  //tbladminist_clientDataSource Class @2-CDC5F061
+class clstbladminist_clientDataSource extends clsDBgayafusionall {  //tbladminist_clientDataSource Class @2-CDC5F061
 
 //DataSource Variables @2-03C984DE
     public $Parent = "";
@@ -350,7 +350,7 @@ class clsRecordtbladminist_clientSearch { //tbladminist_clientSearch Class @3-2C
             $this->Button_DoSearch = new clsButton("Button_DoSearch", $Method, $this);
             $this->s_ClientID = new clsControl(ccsListBox, "s_ClientID", "s_ClientID", ccsInteger, "", CCGetRequestParam("s_ClientID", $Method, NULL), $this);
             $this->s_ClientID->DSType = dsTable;
-            $this->s_ClientID->DataSource = new clsDBGayaFusionAll();
+            $this->s_ClientID->DataSource = new clsDBgayafusionall();
             $this->s_ClientID->ds = & $this->s_ClientID->DataSource;
             $this->s_ClientID->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_client {SQL_Where} {SQL_OrderBy}";
@@ -515,8 +515,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-AF4FB6F6
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -556,7 +556,7 @@ $tbladminist_clientSearch->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tbladminist_client);
     unset($tbladminist_clientSearch);
@@ -577,7 +577,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-4F698714
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tbladminist_client);
 unset($tbladminist_clientSearch);
 unset($Tpl);

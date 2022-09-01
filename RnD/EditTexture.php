@@ -369,7 +369,7 @@ function GetPrimaryKey($keyName)
 
 } //End tbltexture Class @2-FCB6E20C
 
-class clstbltextureDataSource extends clsDBGayaFusionAll {  //tbltextureDataSource Class @2-FDAEB799
+class clstbltextureDataSource extends clsDBgayafusionall {  //tbltextureDataSource Class @2-FDAEB799
 
 //DataSource Variables @2-BAA9D8CC
     public $Parent = "";
@@ -550,8 +550,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-23AE6093
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -587,7 +587,7 @@ $tbltexture->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tbltexture);
     unset($Tpl);
@@ -606,7 +606,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-C9293528
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tbltexture);
 unset($Tpl);
 //End Unload Page

@@ -219,7 +219,7 @@ function GetPrimaryKey($keyName)
 
 } //End NewPol Class @2-FCB6E20C
 
-class clsNewPolDataSource extends clsDBGayaFusionAll {  //NewPolDataSource Class @2-B2054422
+class clsNewPolDataSource extends clsDBgayafusionall {  //NewPolDataSource Class @2-B2054422
 
 //DataSource Variables @2-FB4E4A70
     public $Parent = "";
@@ -306,8 +306,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-26FCC65C
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -345,7 +345,7 @@ $NewPol->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($NewPol);
     unset($Tpl);
@@ -364,7 +364,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-822A9F32
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($NewPol);
 unset($Tpl);
 //End Unload Page

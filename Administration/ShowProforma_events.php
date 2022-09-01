@@ -29,14 +29,14 @@ function BindEvents()
 
 //DEL  $ID = $Container->AddressID->GetValue();
 //DEL  if(!$ID == ""){
-//DEL    $db = new clsDBGayaFusionAll();
+//DEL    $db = new clsDBgayafusionall();
 //DEL    $Component->SetValue(CCDLookUp("Company","tblAdminist_AddressBook","AddressID = ".$db->ToSQL($ID,ccsInteger),$db));
 //DEL    $db->close();
 //DEL  }
 
 //DEL  $ID = $Container->ContactID->GetValue();
 //DEL  if(!$ID == ""){
-//DEL    $db = new clsDBGayaFusionAll();
+//DEL    $db = new clsDBgayafusionall();
 //DEL    $sql = "SELECT ContactName,Email,Address,Phone,Fax FROM tblAdminist_AddressBook_Contact WHERE ContactID = ".$db->ToSQL($ID,ccsInteger);
 //DEL    $db->query($sql);
 //DEL    $result = $db->next_record();
@@ -52,21 +52,21 @@ function BindEvents()
 
 //DEL  $ID = $Container->DeliveryTermID->GetValue();
 //DEL  if(!$ID == ""){
-//DEL    $db = new clsDBGayaFusionAll();
+//DEL    $db = new clsDBgayafusionall();
 //DEL    $Component->SetValue(CCDLookUp("DeliveryTerm","tblAdminist_DeliveryTerm","DeliveryTermID = ".$db->ToSQL($ID,ccsInteger),$db));
 //DEL    $db->close();
 //DEL  }
 
 //DEL  $ID = $Container->DeliveryTimeID->GetValue();
 //DEL  if(!$ID == ""){
-//DEL    $db = new clsDBGayaFusionAll();
+//DEL    $db = new clsDBgayafusionall();
 //DEL    $Component->SetValue(CCDLookUp("DeliveryTime","tblAdminist_DeliveryTime","DeliveryTimeID = ".$db->ToSQL($ID,ccsInteger),$db));
 //DEL    $db->close();
 //DEL  }
 
 //DEL  $ID = $Container->PaymentTermID->GetValue();
 //DEL  if(!$ID == ""){
-//DEL    $db = new clsDBGayaFusionAll();
+//DEL    $db = new clsDBgayafusionall();
 //DEL    $Component->SetValue(CCDLookUp("PaymentTerm","tblAdminist_PaymentTerm","PaymentTermID = ".$db->ToSQL($ID,ccsInteger),$db));
 //DEL    $db->close();
 //DEL  }
@@ -103,10 +103,10 @@ function Detil_lblCurrency_BeforeShow(& $sender)
 //End Detil_lblCurrency_BeforeShow
 
 //Custom Code @151-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $proID = $Detil->Proforma_H_ID->GetValue();
-$id = CCDLookUp("Currency","tblAdminist_Proforma_H","Proforma_H_ID = ".$DBGayaFusionAll->ToSQL($proID,ccsInteger),$DBGayaFusionAll);
-$Detil->lblCurrency->SetValue(CCDLookUp("CurrencyCode","tbladminist_currency","CurrencyID = ".$DBGayaFusionAll->ToSQL($id,ccsInteger),$DBGayaFusionAll));
+$id = CCDLookUp("Currency","tblAdminist_Proforma_H","Proforma_H_ID = ".$DBgayafusionall->ToSQL($proID,ccsInteger),$DBgayafusionall);
+$Detil->lblCurrency->SetValue(CCDLookUp("CurrencyCode","tbladminist_currency","CurrencyID = ".$DBgayafusionall->ToSQL($id,ccsInteger),$DBgayafusionall));
 //End Custom Code
 
 //Close Detil_lblCurrency_BeforeShow @150-A25C728D
@@ -144,7 +144,7 @@ function Detil_ClientCode_BeforeShow(& $sender)
 
 //Custom Code @198-2A29BDB7
 $CollectID = $Detil->CollectID->GetValue();
-$db = new clsDBGayaFusionAll();
+$db = new clsDBgayafusionall();
 $Detil->ClientCode->SetValue(CCDLookUp("ClientCode","tblCollect_Master","ID = ".$CollectID,$db));
 $db->close();
 //End Custom Code
@@ -165,7 +165,7 @@ function Detil_ClientDesc_BeforeShow(& $sender)
 
 //Custom Code @199-2A29BDB7
 $CollectID = $Detil->CollectID->GetValue();
-$db = new clsDBGayaFusionAll();
+$db = new clsDBgayafusionall();
 $Detil->ClientDesc->SetValue(CCDLookUp("ClientDescription","tblCollect_Master","ID = ".$CollectID,$db));
 $db->close();
 //End Custom Code
@@ -204,18 +204,18 @@ function Detil_BeforeShow(& $sender)
 
 //Custom Code @144-2A29BDB7
 global $Header, $Detil;
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $Proforma_H_ID = CCGetFromGet("Proforma_H_ID",0);
 $AddressID = $Header->AddressID->GetValue();
-$Detil->PackCost->SetValue(CCDLookUp("PackagingCost","tblAdminist_Proforma_H","Proforma_H_ID = ".$DBGayaFusionAll->ToSQL($Proforma_H_ID, ccsInteger),$DBGayaFusionAll)."%");
-$DBGayaFusionAll->query("SELECT SubTotal,Discount,Packaging,Fumigation,GrandTotal FROM ar_proforma WHERE Proforma_H_ID = ".$DBGayaFusionAll->ToSQL($Proforma_H_ID, ccsInteger));
-$result = $DBGayaFusionAll->next_record();
+$Detil->PackCost->SetValue(CCDLookUp("PackagingCost","tblAdminist_Proforma_H","Proforma_H_ID = ".$DBgayafusionall->ToSQL($Proforma_H_ID, ccsInteger),$DBgayafusionall)."%");
+$DBgayafusionall->query("SELECT SubTotal,Discount,Packaging,Fumigation,GrandTotal FROM ar_proforma WHERE Proforma_H_ID = ".$DBgayafusionall->ToSQL($Proforma_H_ID, ccsInteger));
+$result = $DBgayafusionall->next_record();
 if($result){
-  $Detil->SubTotal->SetValue($DBGayaFusionAll->f("SubTotal"));
-  $Detil->Discount->SetValue($DBGayaFusionAll->f("Discount"));
-  $Detil->Packaging->SetValue($DBGayaFusionAll->f("Packaging"));
-  $Detil->Fumigation->SetValue($DBGayaFusionAll->f("Fumigation"));
-  $Detil->GrandTotal->SetValue($DBGayaFusionAll->f("GrandTotal"));
+  $Detil->SubTotal->SetValue($DBgayafusionall->f("SubTotal"));
+  $Detil->Discount->SetValue($DBgayafusionall->f("Discount"));
+  $Detil->Packaging->SetValue($DBgayafusionall->f("Packaging"));
+  $Detil->Fumigation->SetValue($DBgayafusionall->f("Fumigation"));
+  $Detil->GrandTotal->SetValue($DBgayafusionall->f("GrandTotal"));
 }
 //End Custom Code
 
@@ -235,7 +235,7 @@ function lblAdministrasi_BeforeShow(& $sender)
 
 //Custom Code @147-2A29BDB7
 global $Header;
-$db = new clsDBGayaFusionAll();
+$db = new clsDBgayafusionall();
 $Component->SetValue(CCDLookUp("Firstname","tblUser","id = ".$db->ToSQL($Header->DocMaker->GetValue(),ccsInteger),$db));
 $db->close();
 //End Custom Code
@@ -276,7 +276,7 @@ function Header_Client_BeforeShow(& $sender)
 //Custom Code @68-2A29BDB7
 $ID = $Container->ClientID->GetValue();
 if(!$ID == ""){
-  $db = new clsDBGayaFusionAll();
+  $db = new clsDBgayafusionall();
   $Component->SetValue(CCDLookUp("ClientCompany","tblAdminist_Client","ClientID = ".$db->ToSQL($ID,ccsInteger),$db));
   $db->close();
 }
@@ -299,7 +299,7 @@ function Header_Address_BeforeShow(& $sender)
 //Custom Code @70-2A29BDB7
 $ID = $Container->AddressID->GetValue();
 if(!$ID == ""){
-  $db = new clsDBGayaFusionAll();
+  $db = new clsDBgayafusionall();
   $Component->SetValue(CCDLookUp("Company","tblAdminist_AddressBook","AddressID = ".$db->ToSQL($ID,ccsInteger),$db));
   $db->close();
 }
@@ -322,7 +322,7 @@ function Header_QuotationContact_BeforeShow(& $sender)
 //Custom Code @175-2A29BDB7
 $ID = $Container->QuotationContactID->GetValue();
 if(!$ID == ""){
-  $db = new clsDBGayaFusionAll();
+  $db = new clsDBgayafusionall();
   $sql = "SELECT ContactName,Address,Email,Phone,Fax FROM tblAdminist_AddressBook_Contact WHERE ContactID = ".$db->ToSQL($ID,ccsInteger);
   $db->query($sql);
   $result = $db->next_record();
@@ -354,7 +354,7 @@ function Header_DeliveryContact_BeforeShow(& $sender)
 //Custom Code @181-2A29BDB7
 $ID = $Container->DeliveryContactID->GetValue();
 if(!$ID == ""){
-  $db = new clsDBGayaFusionAll();
+  $db = new clsDBgayafusionall();
   $sql = "SELECT ContactName,Address,Email,Phone,Fax FROM tblAdminist_AddressBook_Contact WHERE ContactID = ".$db->ToSQL($ID,ccsInteger);
   $db->query($sql);
   $result = $db->next_record();
@@ -386,7 +386,7 @@ function Header_DeliveryTem_BeforeShow(& $sender)
 //Custom Code @187-2A29BDB7
 $ID = $Container->DeliveryTermID->GetValue();
 if(!$ID == ""){
-  $db = new clsDBGayaFusionAll();
+  $db = new clsDBgayafusionall();
   $Component->SetValue(CCDLookUp("DeliveryTerm","tblAdminist_DeliveryTerm","DeliveryTermID = ".$db->ToSQL($ID,ccsInteger),$db));
   $db->close();
 }
@@ -409,7 +409,7 @@ function Header_DeliveryTime_BeforeShow(& $sender)
 //Custom Code @188-2A29BDB7
 $ID = $Container->DeliveryTimeID->GetValue();
 if(!$ID == ""){
-  $db = new clsDBGayaFusionAll();
+  $db = new clsDBgayafusionall();
   $Component->SetValue(CCDLookUp("DeliveryTime","tblAdminist_DeliveryTime","DeliveryTimeID = ".$db->ToSQL($ID,ccsInteger),$db));
   $db->close();
 }
@@ -432,7 +432,7 @@ function Header_PaymentTerm_BeforeShow(& $sender)
 //Custom Code @190-2A29BDB7
 $ID = $Container->PaymentTermID->GetValue();
 if(!$ID == ""){
-  $db = new clsDBGayaFusionAll();
+  $db = new clsDBgayafusionall();
   $Component->SetValue(CCDLookUp("PaymentTerm","tblAdminist_PaymentTerm","PaymentTermID = ".$db->ToSQL($ID,ccsInteger),$db));
   $db->close();
 }
@@ -455,7 +455,7 @@ function Header_DeliveryAddr_BeforeShow(& $sender)
 //Custom Code @195-2A29BDB7
 $ID = $Container->DeliveryAddressID->GetValue();
 if(!$ID == ""){
-  $db = new clsDBGayaFusionAll();
+  $db = new clsDBgayafusionall();
   $Component->SetValue(CCDLookUp("Company","tblAdminist_AddressBook","AddressID = ".$db->ToSQL($ID,ccsInteger),$db));
   $db->close();
 }

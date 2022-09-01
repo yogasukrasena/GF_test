@@ -29,7 +29,7 @@ function Header_Company_BeforeShow(& $sender)
 //End Header_Company_BeforeShow
 
 //Custom Code @141-2A29BDB7
-$db = new clsDBGayaFusionAll();
+$db = new clsDBgayafusionall();
 $AddressID = $Container->AddressID->GetValue();
 $Component->SetValue(CCDLookUp("Company","tblAdminist_AddressBook","AddressID = ".$db->ToSQL($AddressID,ccsInteger),$db));
 $db->close();
@@ -50,7 +50,7 @@ function Header_Company1_BeforeShow(& $sender)
 //End Header_Company1_BeforeShow
 
 //Custom Code @142-2A29BDB7
-$db = new clsDBGayaFusionAll();
+$db = new clsDBgayafusionall();
 $AddressID = $Container->DeliveryAddressID->GetValue();
 $Component->SetValue(CCDLookUp("Company","tblAdminist_AddressBook","AddressID = ".$db->ToSQL($AddressID,ccsInteger),$db));
 $db->close();
@@ -71,18 +71,18 @@ function Header_Detail_BeforeShow(& $sender)
 //End Header_Detail_BeforeShow
 
 //Custom Code @129-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $InvoiceContactID = CCGetFromGet("InvoiceContactID",0);
 $DeliveryContactID = CCGetFromGet("DeliveryContactID",0);
 if($InvoiceContactID > 0){
   $addquery = "SELECT * FROM tblAdminist_AddressBook_Contact WHERE ContactID = ".$InvoiceContactID;
-  $DBGayaFusionAll->query($addquery);
-  $Result = $DBGayaFusionAll->next_record();
+  $DBgayafusionall->query($addquery);
+  $Result = $DBgayafusionall->next_record();
   if($Result){
-  	$contactname = $DBGayaFusionAll->f("ContactName");
-  	$address = $DBGayaFusionAll->f("Address");
-  	$phone = $DBGayaFusionAll->f("Phone");
-  	$fax = $DBGayaFusionAll->f("Fax");
+  	$contactname = $DBgayafusionall->f("ContactName");
+  	$address = $DBgayafusionall->f("Address");
+  	$phone = $DBgayafusionall->f("Phone");
+  	$fax = $DBgayafusionall->f("Fax");
   }
   $Header->Attn1->SetValue($contactname);
   $Header->Address1->SetValue($address);
@@ -92,13 +92,13 @@ if($InvoiceContactID > 0){
   
 if($DeliveryContactID > 0){
   $addquery = "SELECT * FROM tblAdminist_AddressBook_Contact WHERE ContactID = ".$DeliveryContactID;
-  $DBGayaFusionAll->query($addquery);
-  $Result = $DBGayaFusionAll->next_record();
+  $DBgayafusionall->query($addquery);
+  $Result = $DBgayafusionall->next_record();
   if($Result){
-    $contactname = $DBGayaFusionAll->f("ContactName");
-    $address = $DBGayaFusionAll->f("Address");
-    $phone = $DBGayaFusionAll->f("Phone");
-    $fax = $DBGayaFusionAll->f("Fax");
+    $contactname = $DBgayafusionall->f("ContactName");
+    $address = $DBgayafusionall->f("Address");
+    $phone = $DBgayafusionall->f("Phone");
+    $fax = $DBgayafusionall->f("Fax");
   }
   $Header->Attn2->SetValue($contactname);
   $Header->Address2->SetValue($address);
@@ -185,7 +185,7 @@ function Detil_ReportLabel3_BeforeShow(& $sender)
 
 //Custom Code @138-2A29BDB7
 $PL_H_ID = CCGetFromGet("PL_H_ID","");
-$db = new clsDBGayaFusionAll();
+$db = new clsDBgayafusionall();
 $sql = "SELECT * FROM tblAdminist_Box_H WHERE PL_H_ID = ".$PL_H_ID." GROUP BY PL_H_ID";
 $db->query($sql);
 $result = $db->next_record();
@@ -195,7 +195,7 @@ if ($result){
   $tg = $db->f("Height");
 }
 $db->close();
-$db2 = new clsDBGayaFusionAll();
+$db2 = new clsDBgayafusionall();
 $sql= "SELECT SentBy FROM tblAdminist_Packinglist_H WHERE PL_H_ID = ".$PL_H_ID;
 $db2->query($sql);
 $result = $db->next_record();
@@ -227,7 +227,7 @@ function lblAdministrasi_BeforeShow(& $sender)
 
 //Custom Code @89-2A29BDB7
 global $Header;
-$db = new clsDBGayaFusionAll();
+$db = new clsDBgayafusionall();
 $Invoice_H_ID = $Header->Invoice_H_ID->GetValue();
 $DocMaker = CCDLookUp("DocMaker","tblAdminist_Invoice_H","Invoice_H_ID = ".$db->ToSQL($Invoice_H_ID,ccsInteger),$db);
 $Component->SetValue(CCDLookUp("Firstname","tblUser","id = ".$db->ToSQL($DocMaker,ccsInteger),$db));
@@ -250,7 +250,7 @@ function lblCustomer_BeforeShow(& $sender)
 
 //Custom Code @146-2A29BDB7
 global $Header;
-$db = new clsDBGayaFusionAll();
+$db = new clsDBgayafusionall();
 $AddressID = $Header->AddressID->GetValue();
 //$DocMaker = CCDLookUp("DocMaker","tblAdminist_Invoice_H","Invoice_H_ID = ".$db->ToSQL($Invoice_H_ID,ccsInteger),$db);
 $Component->SetValue(CCDLookUp("Company","tblAdminist_AddressBook","AddressID = ".$db->ToSQL($AddressID,ccsInteger),$db));

@@ -39,9 +39,9 @@ function Grid_lblClient_BeforeShow(& $sender)
 //End Grid_lblClient_BeforeShow
 
 //Custom Code @33-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $ClientID = CCGetFromGet("ClientID",0);
-$Grid->lblClient->SetValue(CCDLookUp("ClientCompany","tblAdminist_Client","ClientID=".$DBGayaFusionAll->ToSQL($ClientID,ccsInteger),$DBGayaFusionAll));
+$Grid->lblClient->SetValue(CCDLookUp("ClientCompany","tblAdminist_Client","ClientID=".$DBgayafusionall->ToSQL($ClientID,ccsInteger),$DBgayafusionall));
 //End Custom Code
 
 //Close Grid_lblClient_BeforeShow @29-B30F0E89
@@ -59,9 +59,9 @@ function Grid_InvoiceNo_BeforeShow(& $sender)
 //End Grid_InvoiceNo_BeforeShow
 
 //Custom Code @34-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $Invoice_H_ID = $Grid->Invoice_H_ID->GetValue();
-$InvNo = CCDLookUp("InvoiceNo","tblAdminist_Invoice_H","Invoice_H_ID = ".$DBGayaFusionAll->ToSQL($Invoice_H_ID,ccsInteger),$DBGayaFusionAll);
+$InvNo = CCDLookUp("InvoiceNo","tblAdminist_Invoice_H","Invoice_H_ID = ".$DBgayafusionall->ToSQL($Invoice_H_ID,ccsInteger),$DBgayafusionall);
 $Grid->InvoiceNo->SetValue($InvNo);
 //End Custom Code
 
@@ -80,9 +80,9 @@ function Grid_lblCurrency_BeforeShow(& $sender)
 //End Grid_lblCurrency_BeforeShow
 
 //Custom Code @47-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $CurrencyID = $Grid->CurrencyID->GetValue();
-$Grid->lblCurrency->SetValue(CCDLookUp("Currency","tblAdminist_Currency","CurrencyID=".$DBGayaFusionAll->ToSQL($CurrencyID,ccsInteger),$DBGayaFusionAll));
+$Grid->lblCurrency->SetValue(CCDLookUp("Currency","tblAdminist_Currency","CurrencyID=".$DBgayafusionall->ToSQL($CurrencyID,ccsInteger),$DBgayafusionall));
 //End Custom Code
 
 //Close Grid_lblCurrency_BeforeShow @45-09E85BAB
@@ -100,9 +100,9 @@ function Grid_lblProforma_BeforeShow(& $sender)
 //End Grid_lblProforma_BeforeShow
 
 //Custom Code @49-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $ProID = $Grid->proforma_h_id->GetValue();
-$Grid->lblProforma->SetValue(CCDLookUp("ProformaNo","tblAdminist_Proforma_H","Proforma_H_ID=".$DBGayaFusionAll->ToSQL($ProID,ccsInteger),$DBGayaFusionAll));
+$Grid->lblProforma->SetValue(CCDLookUp("ProformaNo","tblAdminist_Proforma_H","Proforma_H_ID=".$DBgayafusionall->ToSQL($ProID,ccsInteger),$DBgayafusionall));
 //End Custom Code
 
 //Close Grid_lblProforma_BeforeShow @48-1285453C

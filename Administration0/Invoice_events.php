@@ -38,12 +38,12 @@ function InvGrid_BeforeShowRow(& $sender)
 //End InvGrid_BeforeShowRow
 
 //Custom Code @137-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $Quotation_H_ID = $InvGrid->Quotation_H_ID->GetValue();
 $Proforma_H_ID = $InvGrid->Proforma_H_ID->GetValue();
-$QuoInPro = $ProNo = CCDLookUp("Quotation_H_ID","tblAdminist_Proforma_H","Proforma_H_ID=".$DBGayaFusionAll->ToSQL($Proforma_H_ID,ccsInteger),$DBGayaFusionAll);
-$ProNo = CCDLookUp("ProformaNo","tblAdminist_Proforma_H","Proforma_H_ID=".$DBGayaFusionAll->ToSQL($Proforma_H_ID,ccsInteger),$DBGayaFusionAll);
-$ProRev = CCDLookUp("Rev","tblAdminist_Proforma_H","Proforma_H_ID=".$DBGayaFusionAll->ToSQL($Proforma_H_ID,ccsInteger),$DBGayaFusionAll);
+$QuoInPro = $ProNo = CCDLookUp("Quotation_H_ID","tblAdminist_Proforma_H","Proforma_H_ID=".$DBgayafusionall->ToSQL($Proforma_H_ID,ccsInteger),$DBgayafusionall);
+$ProNo = CCDLookUp("ProformaNo","tblAdminist_Proforma_H","Proforma_H_ID=".$DBgayafusionall->ToSQL($Proforma_H_ID,ccsInteger),$DBgayafusionall);
+$ProRev = CCDLookUp("Rev","tblAdminist_Proforma_H","Proforma_H_ID=".$DBgayafusionall->ToSQL($Proforma_H_ID,ccsInteger),$DBgayafusionall);
 
 if(!$ProRev == ""){
     $InvGrid->ProformaNo->SetValue($ProNo."-".$ProRev);
@@ -52,12 +52,12 @@ if(!$ProRev == ""){
 }
 $InvGrid->ProformaNo->SetLink("ShowProforma.php?Proforma_H_ID=".$Proforma_H_ID);
 if(!$QuoInPro == ""){
-  $QuoNo = $ProNo = CCDLookUp("QuotationNo","tblAdminist_Quotation_H","Quotation_H_ID=".$DBGayaFusionAll->ToSQL($QuoInPro,ccsInteger),$DBGayaFusionAll);
-  $QuoRev = CCDLookUp("Rev","tblAdminist_Quotation_H","Quotation_H_ID=".$DBGayaFusionAll->ToSQL($QuoInPro,ccsInteger),$DBGayaFusionAll);
+  $QuoNo = $ProNo = CCDLookUp("QuotationNo","tblAdminist_Quotation_H","Quotation_H_ID=".$DBgayafusionall->ToSQL($QuoInPro,ccsInteger),$DBgayafusionall);
+  $QuoRev = CCDLookUp("Rev","tblAdminist_Quotation_H","Quotation_H_ID=".$DBgayafusionall->ToSQL($QuoInPro,ccsInteger),$DBgayafusionall);
   $InvGrid->QuotationNo->SetLink("ShowQuotation.php?Quotation_H_ID=".$QuoInPro);
 }else{
-  $QuoNo = CCDLookUp("QuotationNo","tblAdminist_Quotation_H","Quotation_H_ID=".$DBGayaFusionAll->ToSQL($Quotation_H_ID,ccsInteger),$DBGayaFusionAll);
-  $QuoRev = CCDLookUp("Rev","tblAdminist_Quotation_H","Quotation_H_ID=".$DBGayaFusionAll->ToSQL($Quotation_H_ID,ccsInteger),$DBGayaFusionAll);
+  $QuoNo = CCDLookUp("QuotationNo","tblAdminist_Quotation_H","Quotation_H_ID=".$DBgayafusionall->ToSQL($Quotation_H_ID,ccsInteger),$DBgayafusionall);
+  $QuoRev = CCDLookUp("Rev","tblAdminist_Quotation_H","Quotation_H_ID=".$DBgayafusionall->ToSQL($Quotation_H_ID,ccsInteger),$DBgayafusionall);
   $InvGrid->QuotationNo->SetLink("ShowQuotation.php?Quotation_H_ID=".$Quotation_H_ID);
   
 }

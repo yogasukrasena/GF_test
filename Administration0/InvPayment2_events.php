@@ -19,9 +19,9 @@ function Payment_lblCurrency_BeforeShow(& $sender)
 //End Payment_lblCurrency_BeforeShow
 
 //Custom Code @18-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $CurrencyID = $Payment->currency_id->GetValue();
-$Payment->lblCurrency->SetValue(CCDLookUp("Currency","tblAdminist_Currency","CurrencyID=".$DBGayaFusionAll->ToSQL($CurrencyID,ccsInteger),$DBGayaFusionAll));
+$Payment->lblCurrency->SetValue(CCDLookUp("Currency","tblAdminist_Currency","CurrencyID=".$DBgayafusionall->ToSQL($CurrencyID,ccsInteger),$DBgayafusionall));
 //End Custom Code
 
 //Close Payment_lblCurrency_BeforeShow @15-06DCEB8C
@@ -40,13 +40,13 @@ function Payment_BeforeShow(& $sender)
 
 //Custom Code @16-2A29BDB7
 if(!$Payment->EditMode){
-  global $DBGayaFusionAll;
+  global $DBgayafusionall;
   $ar_invoice_id = CCGetFromGet("ar_invoice_id",0);
-  $CurrencyID = CCDLookUp("Currency","ar_invoice","ar_invoice_id=".$DBGayaFusionAll->ToSQL($ar_invoice_id,ccsInteger),$DBGayaFusionAll);
+  $CurrencyID = CCDLookUp("Currency","ar_invoice","ar_invoice_id=".$DBgayafusionall->ToSQL($ar_invoice_id,ccsInteger),$DBgayafusionall);
   $Payment->currency_id->SetValue($CurrencyID);
-  $Payment->lblCurrency->SetValue(CCDLookUp("Currency","tblAdminist_Currency","CurrencyID=".$DBGayaFusionAll->ToSQL($CurrencyID,ccsInteger),$DBGayaFusionAll));
-  $Payment->Rate->SetValue(CCDLookUp("Rate","tblAdminist_Currency","CurrencyID=".$DBGayaFusionAll->ToSQL($CurrencyID,ccsInteger),$DBGayaFusionAll));
-  $Payment->amount_paid->SetValue(CCDLookUp("GrandTotal","ar_invoice","ar_invoice_id=".$DBGayaFusionAll->ToSQL($ar_invoice_id,ccsInteger),$DBGayaFusionAll));
+  $Payment->lblCurrency->SetValue(CCDLookUp("Currency","tblAdminist_Currency","CurrencyID=".$DBgayafusionall->ToSQL($CurrencyID,ccsInteger),$DBgayafusionall));
+  $Payment->Rate->SetValue(CCDLookUp("Rate","tblAdminist_Currency","CurrencyID=".$DBgayafusionall->ToSQL($CurrencyID,ccsInteger),$DBgayafusionall));
+  $Payment->amount_paid->SetValue(CCDLookUp("GrandTotal","ar_invoice","ar_invoice_id=".$DBgayafusionall->ToSQL($ar_invoice_id,ccsInteger),$DBgayafusionall));
 }
 //End Custom Code
 
@@ -65,9 +65,9 @@ function Payment_BeforeInsert(& $sender)
 //End Payment_BeforeInsert
 
 //Custom Code @17-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $ar_invoice_id = CCGetFromGet("ar_invoice_id",0);
-$DBGayaFusionAll->query("UPDATE ar_invoice SET PAID=1 WHERE ar_invoice_id = ".$DBGayaFusionAll->ToSQL($ar_invoice_id,ccsInteger));
+$DBgayafusionall->query("UPDATE ar_invoice SET PAID=1 WHERE ar_invoice_id = ".$DBgayafusionall->ToSQL($ar_invoice_id,ccsInteger));
 //End Custom Code
 
 //Close Payment_BeforeInsert @2-37E804E9

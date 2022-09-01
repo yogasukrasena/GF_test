@@ -54,7 +54,7 @@ function AddNewHeader_BeforeShow(& $sender)
 	global $ContactID;//this is to get the contact id
 	
 	$Prefik = "QUO".date(Ym);
-	$NewConnection = new clsDBGayaFusionAll();
+	$NewConnection = new clsDBgayafusionall();
 
    	if(!$AddNewHeader->EditMode){ 
 		$AddNewDetail->Visible = false;
@@ -149,10 +149,10 @@ function AddNewHeader_AfterInsert(& $sender)
 
 //Custom Code @43-2A29BDB7
 // -------------------------
-     global $DBGayaFusionAll;	
+     global $DBgayafusionall;	
   	global $Redirect,$FileName;
   
-    	$Redirect = $FileName."?Quotation_H_ID=".CCDLookUp("max(Quotation_H_ID)","tblAdminist_Quotation_H","", $DBGayaFusionAll);
+    	$Redirect = $FileName."?Quotation_H_ID=".CCDLookUp("max(Quotation_H_ID)","tblAdminist_Quotation_H","", $DBgayafusionall);
   // -------------------------
 //End Custom Code
 
@@ -176,7 +176,7 @@ function AddNewHeader_BeforeDelete(& $sender)
    
     	if(intval($Quotation_H_ID) >0){
  		//Create a new database connection object
-      	$NewConnection = new clsDBGayaFusionAll();
+      	$NewConnection = new clsDBgayafusionall();
       	$NewConnection->query("DELETE FROM tblAdminist_Quotation_D WHERE Quotation_H_ID=".$NewConnection->ToSQL($Quotation_H_ID,ccsInteger));
   		}
       	//Close and destroy the database connection object
@@ -264,7 +264,7 @@ function AddNewDetail_BeforeShow(& $sender)
 //Custom Code @91-2A29BDB7
 	$QuotationHID = CCGetFromGet("Quotation_H_ID",0);
 	if($QuotationHID > 0){
-		$db = new clsDBGayaFusionAll;
+		$db = new clsDBgayafusionall;
 		$sqlquery = "SELECT * FROM tblAdminist_Quotation_D WHERE Quotation_H_ID = ".$QuotationHID;
 		$db->query($sqlquery);
 		$result = $db->next_record();
@@ -300,7 +300,7 @@ function Page_BeforeInitialize(& $sender)
 //End PTAutoFill1 Initialization
 
 //PTAutoFill1 DataSource @14-3D3BDCAD
-        $Service->DataSource = new clsDBGayaFusionAll();
+        $Service->DataSource = new clsDBgayafusionall();
         $Service->ds = & $Service->DataSource;
         $Service->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_addressbook_contact {SQL_Where} {SQL_OrderBy}";
@@ -330,7 +330,7 @@ function Page_BeforeInitialize(& $sender)
 //End PTAutoFill1 Initialization
 
 //PTAutoFill1 DataSource @64-DB8FA9F1
-        $Service->DataSource = new clsDBGayaFusionAll();
+        $Service->DataSource = new clsDBgayafusionall();
         $Service->ds = & $Service->DataSource;
         $Service->DataSource->SQL = "SELECT * \n" .
 "FROM sampleceramic {SQL_Where} {SQL_OrderBy}";

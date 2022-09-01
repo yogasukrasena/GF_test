@@ -212,7 +212,7 @@ class clsGridGridQuotation { //GridQuotation class @2-69D4D828
 
 } //End GridQuotation Class @2-FCB6E20C
 
-class clsGridQuotationDataSource extends clsDBGayaFusionAll {  //GridQuotationDataSource Class @2-E9A1489C
+class clsGridQuotationDataSource extends clsDBgayafusionall {  //GridQuotationDataSource Class @2-E9A1489C
 
 //DataSource Variables @2-2671D5FA
     public $Parent = "";
@@ -576,7 +576,7 @@ class clsRecordAddQuotation { //AddQuotation Class @26-C8B3DEC0
             $this->Button_Delete = new clsButton("Button_Delete", $Method, $this);
             $this->ClientCode = new clsControl(ccsListBox, "ClientCode", "Client Code", ccsText, "", CCGetRequestParam("ClientCode", $Method, NULL), $this);
             $this->ClientCode->DSType = dsTable;
-            $this->ClientCode->DataSource = new clsDBGayaFusionAll();
+            $this->ClientCode->DataSource = new clsDBgayafusionall();
             $this->ClientCode->ds = & $this->ClientCode->DataSource;
             $this->ClientCode->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_client {SQL_Where} {SQL_OrderBy}";
@@ -812,7 +812,7 @@ function GetPrimaryKey($keyName)
 
 } //End AddQuotation Class @26-FCB6E20C
 
-class clsAddQuotationDataSource extends clsDBGayaFusionAll {  //AddQuotationDataSource Class @26-257A3FA7
+class clsAddQuotationDataSource extends clsDBgayafusionall {  //AddQuotationDataSource Class @26-257A3FA7
 
 //DataSource Variables @26-AD2800C9
     public $Parent = "";
@@ -1057,7 +1057,7 @@ class clsEditableGridAddItem { //AddItem Class @35-A79BB625
 
         $this->RndCode = new clsControl(ccsListBox, "RndCode", "Rnd Code", ccsText, "", NULL, $this);
         $this->RndCode->DSType = dsTable;
-        $this->RndCode->DataSource = new clsDBGayaFusionAll();
+        $this->RndCode->DataSource = new clsDBgayafusionall();
         $this->RndCode->ds = & $this->RndCode->DataSource;
         $this->RndCode->DataSource->SQL = "SELECT * \n" .
 "FROM sampleceramic {SQL_Where} {SQL_OrderBy}";
@@ -1564,7 +1564,7 @@ class clsEditableGridAddItem { //AddItem Class @35-A79BB625
 
 } //End AddItem Class @35-FCB6E20C
 
-class clsAddItemDataSource extends clsDBGayaFusionAll {  //AddItemDataSource Class @35-6BD550D9
+class clsAddItemDataSource extends clsDBgayafusionall {  //AddItemDataSource Class @35-6BD550D9
 
 //DataSource Variables @35-390BABC2
     public $Parent = "";
@@ -1787,8 +1787,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-7BBBD93F
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -1836,7 +1836,7 @@ $AddItem->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($GridQuotation);
     unset($SearchQuotation);
@@ -1869,7 +1869,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-7C3A574D
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($GridQuotation);
 unset($SearchQuotation);
 unset($AddQuotation);

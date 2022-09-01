@@ -56,9 +56,9 @@ function Costing_DesignName_BeforeShow(& $sender)
 //End Costing_DesignName_BeforeShow
 
 //Custom Code @250-2A29BDB7
-	global $DBGayaFusionAll;
+	global $DBgayafusionall;
 	$IDnya = CCGetFromGet("DesignCode","");
-	$Costing->DesignName->SetValue(CCDLookUp("DesignName","tblCollect_Design", "DesignCode = ".$DBGayaFusionAll->ToSQL($IDnya,ccsString),$DBGayaFusionAll));
+	$Costing->DesignName->SetValue(CCDLookUp("DesignName","tblCollect_Design", "DesignCode = ".$DBgayafusionall->ToSQL($IDnya,ccsString),$DBgayafusionall));
 //End Custom Code
 
 //Close Costing_DesignName_BeforeShow @5-15371C79
@@ -76,9 +76,9 @@ function Costing_SizeName_BeforeShow(& $sender)
 //End Costing_SizeName_BeforeShow
 
 //Custom Code @253-2A29BDB7
-	global $DBGayaFusionAll;
+	global $DBgayafusionall;
 	$IDnya = CCGetFromGet("SizeCode","");
-	$Costing->SizeName->SetValue(CCDLookUp("SizeName","tblCollect_Size", "SizeCode = ".$DBGayaFusionAll->ToSQL($IDnya,ccsString),$DBGayaFusionAll));
+	$Costing->SizeName->SetValue(CCDLookUp("SizeName","tblCollect_Size", "SizeCode = ".$DBgayafusionall->ToSQL($IDnya,ccsString),$DBgayafusionall));
 //End Custom Code
 
 //Close Costing_SizeName_BeforeShow @6-7781D5A5
@@ -96,10 +96,10 @@ function Costing_ClayCost_BeforeShow(& $sender)
 //End Costing_ClayCost_BeforeShow
 
 //Custom Code @266-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $IDnya = $Costing->ClayType->GetValue();
 if($IDnya > 0){
-	$ClayPrice = CCDLookUp("PricePerKG", "tblCosting_Clay","ID = $IDnya", $DBGayaFusionAll);
+	$ClayPrice = CCDLookUp("PricePerKG", "tblCosting_Clay","ID = $IDnya", $DBgayafusionall);
 	$ClayKG = $Costing->ClayKG->GetValue();
 	$ClayCost = $ClayKG * $ClayPrice;
 	$Costing->ClayCost->SetValue($ClayCost);
@@ -386,7 +386,7 @@ $rakubisque = $Costing->RakuBisqueCost->GetValue();
 $rakuglaze = $Costing->RakuGlazeCost->GetValue();
   $IDna = $Costing->DesignMat1->GetValue();
 	if($IDna > 0){
-		$db = new clsDBGayaFusionAll;
+		$db = new clsDBgayafusionall;
 		$sql = "SELECT tbldesignmat.DesignMatUnitPrice FROM
  				tbldesignmat WHERE tblDesignMat.DesignMatID = $IDna";
 		$db->query($sql);
@@ -400,7 +400,7 @@ $rakuglaze = $Costing->RakuGlazeCost->GetValue();
 $dm1 = ($qty * $price);
   $IDna = $Costing->DesignMat2->GetValue();
 	if($IDna > 0){
-		$db = new clsDBGayaFusionAll;
+		$db = new clsDBgayafusionall;
 		$sql = "SELECT tbldesignmat.DesignMatUnitPrice FROM
  				tbldesignmat WHERE tblDesignMat.DesignMatID = $IDna";
 		$db->query($sql);
@@ -414,7 +414,7 @@ $dm1 = ($qty * $price);
 $dm2 = ($qty * $price);
   $IDna = $Costing->DesignMat3->GetValue();
 	if($IDna > 0){
-		$db = new clsDBGayaFusionAll;
+		$db = new clsDBgayafusionall;
 		$sql = "SELECT tbldesignmat.DesignMatUnitPrice FROM
  				tbldesignmat WHERE tblDesignMat.DesignMatID = $IDna";
 		$db->query($sql);
@@ -428,7 +428,7 @@ $dm2 = ($qty * $price);
 $dm3 = ($qty * $price);
   $IDna = $Costing->DesignMat4->GetValue();
 	if($IDna > 0){
-		$db = new clsDBGayaFusionAll;
+		$db = new clsDBgayafusionall;
 		$sql = "SELECT tbldesignmat.DesignMatUnitPrice FROM
  				tbldesignmat WHERE tblDesignMat.DesignMatID = $IDna";
 		$db->query($sql);
@@ -502,10 +502,10 @@ function Costing_ClayPrice_BeforeShow(& $sender)
 //End Costing_ClayPrice_BeforeShow
 
 //Custom Code @51-2A29BDB7
-	global $DBGayaFusionAll;
+	global $DBgayafusionall;
 	$IDnya = $Costing->ClayType->GetValue();
 	if($IDnya > 0){
-		$Costing->ClayPrice->SetValue(CCDLookUp("PricePerKG", "tblCosting_Clay","ID = $IDnya", $DBGayaFusionAll));
+		$Costing->ClayPrice->SetValue(CCDLookUp("PricePerKG", "tblCosting_Clay","ID = $IDnya", $DBgayafusionall));
 	}
 //End Custom Code
 
@@ -526,7 +526,7 @@ function Costing_DesignMat1_BeforeShow(& $sender)
 //Custom Code @109-2A29BDB7
 $IDna = $Costing->DesignMat1->GetValue();
 	if($IDna > 0){
-		$db = new clsDBGayaFusionAll;
+		$db = new clsDBgayafusionall;
 		$sql = "SELECT tblunit.UnitValue, tbldesignmat.DesignMatDescription, tbldesignmat.DesignMatUnitPrice FROM
  				tbldesignmat INNER JOIN tblunit ON (tbldesignmat.DesignMatUnit=tblunit.UnitID) WHERE tblDesignMat.DesignMatID = $IDna";
 		$db->query($sql);
@@ -557,7 +557,7 @@ function Costing_DesignMat2_BeforeShow(& $sender)
 //Custom Code @110-2A29BDB7
 	$IDna = $Costing->DesignMat2->GetValue();
 	if($IDna > 0){
-		$db = new clsDBGayaFusionAll;
+		$db = new clsDBgayafusionall;
 		$sql = "SELECT tblunit.UnitValue, tbldesignmat.DesignMatDescription, tbldesignmat.DesignMatUnitPrice FROM
  				tbldesignmat INNER JOIN tblunit ON (tbldesignmat.DesignMatUnit=tblunit.UnitID) WHERE tblDesignMat.DesignMatID = $IDna";
 		$db->query($sql);
@@ -588,7 +588,7 @@ function Costing_DesignMat3_BeforeShow(& $sender)
 //Custom Code @111-2A29BDB7
 	$IDna = $Costing->DesignMat3->GetValue();
 	if($IDna > 0){
-		$db = new clsDBGayaFusionAll;
+		$db = new clsDBgayafusionall;
 		$sql = "SELECT tblunit.UnitValue, tbldesignmat.DesignMatDescription, tbldesignmat.DesignMatUnitPrice FROM
  				tbldesignmat INNER JOIN tblunit ON (tbldesignmat.DesignMatUnit=tblunit.UnitID) WHERE tblDesignMat.DesignMatID = $IDna";
 		$db->query($sql);
@@ -619,7 +619,7 @@ function Costing_DesignMat4_BeforeShow(& $sender)
 //Custom Code @112-2A29BDB7
 	$IDna = $Costing->DesignMat4->GetValue();
 	if($IDna > 0){
-		$db = new clsDBGayaFusionAll;
+		$db = new clsDBgayafusionall;
 		$sql = "SELECT tblunit.UnitValue, tbldesignmat.DesignMatDescription, tbldesignmat.DesignMatUnitPrice FROM
  				tbldesignmat INNER JOIN tblunit ON (tbldesignmat.DesignMatUnit=tblunit.UnitID) WHERE tblDesignMat.DesignMatID = $IDna";
 		$db->query($sql);
@@ -874,9 +874,9 @@ function Costing_NameDesc_BeforeShow(& $sender)
 //End Costing_NameDesc_BeforeShow
 
 //Custom Code @251-2A29BDB7
-	global $DBGayaFusionAll;
+	global $DBgayafusionall;
 	$IDnya = CCGetFromGet("NameCode","");
-	$Costing->NameDesc->SetValue(CCDLookUp("NameDesc","tblCollect_Name", "NameCode = ".$DBGayaFusionAll->ToSQL($IDnya,ccsString),$DBGayaFusionAll));
+	$Costing->NameDesc->SetValue(CCDLookUp("NameDesc","tblCollect_Name", "NameCode = ".$DBgayafusionall->ToSQL($IDnya,ccsString),$DBgayafusionall));
 //End Custom Code
 
 //Close Costing_NameDesc_BeforeShow @195-E7DD70BB
@@ -894,9 +894,9 @@ function Costing_CategoryName_BeforeShow(& $sender)
 //End Costing_CategoryName_BeforeShow
 
 //Custom Code @252-2A29BDB7
-	global $DBGayaFusionAll;
+	global $DBgayafusionall;
 	$IDnya = CCGetFromGet("CategoryCode","");
-	$Costing->CategoryName->SetValue(CCDLookUp("CategoryName","tblCollect_Category", "CategoryCode = ".$DBGayaFusionAll->ToSQL($IDnya,ccsString),$DBGayaFusionAll));
+	$Costing->CategoryName->SetValue(CCDLookUp("CategoryName","tblCollect_Category", "CategoryCode = ".$DBgayafusionall->ToSQL($IDnya,ccsString),$DBgayafusionall));
 //End Custom Code
 
 //Close Costing_CategoryName_BeforeShow @197-921A06FA
@@ -914,9 +914,9 @@ function Costing_TextureName_BeforeShow(& $sender)
 //End Costing_TextureName_BeforeShow
 
 //Custom Code @254-2A29BDB7
-	global $DBGayaFusionAll;
+	global $DBgayafusionall;
 	$IDnya = CCGetFromGet("TextureCode","");
-	$Costing->TextureName->SetValue(CCDLookUp("TextureName","tblCollect_Texture", "TextureCode = ".$DBGayaFusionAll->ToSQL($IDnya,ccsString),$DBGayaFusionAll));
+	$Costing->TextureName->SetValue(CCDLookUp("TextureName","tblCollect_Texture", "TextureCode = ".$DBgayafusionall->ToSQL($IDnya,ccsString),$DBgayafusionall));
 //End Custom Code
 
 //Close Costing_TextureName_BeforeShow @200-C5C2B5D2
@@ -934,9 +934,9 @@ function Costing_ColorName_BeforeShow(& $sender)
 //End Costing_ColorName_BeforeShow
 
 //Custom Code @255-2A29BDB7
-	global $DBGayaFusionAll;
+	global $DBgayafusionall;
 	$IDnya = CCGetFromGet("ColorCode","");
-	$Costing->ColorName->SetValue(CCDLookUp("ColorName","tblCollect_Color", "ColorCode = ".$DBGayaFusionAll->ToSQL($IDnya,ccsString),$DBGayaFusionAll));
+	$Costing->ColorName->SetValue(CCDLookUp("ColorName","tblCollect_Color", "ColorCode = ".$DBgayafusionall->ToSQL($IDnya,ccsString),$DBgayafusionall));
 //End Custom Code
 
 //Close Costing_ColorName_BeforeShow @202-0694379D
@@ -954,9 +954,9 @@ function Costing_MaterialName_BeforeShow(& $sender)
 //End Costing_MaterialName_BeforeShow
 
 //Custom Code @256-2A29BDB7
-	global $DBGayaFusionAll;
+	global $DBgayafusionall;
 	$IDnya = CCGetFromGet("MaterialCode","");
-	$Costing->MaterialName->SetValue(CCDLookUp("MaterialName","tblCollect_Material", "MaterialCode = ".$DBGayaFusionAll->ToSQL($IDnya,ccsString),$DBGayaFusionAll));
+	$Costing->MaterialName->SetValue(CCDLookUp("MaterialName","tblCollect_Material", "MaterialCode = ".$DBgayafusionall->ToSQL($IDnya,ccsString),$DBgayafusionall));
 //End Custom Code
 
 //Close Costing_MaterialName_BeforeShow @204-ED6371AB
@@ -994,7 +994,7 @@ function Costing_BeforeShow(& $sender)
 //End Costing_BeforeShow
 
 //Custom Code @50-2A29BDB7
-	$db = new clsDBGayaFusionAll;
+	$db = new clsDBgayafusionall;
 	
 	$sql = "SELECT tblCosting_Casting.CostPerMinute as CastingCPM,tblcosting_claypreparation.CostPerMinute as ClayPrepCPM,tblcosting_costbudgetpreview.BudgetYear as BudgetYear,tblcosting_costbudgetpreview.CostBudgetAmmount as CostBudget,tblcosting_rakubisque.PricePerFiring as RakuBisquePPF,tblcosting_wheel.CostPerMinute as WheelCPM,tblcosting_standardbisque.PricePerFiring as StdBisquePPF,tblcosting_standardglaze.PricePerFiring as StdGlazePPF,tblcosting_packagingwork.CostPerMinute as PackWorkCPM,tblcosting_movement.CostPerMinute as MovementCPM,tblcosting_glazing.CostPerMinute as GlazingCPM,tblcosting_finishing.CostPerMinute as FinishingCPM,tblcosting_rakuglaze.PricePerFiring as RakuGlazePPF,tblcosting_trowworker.TrowWorker as TrowWorker,tblcosting_slab.CostPerMinute as SlabCPM,tblcosting_productivehours.`Day` AS ProdDay,tblcosting_productivehours.`Month` AS ProdMonth,tblcosting_productivehours.`Year` AS ProdYear, tblCosting_costbudgetpreview.budgetyear as BudgetYear, tblcosting_costbudgetpreview.costbudgetammount as CostBudgetAmmount 
 	FROM tblcosting_casting,tblcosting_claypreparation,tblcosting_costbudgetpreview,tblcosting_rakubisque,tblcosting_wheel,tblcosting_standardbisque,tblcosting_standardglaze,tblcosting_packagingwork,tblcosting_movement,tblcosting_glazing,tblcosting_finishing,tblcosting_rakuglaze,tblcosting_trowworker,tblcosting_slab,tblcosting_productivehours";
@@ -1062,11 +1062,11 @@ function Costing_BeforeUpdate(& $sender)
 //End Costing_BeforeUpdate
 
 //Custom Code @292-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $LastUpdate = $Costing->LastUpdate->GetValue();
 $ID = $Costing->ID->GetValue();
 $sql = "UPDATE tblCollect_Master SET LastUpdate = $LastUpdate WHERE ID = $ID";
-$DBGayaFusionAll->query($sql);
+$DBgayafusionall->query($sql);
 //End Custom Code
 
 //Close Costing_BeforeUpdate @2-F283DB58

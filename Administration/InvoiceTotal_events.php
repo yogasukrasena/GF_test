@@ -38,7 +38,7 @@ function Totalan_BeforeUpdate(& $sender)
 //End Totalan_BeforeUpdate
 
 //Custom Code @24-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $Invoice_H_ID = CCGetFromGet("Invoice_H_ID",0);
 //$Proforma_H_ID = CCGetFromGet("Proforma_H_ID",0);
 $subtotal = $Totalan->SubTotal->GetValue();
@@ -47,8 +47,8 @@ $packcost = $Totalan->Packaging->GetValue();
 $shipcost = $Totalan->Fumigation->GetValue();
 $grandtot = $Totalan->GrandTotal->GetValue();
 //DEL  //if($Proforma_H_ID > 0){
-$sql = "UPDATE ar_invoice SET SubTotal = ".$DBGayaFusionAll->ToSQL($subtotal,ccsFloat).", Discount = ".$DBGayaFusionAll->ToSQL($diskon,ccsFloat).", Packaging = ".$DBGayaFusionAll->ToSQL($packcost,ccsFloat).", Fumigation = ".$DBGayaFusionAll->ToSQL($shipcost,ccsFloat).", GrandTotal = ".$DBGayaFusionAll->ToSQL($grandtot,ccsFloat)." WHERE Invoice_H_ID = ".$DBGayaFusionAll->ToSQL($Invoice_H_ID,ccsInteger);
-$DBGayaFusionAll->query($sql);
+$sql = "UPDATE ar_invoice SET SubTotal = ".$DBgayafusionall->ToSQL($subtotal,ccsFloat).", Discount = ".$DBgayafusionall->ToSQL($diskon,ccsFloat).", Packaging = ".$DBgayafusionall->ToSQL($packcost,ccsFloat).", Fumigation = ".$DBgayafusionall->ToSQL($shipcost,ccsFloat).", GrandTotal = ".$DBgayafusionall->ToSQL($grandtot,ccsFloat)." WHERE Invoice_H_ID = ".$DBgayafusionall->ToSQL($Invoice_H_ID,ccsInteger);
+$DBgayafusionall->query($sql);
 //DEL  //}
 //End Custom Code
 

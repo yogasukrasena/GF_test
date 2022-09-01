@@ -17,7 +17,7 @@ function tblcollect_master_BeforeUpdate(& $sender)
 //End tblcollect_master_BeforeUpdate
 
 //Custom Code @16-2A29BDB7
-$db = new clsDBGayaFusionAll();
+$db = new clsDBgayafusionall();
 $id = $Container->ID->GetValue();
 $LastUpdate = $Container->LastUpdate->GetValue();
 $db->query("UPDATE tblCollect_master SET LastUpdate = ".$db->ToSQL($LastUpdate,ccsDate)." WHERE ID = ".$db->ToSQL($id,ccsInteger));

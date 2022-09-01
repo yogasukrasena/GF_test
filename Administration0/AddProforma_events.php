@@ -44,7 +44,7 @@ function AddNewHeader_BeforeDelete(& $sender)
 $Proforma_H_ID = CCGetFromGet("Proforma_H_ID",0);
 if(intval($Proforma_H_ID) >0){
 //Create a new database connection object
-	$NewConnection = new clsDBGayaFusionAll();
+	$NewConnection = new clsDBgayafusionall();
 	$NewConnection->query("DELETE FROM tblAdminist_Proforma_D WHERE Proforma_H_ID=".$NewConnection->ToSQL($Proforma_H_ID,ccsInteger));
 	$NewConnection->query("DELETE FROM ar_proforma WHERE Proforma_H_ID = ".$NewConnection->ToSQL($Proforma_H_ID,ccsInteger));
 }
@@ -66,26 +66,26 @@ function AddNewHeader_AfterInsert(& $sender)
 //End AddNewHeader_AfterInsert
 
 //Custom Code @185-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 global $Redirect,$FileName;
 
 $ClientID = $AddNewHeader->ClientID->GetValue();
 $predate = $AddNewHeader->PreviewDPDate->GetValue();
-$Proforma_H_ID = CCDLookUp("last_insert_id()","tblAdminist_Proforma_H","",$DBGayaFusionAll);
+$Proforma_H_ID = CCDLookUp("last_insert_id()","tblAdminist_Proforma_H","",$DBgayafusionall);
 $Quotation_H_ID = $AddNewHeader->Quotation_H_ID->GetValue();
 $AddressID = $AddNewHeader->AddressIDAdd->GetValue();
 $ContactID = $AddNewHeader->ContactIDAdd->GetValue();
 $AddNewHeader->AddressIDAdd->SetValue($Quotation_H_ID);
 $CurrencyID = $AddNewHeader->Currency->GetValue();
-$CurrencyRate = CCDLookUp("Rate","tblAdminist_Currency","CurrencyID = ".$DBGayaFusionAll->ToSQL($CurrencyID,ccsInteger),$DBGayaFusionAll);
+$CurrencyRate = CCDLookUp("Rate","tblAdminist_Currency","CurrencyID = ".$DBgayafusionall->ToSQL($CurrencyID,ccsInteger),$DBgayafusionall);
 
-if($Quotation_H_ID > 0) $DBGayaFusionAll->query("UPDATE tblAdminist_Proforma_H SET AddressID = ".$DBGayaFusionAll->ToSQL($AddressID,ccsInteger).",ContactID = ".$DBGayaFusionAll->ToSQL($ContactID, ccsInteger)." WHERE Proforma_H_ID = ".$DBGayaFusionAll->ToSQL($Proforma_H_ID,ccsInteger));
+if($Quotation_H_ID > 0) $DBgayafusionall->query("UPDATE tblAdminist_Proforma_H SET AddressID = ".$DBgayafusionall->ToSQL($AddressID,ccsInteger).",ContactID = ".$DBgayafusionall->ToSQL($ContactID, ccsInteger)." WHERE Proforma_H_ID = ".$DBgayafusionall->ToSQL($Proforma_H_ID,ccsInteger));
 
-$sql = "INSERT INTO ar_proforma (Client_ID, Proforma_H_ID, pre_date,Currency,Rate) VALUES (".$DBGayaFusionAll->ToSQL($ClientID,csInteger).",". $DBGayaFusionAll->ToSQL($Proforma_H_ID,ccsInteger).",". $DBGayaFusionAll->ToSQL($predate,ccsDate).",".$DBGayaFusionAll->ToSQL($CurrencyID,ccsInteger).",".$DBGayaFusionAll->ToSQL($CurrencyRate,ccsFloat).")";
-$DBGayaFusionAll->query($sql);
+$sql = "INSERT INTO ar_proforma (Client_ID, Proforma_H_ID, pre_date,Currency,Rate) VALUES (".$DBgayafusionall->ToSQL($ClientID,csInteger).",". $DBgayafusionall->ToSQL($Proforma_H_ID,ccsInteger).",". $DBgayafusionall->ToSQL($predate,ccsDate).",".$DBgayafusionall->ToSQL($CurrencyID,ccsInteger).",".$DBgayafusionall->ToSQL($CurrencyRate,ccsFloat).")";
+$DBgayafusionall->query($sql);
 		
-$ContactID = CCDLookUp("ContactID","tblAdminist_Proforma_H","Proforma_H_ID = ".$DBGayaFusionAll->ToSQL($Proforma_H_ID,ccsInteger),$DBGayaFusionAll);
-$Redirect = $FileName."?Proforma_H_ID=".$Proforma_H_ID."&ContactID=".$ContactID;//CCDLookUp("max(Proforma_H_ID)","tblAdminist_Proforma_H","", $DBGayaFusionAll);
+$ContactID = CCDLookUp("ContactID","tblAdminist_Proforma_H","Proforma_H_ID = ".$DBgayafusionall->ToSQL($Proforma_H_ID,ccsInteger),$DBgayafusionall);
+$Redirect = $FileName."?Proforma_H_ID=".$Proforma_H_ID."&ContactID=".$ContactID;//CCDLookUp("max(Proforma_H_ID)","tblAdminist_Proforma_H","", $DBgayafusionall);
 	
 //End Custom Code
 
@@ -130,7 +130,7 @@ function AddNewHeader_BeforeShow(& $sender)
 	global $AddNewHeader, $AddNewDetail;
 	global $ProformaNo;
 	global $AddProforma, $ContactID, $Quotation_H_ID;
-	$NewConnection = new clsDBGayaFusionAll;
+	$NewConnection = new clsDBgayafusionall;
 
 	//Make prefix variable for prof
 	$Prefix = "PRO".date(Ym);
@@ -232,7 +232,7 @@ function AddNewHeader_AfterUpdate(& $sender)
 //End AddNewHeader_AfterUpdate
 
 //Custom Code @287-2A29BDB7
-$db = new clsDBGayaFusionAll;
+$db = new clsDBgayafusionall;
 $ClientID = $AddNewHeader->ClientID->GetValue();
 $predate = $AddNewHeader->PreviewDPDate->GetValue();
 $proforma_H_ID = $AddNewHeader->Proforma_H_ID->GetValue();
@@ -260,7 +260,7 @@ function AddNewDetail_BeforeShowRow(& $sender)
 //Custom Code @234-2A29BDB7
 global $AddNewDetail;
 global $RowNumber;
-global $DBGayaFusionAll;    
+global $DBgayafusionall;    
 $RowNumber++;
 $AddNewDetail->RowIDAttribute->SetValue($RowNumber);
   
@@ -275,19 +275,19 @@ if( ($RowNumber <= $AddNewDetail->ds->RecordsCount) && ($RowNumber <= $AddNewDet
     }
 }
 $CollectID = $AddNewDetail->CollectID->GetValue();
-$DBGayaFusionAll->query("SELECT DesignCode, NameCode, CategoryCode, SizeCode, TextureCode, ColorCode, MaterialCode FROM tblCollect_Master
-	WHERE ID = ".$DBGayaFusionAll->ToSQL($CollectID,ccsInteger));
-$Result = $DBGayaFusionAll->next_record();
+$DBgayafusionall->query("SELECT DesignCode, NameCode, CategoryCode, SizeCode, TextureCode, ColorCode, MaterialCode FROM tblCollect_Master
+	WHERE ID = ".$DBgayafusionall->ToSQL($CollectID,ccsInteger));
+$Result = $DBgayafusionall->next_record();
 if($Result){
-	$DesignCode = $DBGayaFusionAll->f("DesignCode");
-	$NameCode = $DBGayaFusionAll->f("NameCode");
-	$CategoryCode = $DBGayaFusionAll->f("CategoryCode");
-	$SizeCode = $DBGayaFusionAll->f("SizeCode");
-	$TextureCode = $DBGayaFusionAll->f("TextureCode");
-	$ColorCode = $DBGayaFusionAll->f("ColorCode");
-	$MaterialCode = $DBGayaFusionAll->f("MaterialCode");
+	$DesignCode = $DBgayafusionall->f("DesignCode");
+	$NameCode = $DBgayafusionall->f("NameCode");
+	$CategoryCode = $DBgayafusionall->f("CategoryCode");
+	$SizeCode = $DBgayafusionall->f("SizeCode");
+	$TextureCode = $DBgayafusionall->f("TextureCode");
+	$ColorCode = $DBgayafusionall->f("ColorCode");
+	$MaterialCode = $DBgayafusionall->f("MaterialCode");
 }
-$DB = new clsDBGayaFusionAll;
+$DB = new clsDBgayafusionall;
 $query = "SELECT CategoryName, ColorName, DesignName, MaterialName, NameDesc, SizeName, TextureName 
 FROM ((((((tblcollect_master INNER JOIN tblcollect_category ON
 tblcollect_master.CategoryCode = tblcollect_category.CategoryCode) INNER JOIN tblcollect_color ON
@@ -330,7 +330,7 @@ function AddNewDetail_ds_BeforeBuildInsert(& $sender)
 //End AddNewDetail_ds_BeforeBuildInsert
 
 //Custom Code @329-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $Proforma_H_ID = intval(CCGetFromGet("Proforma_H_ID",0));
 if($Proforma_H_ID > 0){
   $AddNewDetail->ds->Proforma_H_ID->SetValue($Proforma_H_ID);
@@ -358,7 +358,7 @@ function Page_BeforeInitialize(& $sender)
 //End PTAutoFill2 Initialization
 
 //PTAutoFill2 DataSource @237-3D3BDCAD
-        $Service->DataSource = new clsDBGayaFusionAll();
+        $Service->DataSource = new clsDBgayafusionall();
         $Service->ds = & $Service->DataSource;
         $Service->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_addressbook_contact {SQL_Where} {SQL_OrderBy}";

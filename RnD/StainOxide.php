@@ -423,7 +423,7 @@ class clsGridtblstainoxide { //tblstainoxide class @2-58C81270
 
 } //End tblstainoxide Class @2-FCB6E20C
 
-class clstblstainoxideDataSource extends clsDBGayaFusionAll {  //tblstainoxideDataSource Class @2-E62D4DC1
+class clstblstainoxideDataSource extends clsDBgayafusionall {  //tblstainoxideDataSource Class @2-E62D4DC1
 
 //DataSource Variables @2-0C423277
     public $Parent = "";
@@ -795,7 +795,7 @@ function GetPrimaryKey($keyName)
 
 } //End tblstainoxide1 Class @24-FCB6E20C
 
-class clstblstainoxide1DataSource extends clsDBGayaFusionAll {  //tblstainoxide1DataSource Class @24-70839B60
+class clstblstainoxide1DataSource extends clsDBgayafusionall {  //tblstainoxide1DataSource Class @24-70839B60
 
 //DataSource Variables @24-4B82C837
     public $Parent = "";
@@ -968,8 +968,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-90B5B5B9
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -1018,7 +1018,7 @@ $tblstainoxide1->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tblstainoxideSearch);
     unset($tblstainoxide);
@@ -1039,7 +1039,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-47376655
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tblstainoxideSearch);
 unset($tblstainoxide);
 unset($tblstainoxide1);

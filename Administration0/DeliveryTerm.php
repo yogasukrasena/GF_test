@@ -198,7 +198,7 @@ class clsGridGrid { //Grid class @2-76129994
 
 } //End Grid Class @2-FCB6E20C
 
-class clsGridDataSource extends clsDBGayaFusionAll {  //GridDataSource Class @2-7708C172
+class clsGridDataSource extends clsDBgayafusionall {  //GridDataSource Class @2-7708C172
 
 //DataSource Variables @2-A28A27FD
     public $Parent = "";
@@ -557,7 +557,7 @@ function GetPrimaryKey($keyName)
 
 } //End Add Class @14-FCB6E20C
 
-class clsAddDataSource extends clsDBGayaFusionAll {  //AddDataSource Class @14-1F150DA3
+class clsAddDataSource extends clsDBgayafusionall {  //AddDataSource Class @14-1F150DA3
 
 //DataSource Variables @14-55E5D180
     public $Parent = "";
@@ -722,8 +722,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-D8937546
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -772,7 +772,7 @@ $Add->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     $Header->Class_Terminate();
     unset($Header);
@@ -796,7 +796,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-55B08A15
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 $Header->Class_Terminate();
 unset($Header);
 unset($Grid);

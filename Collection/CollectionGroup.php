@@ -89,7 +89,7 @@ class clsRecordSearch { //Search Class @8-39E8735D
             $this->Button_DoSearch = new clsButton("Button_DoSearch", $Method, $this);
             $this->s_DesignName = new clsControl(ccsListBox, "s_DesignName", "s_DesignName", ccsText, "", CCGetRequestParam("s_DesignName", $Method, NULL), $this);
             $this->s_DesignName->DSType = dsTable;
-            $this->s_DesignName->DataSource = new clsDBGayaFusionAll();
+            $this->s_DesignName->DataSource = new clsDBgayafusionall();
             $this->s_DesignName->ds = & $this->s_DesignName->DataSource;
             $this->s_DesignName->DataSource->SQL = "SELECT * \n" .
 "FROM tblcollect_design {SQL_Where} {SQL_OrderBy}";
@@ -446,7 +446,7 @@ class clsGridGrid { //Grid class @2-76129994
 
 } //End Grid Class @2-FCB6E20C
 
-class clsGridDataSource extends clsDBGayaFusionAll {  //GridDataSource Class @2-7708C172
+class clsGridDataSource extends clsDBgayafusionall {  //GridDataSource Class @2-7708C172
 
 //DataSource Variables @2-D7DA63AE
     public $Parent = "";
@@ -631,7 +631,7 @@ class clsRecordAddNew { //AddNew Class @31-B93F975A
             $this->Group_H_ID = new clsControl(ccsHidden, "Group_H_ID", "Group_H_ID", ccsInteger, "", CCGetRequestParam("Group_H_ID", $Method, NULL), $this);
             $this->DesignCode = new clsControl(ccsListBox, "DesignCode", "DesignCode", ccsText, "", CCGetRequestParam("DesignCode", $Method, NULL), $this);
             $this->DesignCode->DSType = dsTable;
-            $this->DesignCode->DataSource = new clsDBGayaFusionAll();
+            $this->DesignCode->DataSource = new clsDBgayafusionall();
             $this->DesignCode->ds = & $this->DesignCode->DataSource;
             $this->DesignCode->DataSource->SQL = "SELECT * \n" .
 "FROM tblcollect_design {SQL_Where} {SQL_OrderBy}";
@@ -878,7 +878,7 @@ function GetPrimaryKey($keyName)
 
 } //End AddNew Class @31-FCB6E20C
 
-class clsAddNewDataSource extends clsDBGayaFusionAll {  //AddNewDataSource Class @31-994CCFD0
+class clsAddNewDataSource extends clsDBgayafusionall {  //AddNewDataSource Class @31-994CCFD0
 
 //DataSource Variables @31-FAA10537
     public $Parent = "";
@@ -1060,8 +1060,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-937AA13F
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -1110,7 +1110,7 @@ $AddNew->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($Search);
     unset($Grid);
@@ -1131,7 +1131,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-46E23C4E
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($Search);
 unset($Grid);
 unset($AddNew);

@@ -17,7 +17,7 @@ function NewPol_BeforeShow(& $sender)
 //End NewPol_BeforeShow
 
 //Custom Code @6-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $Invoice_SH_ID = CCGetFromGet("Invoice_SH_ID",0);
 $Invoice_H_ID = CCGetFromGet("Invoice_H_ID",0)
 if($Invoice_H_ID > 0){
@@ -32,7 +32,7 @@ if($Invoice_H_ID > 0){
 		$NoTrans = $Prefix."01";
 	}
 	$tgl = date('Y-m-d');
-	$DBGayaFusionAll->query("INSERT INTO tblAdminist_PackingList_H (PlNo,Invoice_SH_ID, Invoice_H_ID, PLDate) VALUES (".$DBGayaFusionAll->ToSQL($NoTrans,ccsText).",".$DBGayaFusionAll->ToSQL($Invoice_SH_ID, ccsInteger).",".$DBGayaFusionAll->ToSQL($Invoice_H_ID, ccsInteger).",".$DBGayaFusionAll->ToSQL($tgl,ccsDate).")");
+	$DBgayafusionall->query("INSERT INTO tblAdminist_PackingList_H (PlNo,Invoice_SH_ID, Invoice_H_ID, PLDate) VALUES (".$DBgayafusionall->ToSQL($NoTrans,ccsText).",".$DBgayafusionall->ToSQL($Invoice_SH_ID, ccsInteger).",".$DBgayafusionall->ToSQL($Invoice_H_ID, ccsInteger).",".$DBgayafusionall->ToSQL($tgl,ccsDate).")");
 }
 //End Custom Code
 

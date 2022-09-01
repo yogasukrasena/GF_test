@@ -73,7 +73,7 @@ class clsRecordSearch { //Search Class @3-39E8735D
             $this->Button_DoSearch = new clsButton("Button_DoSearch", $Method, $this);
             $this->s_Company = new clsControl(ccsListBox, "s_Company", "s_Company", ccsText, "", CCGetRequestParam("s_Company", $Method, NULL), $this);
             $this->s_Company->DSType = dsTable;
-            $this->s_Company->DataSource = new clsDBGayaFusionAll();
+            $this->s_Company->DataSource = new clsDBgayafusionall();
             $this->s_Company->ds = & $this->s_Company->DataSource;
             $this->s_Company->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_addressbook {SQL_Where} {SQL_OrderBy}";
@@ -438,7 +438,7 @@ class clsGridGrid { //Grid class @2-76129994
 
 } //End Grid Class @2-FCB6E20C
 
-class clsGridDataSource extends clsDBGayaFusionAll {  //GridDataSource Class @2-7708C172
+class clsGridDataSource extends clsDBgayafusionall {  //GridDataSource Class @2-7708C172
 
 //DataSource Variables @2-8F754B21
     public $Parent = "";
@@ -857,7 +857,7 @@ function GetPrimaryKey($keyName)
 
 } //End Add Class @35-FCB6E20C
 
-class clsAddDataSource extends clsDBGayaFusionAll {  //AddDataSource Class @35-1F150DA3
+class clsAddDataSource extends clsDBgayafusionall {  //AddDataSource Class @35-1F150DA3
 
 //DataSource Variables @35-ABC66CBC
     public $Parent = "";
@@ -1280,7 +1280,7 @@ function GetPrimaryKey($keyName)
 
 } //End Edit Class @84-FCB6E20C
 
-class clsEditDataSource extends clsDBGayaFusionAll {  //EditDataSource Class @84-DF3D2FA1
+class clsEditDataSource extends clsDBgayafusionall {  //EditDataSource Class @84-DF3D2FA1
 
 //DataSource Variables @84-E224BDA6
     public $Parent = "";
@@ -1429,8 +1429,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-0924985E
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -1486,7 +1486,7 @@ $Edit->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($Search);
     unset($Grid);
@@ -1510,7 +1510,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-3E970A14
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($Search);
 unset($Grid);
 unset($Add);

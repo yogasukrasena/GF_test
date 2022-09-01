@@ -44,7 +44,7 @@ function Grid_LinkPOL_BeforeShow(& $sender)
 //End Grid_LinkPOL_BeforeShow
 
 //Custom Code @120-2A29BDB7
-$db = new clsDBGayaFusionAll();
+$db = new clsDBgayafusionall();
 $Proforma_H_ID = $Grid->Proforma_H_ID->GetValue();
 $sql = "SELECT POL_H_ID,POLNo,Proforma_H_ID FROM tblAdminist_Pol_H WHERE Proforma_H_ID = ".$db->ToSQL($Proforma_H_ID,ccsInteger);
 $db->query($sql);
@@ -73,7 +73,7 @@ function Grid_lblQuotation_BeforeShow(& $sender)
 //End Grid_lblQuotation_BeforeShow
 
 //Custom Code @116-2A29BDB7
-$db = new clsDBGayaFusionAll;
+$db = new clsDBgayafusionall;
 $QuotationID = $Grid->Quotation_H_ID->GetValue();
 if($QuotationID > 0){	
 	$Grid->lblQuotation->SetValue(CCDLookUp("QuotationNo","tblAdminist_Quotation_H","Quotation_H_ID = ".$db->ToSQL($QuotationID,ccsInteger),$db));

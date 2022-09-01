@@ -242,7 +242,7 @@ class clsGridtblcollect_category_tblco { //tblcollect_category_tblco class @2-B8
 
 } //End tblcollect_category_tblco Class @2-FCB6E20C
 
-class clstblcollect_category_tblcoDataSource extends clsDBGayaFusionAll {  //tblcollect_category_tblcoDataSource Class @2-C7160B05
+class clstblcollect_category_tblcoDataSource extends clsDBgayafusionall {  //tblcollect_category_tblcoDataSource Class @2-C7160B05
 
 //DataSource Variables @2-BE8ECF49
     public $Parent = "";
@@ -430,8 +430,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-8C1A276E
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -463,7 +463,7 @@ $Attributes->Show();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tblcollect_category_tblco);
     unset($Tpl);
@@ -482,7 +482,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-0BC5F05E
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tblcollect_category_tblco);
 unset($Tpl);
 //End Unload Page

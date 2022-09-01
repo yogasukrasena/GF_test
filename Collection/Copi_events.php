@@ -18,7 +18,7 @@ function copy_BeforeShow(& $sender)
 
 //Custom Code @9-2A29BDB7
 	global $copy;
-	$DB = new clsDBGayaFusionAll;
+	$DB = new clsDBgayafusionall;
 	$sID = CCGetFromGet("sID",0);
 	$CollectID = CCGetFromGet("ID",0);
 	

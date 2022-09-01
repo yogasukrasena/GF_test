@@ -87,7 +87,7 @@ class clsRecordAddNewHeader { //AddNewHeader Class @2-5850F9DE
             $this->OrderRef->Required = true;
             $this->InvoiceAddressContact = new clsControl(ccsListBox, "InvoiceAddressContact", "Invoice Address", ccsInteger, "", CCGetRequestParam("InvoiceAddressContact", $Method, NULL), $this);
             $this->InvoiceAddressContact->DSType = dsTable;
-            $this->InvoiceAddressContact->DataSource = new clsDBGayaFusionAll();
+            $this->InvoiceAddressContact->DataSource = new clsDBgayafusionall();
             $this->InvoiceAddressContact->ds = & $this->InvoiceAddressContact->DataSource;
             $this->InvoiceAddressContact->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_addressbook_contact {SQL_Where} {SQL_OrderBy}";
@@ -100,7 +100,7 @@ class clsRecordAddNewHeader { //AddNewHeader Class @2-5850F9DE
                  $this->InvoiceAddressContact->DataSource->wp->Criterion[1];
             $this->DeliveryAddressContact = new clsControl(ccsListBox, "DeliveryAddressContact", "Delivery Address", ccsInteger, "", CCGetRequestParam("DeliveryAddressContact", $Method, NULL), $this);
             $this->DeliveryAddressContact->DSType = dsTable;
-            $this->DeliveryAddressContact->DataSource = new clsDBGayaFusionAll();
+            $this->DeliveryAddressContact->DataSource = new clsDBgayafusionall();
             $this->DeliveryAddressContact->ds = & $this->DeliveryAddressContact->DataSource;
             $this->DeliveryAddressContact->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_addressbook_contact {SQL_Where} {SQL_OrderBy}";
@@ -120,14 +120,14 @@ class clsRecordAddNewHeader { //AddNewHeader Class @2-5850F9DE
             $this->PL_H_ID = new clsControl(ccsHidden, "PL_H_ID", "PL_H_ID", ccsInteger, "", CCGetRequestParam("PL_H_ID", $Method, NULL), $this);
             $this->DeliveryAddressID = new clsControl(ccsListBox, "DeliveryAddressID", "DeliveryAddressID", ccsInteger, "", CCGetRequestParam("DeliveryAddressID", $Method, NULL), $this);
             $this->DeliveryAddressID->DSType = dsTable;
-            $this->DeliveryAddressID->DataSource = new clsDBGayaFusionAll();
+            $this->DeliveryAddressID->DataSource = new clsDBgayafusionall();
             $this->DeliveryAddressID->ds = & $this->DeliveryAddressID->DataSource;
             $this->DeliveryAddressID->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_addressbook {SQL_Where} {SQL_OrderBy}";
             list($this->DeliveryAddressID->BoundColumn, $this->DeliveryAddressID->TextColumn, $this->DeliveryAddressID->DBFormat) = array("AddressID", "Company", "");
             $this->AddressID = new clsControl(ccsListBox, "AddressID", "AddressID", ccsText, "", CCGetRequestParam("AddressID", $Method, NULL), $this);
             $this->AddressID->DSType = dsTable;
-            $this->AddressID->DataSource = new clsDBGayaFusionAll();
+            $this->AddressID->DataSource = new clsDBgayafusionall();
             $this->AddressID->ds = & $this->AddressID->DataSource;
             $this->AddressID->DataSource->SQL = "SELECT * \n" .
 "FROM tbladminist_addressbook {SQL_Where} {SQL_OrderBy}";
@@ -450,7 +450,7 @@ function GetPrimaryKey($keyName)
 
 } //End AddNewHeader Class @2-FCB6E20C
 
-class clsAddNewHeaderDataSource extends clsDBGayaFusionAll {  //AddNewHeaderDataSource Class @2-B5B08D50
+class clsAddNewHeaderDataSource extends clsDBgayafusionall {  //AddNewHeaderDataSource Class @2-B5B08D50
 
 //DataSource Variables @2-C6378E18
     public $Parent = "";
@@ -1235,7 +1235,7 @@ class clsEditableGridAddNewDetail { //AddNewDetail Class @40-254BF570
 
 } //End AddNewDetail Class @40-FCB6E20C
 
-class clsAddNewDetailDataSource extends clsDBGayaFusionAll {  //AddNewDetailDataSource Class @40-9729D968
+class clsAddNewDetailDataSource extends clsDBgayafusionall {  //AddNewDetailDataSource Class @40-9729D968
 
 //DataSource Variables @40-75EF538D
     public $Parent = "";
@@ -1455,8 +1455,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-D7B2DEB3
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -1498,7 +1498,7 @@ $AddNewDetail->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($AddNewHeader);
     unset($AddNewDetail);
@@ -1519,7 +1519,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-142ABB44
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($AddNewHeader);
 unset($AddNewDetail);
 unset($Tpl);

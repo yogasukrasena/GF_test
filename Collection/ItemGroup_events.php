@@ -23,7 +23,7 @@ function GroupHeader_BeforeShow(& $sender)
 	global $GroupHeader;
 	$Group_H_ID = CCGetFromGet("Group_H_ID", 0);
 	if($Group_H_ID > 0){
-		$db = new clsDBGayaFusionAll;
+		$db = new clsDBgayafusionall;
 		$sql = "SELECT GroupCode, GroupDate, GroupDescription, GroupPhoto FROM tblCollect_Group_H WHERE Group_H_ID = ".$Group_H_ID;
 		$db->query($sql);
 		$result = $db->next_record();
@@ -80,7 +80,7 @@ function ItemList_BeforeShowRow(& $sender)
 	 }
 	 $CollectID = $ItemList->CollectID->GetValue();
 	 if($CollectID > 0){
-	 	$db = new clsDBGayaFusionAll;
+	 	$db = new clsDBgayafusionall;
 		$sql = "SELECT tblcollect_master.ID, tblcollect_master.CollectCode, tblcollect_color.ColorName, tblcollect_category.CategoryName,
   			tblcollect_name.NameDesc, tblcollect_texture.TextureName, tblcollect_size.SizeName, tblcollect_material.MaterialName, tblcollect_design.DesignName
 			FROM tblcollect_design INNER JOIN tblcollect_master ON (tblcollect_design.DesignCode=tblcollect_master.DesignCode) INNER JOIN tblcollect_category ON (tblcollect_category.CategoryCode=tblcollect_master.CategoryCode)

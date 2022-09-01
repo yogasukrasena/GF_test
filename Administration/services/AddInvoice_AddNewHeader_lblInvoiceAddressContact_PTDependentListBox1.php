@@ -167,7 +167,7 @@ class clsGridtbladminist_addressbook_c { //tbladminist_addressbook_c class @2-18
 
 } //End tbladminist_addressbook_c Class @2-FCB6E20C
 
-class clstbladminist_addressbook_cDataSource extends clsDBGayaFusionAll {  //tbladminist_addressbook_cDataSource Class @2-F2B6B9D0
+class clstbladminist_addressbook_cDataSource extends clsDBgayafusionall {  //tbladminist_addressbook_cDataSource Class @2-F2B6B9D0
 
 //DataSource Variables @2-255E9B12
     public $Parent = "";
@@ -277,8 +277,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-03A429FD
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -310,7 +310,7 @@ $Attributes->Show();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tbladminist_addressbook_c);
     unset($Tpl);
@@ -329,7 +329,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-EA84FE4D
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tbladminist_addressbook_c);
 unset($Tpl);
 //End Unload Page

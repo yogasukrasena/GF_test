@@ -415,7 +415,7 @@ class clsGridtblengobe { //tblengobe class @6-0AFAF82F
 
 } //End tblengobe Class @6-FCB6E20C
 
-class clstblengobeDataSource extends clsDBGayaFusionAll {  //tblengobeDataSource Class @6-2D7F96DA
+class clstblengobeDataSource extends clsDBgayafusionall {  //tblengobeDataSource Class @6-2D7F96DA
 
 //DataSource Variables @6-DDA23694
     public $Parent = "";
@@ -544,8 +544,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-512334CF
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -585,7 +585,7 @@ $tblengobeSearch->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tblengobeSearch);
     unset($tblengobe);
@@ -606,7 +606,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-74E948C1
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tblengobeSearch);
 unset($tblengobe);
 unset($Tpl);

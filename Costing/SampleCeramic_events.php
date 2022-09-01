@@ -44,7 +44,7 @@ function sampleceramicGrid_BeforeShow(& $sender)
 //End sampleceramicGrid_BeforeShow
 
 //Custom Code @87-2A29BDB7
-$db = new clsDBGayaFusionAll;
+$db = new clsDBgayafusionall;
 $sql = "SELECT tblcosting_rakubisque.PricePerFiring as RakuBisquePPF,tblcosting_standardbisque.PricePerFiring as StdBisquePPF,tblcosting_standardglaze.PricePerFiring as StdGlazePPF,tblcosting_rakuglaze.PricePerFiring as RakuGlazePPF 
 	FROM tblcosting_rakubisque,tblcosting_standardbisque,tblcosting_standardglaze,tblcosting_rakuglaze ";
 $db->query($sql);
@@ -73,7 +73,7 @@ function sampleceramicGrid_BeforeShowRow(& $sender)
 //End sampleceramicGrid_BeforeShowRow
 
 //Custom Code @160-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $SID = $sampleceramicGrid->sID->GetValue();
 $dm1 = $sampleceramicGrid->DesignMat1->GetValue();
 $dm2 = $sampleceramicGrid->DesignMat2->GetValue();
@@ -83,10 +83,10 @@ $QtyDesignMat1 = $sampleceramicGrid->DesignMatQty1->GetValue();
 $QtyDesignMat2 = $sampleceramicGrid->DesignMatQty2->GetValue();
 $QtyDesignMat3 = $sampleceramicGrid->DesignMatQty3->GetValue();
 $QtyDesignMat4 = $sampleceramicGrid->DesignMatQty4->GetValue();
-$dmPrice1 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBGayaFusionAll->ToSQL($dm1,ccsInteger), $DBGayaFusionAll);
-$dmPrice2 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBGayaFusionAll->ToSQL($dm2,ccsInteger), $DBGayaFusionAll);
-$dmPrice3 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBGayaFusionAll->ToSQL($dm3,ccsInteger), $DBGayaFusionAll);
-$dmPrice4 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBGayaFusionAll->ToSQL($dm4,ccsInteger), $DBGayaFusionAll);
+$dmPrice1 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBgayafusionall->ToSQL($dm1,ccsInteger), $DBgayafusionall);
+$dmPrice2 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBgayafusionall->ToSQL($dm2,ccsInteger), $DBgayafusionall);
+$dmPrice3 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBgayafusionall->ToSQL($dm3,ccsInteger), $DBgayafusionall);
+$dmPrice4 = CCDLookUp("DesignMatUnitPrice","tblDesignMat","DesignMatID = ".$DBgayafusionall->ToSQL($dm4,ccsInteger), $DBgayafusionall);
 $TotDM1 = $QtyDesignMat1 * $dmPrice1;
 $TotDM2 = $QtyDesignMat2 * $dmPrice2;
 $TotDM3 = $QtyDesignMat3 * $dmPrice3;
@@ -119,7 +119,7 @@ $Total += $TotDM1 + $TotDM2 + $TotDM3 + $TotDM4 + $sampleceramicGrid->MovementCo
 
 $Total = $Total + ($Total * 0.1) ;
 $sampleceramicGrid->RiskPrice->SetValue($Total);
-$RealPrice = CCDLookUp("RealSellingPrice", "sampleCeramic","sID = ".$DBGayaFusionAll->ToSQL($SID, ccsInteger), $DBGayaFusionAll);
+$RealPrice = CCDLookUp("RealSellingPrice", "sampleCeramic","sID = ".$DBgayafusionall->ToSQL($SID, ccsInteger), $DBgayafusionall);
 if($RealPrice < $Total){
   $sampleceramicGrid->RealPriceColor->SetValue("RED");
 }elseif($RealPrice == $Total){

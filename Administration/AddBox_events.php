@@ -69,7 +69,7 @@ $Box_H_ID = CCGetFromGet("Box_H_ID",0);
 
 if(intval($Box_H_ID) >0){
 //Create a new database connection object
-  	$NewConnection = new clsDBGayaFusionAll();
+  	$NewConnection = new clsDBgayafusionall();
    	$NewConnection->query("DELETE FROM tblAdminist_Box_D WHERE Box_H_ID=".$NewConnection->ToSQL($Box_H_ID,ccsInteger));
 }
 //Close and destroy the database connection object
@@ -91,9 +91,9 @@ function AddNewHeader_AfterInsert(& $sender)
 //End AddNewHeader_AfterInsert
 
 //Custom Code @48-2A29BDB7
-global $DBGayaFusionAll;	
+global $DBgayafusionall;	
 global $Redirect,$FileName;
-$Box_H_ID = CCDLookUp("max(Box_H_ID)","tblAdminist_Box_H","", $DBGayaFusionAll);
+$Box_H_ID = CCDLookUp("max(Box_H_ID)","tblAdminist_Box_H","", $DBgayafusionall);
 $PL_H_ID = $AddNewHeader->PL_H_ID->GetValue();
 $rowNumber = CCGetFromGet("rowNumber",0);
 $Redirect = $FileName."?Box_H_ID=".$Box_H_ID."&rowNumber=".$rowNumber."&PL_H_ID=".$PL_H_ID;
@@ -114,12 +114,12 @@ function AddNewHeader_BeforeInsert(& $sender)
 //End AddNewHeader_BeforeInsert
 
 //Custom Code @107-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $BoxNumber = $AddNewHeader->BoxNumber->GetValue();
 $PL_H_ID = CCGetFromGet("PL_H_ID",0);
-$sql = "SELECT BoxNumber FROM tblAdminist_Box_H WHERE BoxNumber = ".$DBGayaFusionAll->ToSQL($BoxNumber,ccsInteger)." AND PL_H_ID = ".$DBGayaFusionAll->ToSQL($PL_H_ID,ccsInteger);
-$DBGayaFusionAll->query($sql);
-$Result = $DBGayaFusionAll->next_record();
+$sql = "SELECT BoxNumber FROM tblAdminist_Box_H WHERE BoxNumber = ".$DBgayafusionall->ToSQL($BoxNumber,ccsInteger)." AND PL_H_ID = ".$DBgayafusionall->ToSQL($PL_H_ID,ccsInteger);
+$DBgayafusionall->query($sql);
+$Result = $DBgayafusionall->next_record();
 if($Result){
   $AddNewHeader->InsertAllowed= false;
   $AddNewHeader->Errors->addError("Box Number For This Packing List Already Used.");
@@ -148,7 +148,7 @@ function AddNewDetail_BeforeShowRow(& $sender)
 //Custom Code @72-2A29BDB7
 global $AddNewDetail;
 global $RowNumber;
-global $DBGayaFusionAll;    
+global $DBgayafusionall;    
     	$RowNumber++;
     	$AddNewDetail->RowIDAttribute->SetValue($RowNumber);
   
@@ -168,19 +168,19 @@ global $DBGayaFusionAll;
   	 }
 
 $CollectID = $AddNewDetail->CollectID->GetValue();
-$DBGayaFusionAll->query("SELECT DesignCode, NameCode, CategoryCode, SizeCode, TextureCode, ColorCode, MaterialCode FROM tblCollect_Master
-	WHERE ID = ".$DBGayaFusionAll->ToSQL($CollectID,ccsInteger));
-$Result = $DBGayaFusionAll->next_record();
+$DBgayafusionall->query("SELECT DesignCode, NameCode, CategoryCode, SizeCode, TextureCode, ColorCode, MaterialCode FROM tblCollect_Master
+	WHERE ID = ".$DBgayafusionall->ToSQL($CollectID,ccsInteger));
+$Result = $DBgayafusionall->next_record();
 if($Result){
-	$DesignCode = $DBGayaFusionAll->f("DesignCode");
-	$NameCode = $DBGayaFusionAll->f("NameCode");
-	$CategoryCode = $DBGayaFusionAll->f("CategoryCode");
-	$SizeCode = $DBGayaFusionAll->f("SizeCode");
-	$TextureCode = $DBGayaFusionAll->f("TextureCode");
-	$ColorCode = $DBGayaFusionAll->f("ColorCode");
-	$MaterialCode = $DBGayaFusionAll->f("MaterialCode");
+	$DesignCode = $DBgayafusionall->f("DesignCode");
+	$NameCode = $DBgayafusionall->f("NameCode");
+	$CategoryCode = $DBgayafusionall->f("CategoryCode");
+	$SizeCode = $DBgayafusionall->f("SizeCode");
+	$TextureCode = $DBgayafusionall->f("TextureCode");
+	$ColorCode = $DBgayafusionall->f("ColorCode");
+	$MaterialCode = $DBgayafusionall->f("MaterialCode");
 }
-$DB = new clsDBGayaFusionAll;
+$DB = new clsDBgayafusionall;
 $query = "SELECT CollectCode, CategoryName, ColorName, DesignName, MaterialName, NameDesc, SizeName, TextureName 
 FROM ((((((tblcollect_master INNER JOIN tblcollect_category ON
 tblcollect_master.CategoryCode = tblcollect_category.CategoryCode) INNER JOIN tblcollect_color ON

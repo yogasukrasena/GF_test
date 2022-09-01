@@ -57,10 +57,10 @@ function AddSampleCeramic_Casting1Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Casting1->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddCasting1->Visible = false;
 		$AddSampleCeramic->DelCasting1->Visible = true;
-		$AddSampleCeramic->Casting1Desc->SetValue(CCDLookUp("CastingDescription","tblCasting","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Casting1Desc->SetValue(CCDLookUp("CastingDescription","tblCasting","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddCasting1->Visible = true;
 		$AddSampleCeramic->DelCasting1->Visible = false;
@@ -85,10 +85,10 @@ function AddSampleCeramic_Casting2Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Casting2->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddCasting2->Visible = false;
 		$AddSampleCeramic->DelCasting2->Visible = true;
-		$AddSampleCeramic->Casting2Desc->SetValue(CCDLookUp("CastingDescription","tblCasting","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Casting2Desc->SetValue(CCDLookUp("CastingDescription","tblCasting","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddCasting2->Visible = true;
 		$AddSampleCeramic->DelCasting2->Visible = false;
@@ -113,10 +113,10 @@ function AddSampleCeramic_Casting3Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Casting3->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddCasting3->Visible = false;
 		$AddSampleCeramic->DelCasting3->Visible = true;
-		$AddSampleCeramic->Casting3Desc->SetValue(CCDLookUp("CastingDescription","tblCasting","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Casting3Desc->SetValue(CCDLookUp("CastingDescription","tblCasting","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddCasting3->Visible = true;
 		$AddSampleCeramic->DelCasting3->Visible = false;
@@ -141,10 +141,10 @@ function AddSampleCeramic_Casting4Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Casting4->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddCasting4->Visible = false;
 		$AddSampleCeramic->DelCasting4->Visible = true;
-		$AddSampleCeramic->Casting4Desc->SetValue(CCDLookUp("CastingDescription","tblCasting","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Casting4Desc->SetValue(CCDLookUp("CastingDescription","tblCasting","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddCasting4->Visible = true;
 		$AddSampleCeramic->DelCasting4->Visible = false;
@@ -169,10 +169,10 @@ function AddSampleCeramic_Estruder1Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Estruder1->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddEstruder1->Visible = false;
 		$AddSampleCeramic->DelEstruder1->Visible = true;
-		$AddSampleCeramic->Estruder1Desc->SetValue(CCDLookUp("EstruderDescription","tblEstruder","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Estruder1Desc->SetValue(CCDLookUp("EstruderDescription","tblEstruder","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddEstruder1->Visible = true;
 		$AddSampleCeramic->DelEstruder1->Visible = false;
@@ -197,10 +197,10 @@ function AddSampleCeramic_Estruder2Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Estruder2->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddEstruder2->Visible = false;
 		$AddSampleCeramic->DelEstruder2->Visible = true;
-		$AddSampleCeramic->Estruder2Desc->SetValue(CCDLookUp("EstruderDescription","tblEstruder","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Estruder2Desc->SetValue(CCDLookUp("EstruderDescription","tblEstruder","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddEstruder2->Visible = true;
 		$AddSampleCeramic->DelEstruder2->Visible = false;
@@ -225,10 +225,10 @@ function AddSampleCeramic_Estruder3Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Estruder3->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddEstruder3->Visible = false;
 		$AddSampleCeramic->DelEstruder3->Visible = true;
-		$AddSampleCeramic->Estruder3Desc->SetValue(CCDLookUp("EstruderDescription","tblEstruder","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Estruder3Desc->SetValue(CCDLookUp("EstruderDescription","tblEstruder","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddEstruder3->Visible = true;
 		$AddSampleCeramic->DelEstruder3->Visible = false;
@@ -253,10 +253,10 @@ function AddSampleCeramic_Estruder4Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Estruder4->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddEstruder4->Visible = false;
 		$AddSampleCeramic->DelEstruder4->Visible = true;
-		$AddSampleCeramic->Estruder4Desc->SetValue(CCDLookUp("EstruderDescription","tblEstruder","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Estruder4Desc->SetValue(CCDLookUp("EstruderDescription","tblEstruder","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddEstruder4->Visible = true;
 		$AddSampleCeramic->DelEstruder4->Visible = false;
@@ -281,10 +281,10 @@ function AddSampleCeramic_Texture1Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Texture1->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddTexture1->Visible = false;
 		$AddSampleCeramic->DelTexture1->Visible = true;
-		$AddSampleCeramic->Texture1Desc->SetValue(CCDLookUp("TextureDescription","tblTexture","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Texture1Desc->SetValue(CCDLookUp("TextureDescription","tblTexture","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddTexture1->Visible = true;
 		$AddSampleCeramic->DelTexture1->Visible = false;
@@ -309,8 +309,8 @@ function AddSampleCeramic_Texture2Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Texture2->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
-		$AddSampleCeramic->Texture2Desc->SetValue(CCDLookUp("TextureDescription","tblTexture","ID = $IDnya",$DBGayaFusionAll));
+		global $DBgayafusionall;
+		$AddSampleCeramic->Texture2Desc->SetValue(CCDLookUp("TextureDescription","tblTexture","ID = $IDnya",$DBgayafusionall));
 		$AddSampleCeramic->AddTexture2->Visible = false;
 		$AddSampleCeramic->DelTexture2->Visible = true;
 	}else{
@@ -337,8 +337,8 @@ function AddSampleCeramic_Texture3Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Texture3->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
-		$AddSampleCeramic->Texture3Desc->SetValue(CCDLookUp("TextureDescription","tblTexture","ID = $IDnya",$DBGayaFusionAll));
+		global $DBgayafusionall;
+		$AddSampleCeramic->Texture3Desc->SetValue(CCDLookUp("TextureDescription","tblTexture","ID = $IDnya",$DBgayafusionall));
 	}
 //End Custom Code
 
@@ -360,10 +360,10 @@ function AddSampleCeramic_Texture4Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Texture4->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddTexture4->Visible = false;
 		$AddSampleCeramic->DelTexture4->Visible = true;
-		$AddSampleCeramic->Texture4Desc->SetValue(CCDLookUp("TextureDescription","tblTexture","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Texture4Desc->SetValue(CCDLookUp("TextureDescription","tblTexture","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddTexture4->Visible = true;
 		$AddSampleCeramic->DelTexture4->Visible = false;
@@ -388,10 +388,10 @@ function AddSampleCeramic_Tools1Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Tools1->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddTools1->Visible = false;
 		$AddSampleCeramic->DelTools1->Visible = true;
-		$AddSampleCeramic->Tools1Desc->SetValue(CCDLookUp("ToolsDescription","tblTools","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Tools1Desc->SetValue(CCDLookUp("ToolsDescription","tblTools","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddTools1->Visible = true;
 		$AddSampleCeramic->DelTools1->Visible = false;
@@ -416,10 +416,10 @@ function AddSampleCeramic_Tools2Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Tools2->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddTools2->Visible = false;
 		$AddSampleCeramic->DelTools2->Visible = true;
-		$AddSampleCeramic->Tools2Desc->SetValue(CCDLookUp("ToolsDescription","tblTools","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Tools2Desc->SetValue(CCDLookUp("ToolsDescription","tblTools","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddTools2->Visible = true;
 		$AddSampleCeramic->DelTools2->Visible = false;
@@ -444,10 +444,10 @@ function AddSampleCeramic_Tools3Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Tools3->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddTools3->Visible = false;
 		$AddSampleCeramic->DelTools3->Visible = true;
-		$AddSampleCeramic->Tools3Desc->SetValue(CCDLookUp("ToolsDescription","tblTools","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Tools3Desc->SetValue(CCDLookUp("ToolsDescription","tblTools","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddTools3->Visible = true;
 		$AddSampleCeramic->DelTools3->Visible = false;
@@ -472,10 +472,10 @@ function AddSampleCeramic_Tools4Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Tools4->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddTools4->Visible = false;
 		$AddSampleCeramic->DelTools4->Visible = true;
-		$AddSampleCeramic->Tools4Desc->SetValue(CCDLookUp("ToolsDescription","tblTools","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Tools4Desc->SetValue(CCDLookUp("ToolsDescription","tblTools","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddTools4->Visible = true;
 		$AddSampleCeramic->DelTools4->Visible = false;
@@ -500,10 +500,10 @@ function AddSampleCeramic_Engobe1Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Engobe1->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddEngobe1->Visible = false;
 		$AddSampleCeramic->DelEngobe1->Visible = true;
-		$AddSampleCeramic->Engobe1Desc->SetValue(CCDLookUp("EngobeDescription","tblEngobe","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Engobe1Desc->SetValue(CCDLookUp("EngobeDescription","tblEngobe","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddEngobe1->Visible = true;
 		$AddSampleCeramic->DelEngobe1->Visible = false;
@@ -528,10 +528,10 @@ function AddSampleCeramic_Engobe2Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Engobe2->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddEngobe2->Visible = false;
 		$AddSampleCeramic->DelEngobe2->Visible = true;
-		$AddSampleCeramic->Engobe2Desc->SetValue(CCDLookUp("EngobeDescription","tblEngobe","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Engobe2Desc->SetValue(CCDLookUp("EngobeDescription","tblEngobe","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddEngobe2->Visible = true;
 		$AddSampleCeramic->DelEngobe2->Visible = false;
@@ -556,10 +556,10 @@ function AddSampleCeramic_Engobe3Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Engobe3->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddEngobe3->Visible = false;
 		$AddSampleCeramic->DelEngobe3->Visible = true;
-		$AddSampleCeramic->Engobe3Desc->SetValue(CCDLookUp("EngobeDescription","tblEngobe","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Engobe3Desc->SetValue(CCDLookUp("EngobeDescription","tblEngobe","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddEngobe3->Visible = true;
 		$AddSampleCeramic->DelEngobe3->Visible = false;
@@ -584,10 +584,10 @@ function AddSampleCeramic_Engobe4Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Engobe4->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddEngobe4->Visible = false;
 		$AddSampleCeramic->DelEngobe4->Visible = true;
-		$AddSampleCeramic->Engobe4Desc->SetValue(CCDLookUp("EngobeDescription","tblEngobe","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Engobe4Desc->SetValue(CCDLookUp("EngobeDescription","tblEngobe","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddEngobe4->Visible = true;
 		$AddSampleCeramic->DelEngobe4->Visible = false;
@@ -612,10 +612,10 @@ function AddSampleCeramic_StainOxide1Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->StainOxide1->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddStainOxide1->Visible = false;
 		$AddSampleCeramic->DelStainOxide1->Visible = true;
-		$AddSampleCeramic->StainOxide1Desc->SetValue(CCDLookUp("StainOxideDescription","tblStainOxide","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->StainOxide1Desc->SetValue(CCDLookUp("StainOxideDescription","tblStainOxide","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddStainOxide1->Visible = true;
 		$AddSampleCeramic->DelStainOxide1->Visible = false;
@@ -640,10 +640,10 @@ function AddSampleCeramic_StainOxide2Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->StainOxide2->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddStainOxide2->Visible = false;
 		$AddSampleCeramic->DelStainOxide2->Visible = true;
-		$AddSampleCeramic->StainOxide2Desc->SetValue(CCDLookUp("StainOxideDescription","tblStainOxide","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->StainOxide2Desc->SetValue(CCDLookUp("StainOxideDescription","tblStainOxide","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddStainOxide2->Visible = true;
 		$AddSampleCeramic->DelStainOxide2->Visible = false;
@@ -668,10 +668,10 @@ function AddSampleCeramic_StainOxide3Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->StainOxide3->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddStainOxide3->Visible = false;
 		$AddSampleCeramic->DelStainOxide3->Visible = true;
-		$AddSampleCeramic->StainOxide3Desc->SetValue(CCDLookUp("StainOxideDescription","tblStainOxide","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->StainOxide3Desc->SetValue(CCDLookUp("StainOxideDescription","tblStainOxide","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddStainOxide3->Visible = true;
 		$AddSampleCeramic->DelStainOxide3->Visible = false;
@@ -696,10 +696,10 @@ function AddSampleCeramic_StainOxide4Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->StainOxide4->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddStainOxide4->Visible = false;
 		$AddSampleCeramic->DelStainOxide4->Visible = true;
-		$AddSampleCeramic->StainOxide4Desc->SetValue(CCDLookUp("StainOxideDescription","tblStainOxide","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->StainOxide4Desc->SetValue(CCDLookUp("StainOxideDescription","tblStainOxide","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddStainOxide4->Visible = true;
 		$AddSampleCeramic->DelStainOxide4->Visible = false;
@@ -723,10 +723,10 @@ function AddSampleCeramic_Glaze1Desc_BeforeShow(& $sender)
 //Custom Code @147-2A29BDB7
 	$IDnya = $AddSampleCeramic->Glaze1->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddGlaze1->Visible = false;
 		$AddSampleCeramic->DelGlaze1->Visible = true;
-		$AddSampleCeramic->Glaze1Desc->SetValue(CCDLookUp("GlazeDescription","tblGlaze","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Glaze1Desc->SetValue(CCDLookUp("GlazeDescription","tblGlaze","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddGlaze1->Visible = true;
 		$AddSampleCeramic->DelGlaze1->Visible = false;
@@ -751,10 +751,10 @@ function AddSampleCeramic_Glaze2Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Glaze2->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddGlaze2->Visible = false;
 		$AddSampleCeramic->DelGlaze2->Visible = true;
-		$AddSampleCeramic->Glaze2Desc->SetValue(CCDLookUp("GlazeDescription","tblGlaze","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Glaze2Desc->SetValue(CCDLookUp("GlazeDescription","tblGlaze","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddGlaze2->Visible = true;
 		$AddSampleCeramic->DelGlaze2->Visible = false;
@@ -779,10 +779,10 @@ function AddSampleCeramic_Glaze3Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Glaze3->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddGlaze3->Visible = false;
 		$AddSampleCeramic->DelGlaze3->Visible = true;
-		$AddSampleCeramic->Glaze3Desc->SetValue(CCDLookUp("GlazeDescription","tblGlaze","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Glaze3Desc->SetValue(CCDLookUp("GlazeDescription","tblGlaze","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddGlaze3->Visible = true;
 		$AddSampleCeramic->DelGlaze3->Visible = false;
@@ -807,10 +807,10 @@ function AddSampleCeramic_Glaze4Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Glaze4->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddGlaze4->Visible = false;
 		$AddSampleCeramic->DelGlaze4->Visible = true;
-		$AddSampleCeramic->Glaze4Desc->SetValue(CCDLookUp("GlazeDescription","tblGlaze","ID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->Glaze4Desc->SetValue(CCDLookUp("GlazeDescription","tblGlaze","ID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddGlaze4->Visible = true;
 		$AddSampleCeramic->DelGlaze4->Visible = false;
@@ -835,10 +835,10 @@ function AddSampleCeramic_DesignMat1Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->DesignMat1->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddDesignMat1->Visible = false;
 		$AddSampleCeramic->DelDesignMat1->Visible = true;
-		$AddSampleCeramic->DesignMat1Desc->SetValue(CCDLookUp("DesignMatDescription","tblDesignMat","DesignMatID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->DesignMat1Desc->SetValue(CCDLookUp("DesignMatDescription","tblDesignMat","DesignMatID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddDesignMat1->Visible = true;
 		$AddSampleCeramic->DelDesignMat1->Visible = false;
@@ -863,10 +863,10 @@ function AddSampleCeramic_DesignMat2Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->DesignMat2->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddDesignMat2->Visible = false;
 		$AddSampleCeramic->DelDesignMat2->Visible = true;
-		$AddSampleCeramic->DesignMat2Desc->SetValue(CCDLookUp("DesignMatDescription","tblDesignMat","DesignMatID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->DesignMat2Desc->SetValue(CCDLookUp("DesignMatDescription","tblDesignMat","DesignMatID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddDesignMat2->Visible = true;
 		$AddSampleCeramic->DelDesignMat2->Visible = false;
@@ -891,10 +891,10 @@ function AddSampleCeramic_DesignMat3Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->DesignMat3->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddDesignMat3->Visible = false;
 		$AddSampleCeramic->DelDesignMat3->Visible = true;
-		$AddSampleCeramic->DesignMat3Desc->SetValue(CCDLookUp("DesignMatDescription","tblDesignMat","DesignMatID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->DesignMat3Desc->SetValue(CCDLookUp("DesignMatDescription","tblDesignMat","DesignMatID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddDesignMat3->Visible = true;
 		$AddSampleCeramic->DelDesignMat3->Visible = false;
@@ -919,10 +919,10 @@ function AddSampleCeramic_DesignMat4Desc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->DesignMat4->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddDesignMat4->Visible = false;
 		$AddSampleCeramic->DelDesignMat4->Visible = true;
-		$AddSampleCeramic->DesignMat4Desc->SetValue(CCDLookUp("DesignMatDescription","tblDesignMat","DesignMatID = $IDnya",$DBGayaFusionAll));
+		$AddSampleCeramic->DesignMat4Desc->SetValue(CCDLookUp("DesignMatDescription","tblDesignMat","DesignMatID = $IDnya",$DBgayafusionall));
 	}else{
 		$AddSampleCeramic->AddDesignMat4->Visible = true;
 		$AddSampleCeramic->DelDesignMat4->Visible = false;
@@ -947,7 +947,7 @@ function AddSampleCeramic_AddClay_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Clay->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddClay->Visible= false;
 		$AddSampleCeramic->DelClay->Visible = true;
 	}else{
@@ -974,8 +974,8 @@ function AddSampleCeramic_ClayDesc_BeforeShow(& $sender)
 	global $AddSampleCeramic;
 	$IDnya = $AddSampleCeramic->Clay->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
-		$AddSampleCeramic->ClayDesc->SetValue(CCDLookUp("ClayDescription","tblClay","ID = $IDnya",$DBGayaFusionAll));
+		global $DBgayafusionall;
+		$AddSampleCeramic->ClayDesc->SetValue(CCDLookUp("ClayDescription","tblClay","ID = $IDnya",$DBgayafusionall));
 	}
 //End Custom Code
 
@@ -996,7 +996,7 @@ function AddSampleCeramic_AddCasting1_BeforeShow(& $sender)
 //Custom Code @224-2A29BDB7
 	$IDnya = $AddSampleCeramic->Casting1->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddCasting1->Visible= false;
 		$AddSampleCeramic->DelCasting1->Visible = true;
 	}else{
@@ -1022,7 +1022,7 @@ function AddSampleCeramic_AddTexture3_BeforeShow(& $sender)
 //Custom Code @225-2A29BDB7
 	$IDnya = $AddSampleCeramic->Texture3->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddTexture3->Visible= false;
 		$AddSampleCeramic->DelTexture3->Visible = true;
 	}else{
@@ -1048,7 +1048,7 @@ function AddSampleCeramic_AddTexture4_BeforeShow(& $sender)
 //Custom Code @226-2A29BDB7
 	$IDnya = $AddSampleCeramic->Texture4->GetValue();
 	if($IDnya > 0){
-		global $DBGayaFusionAll;
+		global $DBgayafusionall;
 		$AddSampleCeramic->AddTexture4->Visible= false;
 		$AddSampleCeramic->DelTexture4->Visible = true;
 	}else{

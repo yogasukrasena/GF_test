@@ -78,7 +78,7 @@ function AddNewHeader_BeforeDelete(& $sender)
   	if(intval($AddressID) >0){
     
 		//Create a new database connection object
-    	$NewConnection = new clsDBGayaFusionAll();
+    	$NewConnection = new clsDBgayafusionall();
     	$NewConnection->query("DELETE FROM tblAdminist_AddressBook_Contact WHERE AddressID=".$NewConnection->ToSQL($AddressID,ccsInteger));
 
     	//Close and destroy the database connection object
@@ -101,10 +101,10 @@ function AddNewHeader_AfterInsert(& $sender)
 //End AddNewHeader_AfterInsert
 
 //Custom Code @41-2A29BDB7
-	global $DBGayaFusionAll;	
+	global $DBgayafusionall;	
 	global $Redirect,$FileName;
 
-  	$Redirect = $FileName."?AddressID=".CCDLookUp("max(AddressID)","tblAdminist_AddressBook","", $DBGayaFusionAll);
+  	$Redirect = $FileName."?AddressID=".CCDLookUp("max(AddressID)","tblAdminist_AddressBook","", $DBgayafusionall);
 //End Custom Code
 //End Custom Code
 

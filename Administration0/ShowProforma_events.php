@@ -44,8 +44,8 @@ function Detil_lblAdministrasi_BeforeShow(& $sender)
 
 //Custom Code @147-2A29BDB7
 global $Header;
-global $DBGayaFusionAll;
-$Detil->lblAdministrasi->SetValue(CCDLookUp("Firstname","tblUser","id = ".$DBGayaFusionAll->ToSQL(($Header->DocMaker->GetValue()),ccsInteger),$DBGayaFusionAll));
+global $DBgayafusionall;
+$Detil->lblAdministrasi->SetValue(CCDLookUp("Firstname","tblUser","id = ".$DBgayafusionall->ToSQL(($Header->DocMaker->GetValue()),ccsInteger),$DBgayafusionall));
 //End Custom Code
 
 //Close Detil_lblAdministrasi_BeforeShow @146-98ABBD6E
@@ -63,10 +63,10 @@ function Detil_lblCurrency_BeforeShow(& $sender)
 //End Detil_lblCurrency_BeforeShow
 
 //Custom Code @151-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $proID = $Detil->Proforma_H_ID->GetValue();
-$id = CCDLookUp("Currency","tblAdminist_Proforma_H","Proforma_H_ID = ".$DBGayaFusionAll->ToSQL($proID,ccsInteger),$DBGayaFusionAll);
-$Detil->lblCurrency->SetValue(CCDLookUp("CurrencyCode","tbladminist_currency","CurrencyID = ".$DBGayaFusionAll->ToSQL($id,ccsInteger),$DBGayaFusionAll));
+$id = CCDLookUp("Currency","tblAdminist_Proforma_H","Proforma_H_ID = ".$DBgayafusionall->ToSQL($proID,ccsInteger),$DBgayafusionall);
+$Detil->lblCurrency->SetValue(CCDLookUp("CurrencyCode","tbladminist_currency","CurrencyID = ".$DBgayafusionall->ToSQL($id,ccsInteger),$DBgayafusionall));
 //End Custom Code
 
 //Close Detil_lblCurrency_BeforeShow @150-A25C728D
@@ -122,19 +122,19 @@ function Detil_BeforeShow(& $sender)
 
 //Custom Code @144-2A29BDB7
 global $Header, $Detil;
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $Proforma_H_ID = CCGetFromGet("Proforma_H_ID",0);
 $company = $Header->Company->GetValue();
 $Detil->Company->SetValue($company);
-$Detil->PackCost->SetValue(CCDLookUp("PackagingCost","tblAdminist_Proforma_H","Proforma_H_ID = ".$DBGayaFusionAll->ToSQL($Proforma_H_ID, ccsInteger),$DBGayaFusionAll)."%");
-$DBGayaFusionAll->query("SELECT SubTotal,Discount,Packaging,Fumigation,GrandTotal FROM ar_proforma WHERE Proforma_H_ID = ".$DBGayaFusionAll->ToSQL($Proforma_H_ID, ccsInteger));
-$result = $DBGayaFusionAll->next_record();
+$Detil->PackCost->SetValue(CCDLookUp("PackagingCost","tblAdminist_Proforma_H","Proforma_H_ID = ".$DBgayafusionall->ToSQL($Proforma_H_ID, ccsInteger),$DBgayafusionall)."%");
+$DBgayafusionall->query("SELECT SubTotal,Discount,Packaging,Fumigation,GrandTotal FROM ar_proforma WHERE Proforma_H_ID = ".$DBgayafusionall->ToSQL($Proforma_H_ID, ccsInteger));
+$result = $DBgayafusionall->next_record();
 if($result){
-  $Detil->SubTotal->SetValue($DBGayaFusionAll->f("SubTotal"));
-  $Detil->Discount->SetValue($DBGayaFusionAll->f("Discount"));
-  $Detil->Packaging->SetValue($DBGayaFusionAll->f("Packaging"));
-  $Detil->Fumigation->SetValue($DBGayaFusionAll->f("Fumigation"));
-  $Detil->GrandTotal->SetValue($DBGayaFusionAll->f("GrandTotal"));
+  $Detil->SubTotal->SetValue($DBgayafusionall->f("SubTotal"));
+  $Detil->Discount->SetValue($DBgayafusionall->f("Discount"));
+  $Detil->Packaging->SetValue($DBgayafusionall->f("Packaging"));
+  $Detil->Fumigation->SetValue($DBgayafusionall->f("Fumigation"));
+  $Detil->GrandTotal->SetValue($DBgayafusionall->f("GrandTotal"));
 }
 //End Custom Code
 

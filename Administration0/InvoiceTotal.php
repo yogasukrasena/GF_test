@@ -289,7 +289,7 @@ function GetPrimaryKey($keyName)
 
 } //End Totalan Class @2-FCB6E20C
 
-class clsTotalanDataSource extends clsDBGayaFusionAll {  //TotalanDataSource Class @2-49C03C91
+class clsTotalanDataSource extends clsDBgayafusionall {  //TotalanDataSource Class @2-49C03C91
 
 //DataSource Variables @2-575E4A07
     public $Parent = "";
@@ -440,8 +440,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-9493AAB0
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -479,7 +479,7 @@ $Totalan->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($Totalan);
     unset($Tpl);
@@ -498,7 +498,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-E524A3EB
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($Totalan);
 unset($Tpl);
 //End Unload Page

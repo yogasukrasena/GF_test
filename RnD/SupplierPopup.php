@@ -229,7 +229,7 @@ class clsGridSupplierGrid { //SupplierGrid class @2-45285F3B
 
 } //End SupplierGrid Class @2-FCB6E20C
 
-class clsSupplierGridDataSource extends clsDBGayaFusionAll {  //SupplierGridDataSource Class @2-BBEFD317
+class clsSupplierGridDataSource extends clsDBgayafusionall {  //SupplierGridDataSource Class @2-BBEFD317
 
 //DataSource Variables @2-F1EEF38E
     public $Parent = "";
@@ -567,8 +567,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-5DE7757B
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -608,7 +608,7 @@ $tblsupplierSearch->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($SupplierGrid);
     unset($tblsupplierSearch);
@@ -629,7 +629,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-1213918E
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($SupplierGrid);
 unset($tblsupplierSearch);
 unset($Tpl);

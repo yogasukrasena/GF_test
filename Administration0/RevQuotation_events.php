@@ -17,10 +17,10 @@ function RevRecord_BeforeUpdate(& $sender)
 //End RevRecord_BeforeUpdate
 
 //Custom Code @7-2A29BDB7
-	global $DBGayaFusionAll;
+	global $DBgayafusionall;
 	global $RevRecord;
 
-	$db = new clsDBGayaFusionAll;
+	$db = new clsDBgayafusionall;
 	$Quotation_H_ID = CCGetFromGet("Quotation_H_ID", 0);
 	if($Quotation_H_ID > 0){
 		$sql = "SELECT * FROM tblAdminist_Quotation_H WHERE Quotation_H_ID = $Quotation_H_ID ";
@@ -31,7 +31,7 @@ function RevRecord_BeforeUpdate(& $sender)
 			$insert = $insert." SELECT * FROM tblAdminist_Quotation_H WHERE Quotation_H_ID = $Quotation_H_ID ";
 			$db->query($insert);
 		}
-		$QuotationRev_H_ID = CCDLookUp("max(QuotationRev_H_ID)","tblAdminist_QuotationRev_H","",$DBGayaFusionAll);
+		$QuotationRev_H_ID = CCDLookUp("max(QuotationRev_H_ID)","tblAdminist_QuotationRev_H","",$DBgayafusionall);
 		echo "monyongg <br>";
 		echo $QuotationRev_H_ID;
 		$sql = "SELECT * FROM tblAdminist_Quotation_D WHERE Quotation_H_ID = $Quotation_H_ID ";

@@ -317,7 +317,7 @@ function GetPrimaryKey($keyName)
 
 } //End Payment Class @2-FCB6E20C
 
-class clsPaymentDataSource extends clsDBGayaFusionAll {  //PaymentDataSource Class @2-1C53C1C2
+class clsPaymentDataSource extends clsDBgayafusionall {  //PaymentDataSource Class @2-1C53C1C2
 
 //DataSource Variables @2-A3EF5D03
     public $Parent = "";
@@ -493,8 +493,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-E6B1CE80
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -532,7 +532,7 @@ $Payment->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($Payment);
     unset($Tpl);
@@ -551,7 +551,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-09C604BC
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($Payment);
 unset($Tpl);
 //End Unload Page

@@ -21,9 +21,9 @@ function Grid_lblCurrency_BeforeShow(& $sender)
 //End Grid_lblCurrency_BeforeShow
 
 //Custom Code @118-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $CurrencyID = $Grid->Currency->GetValue();
-$Grid->lblCurrency->SetValue(CCDLookUp("Currency","tblAdminist_Currency","CurrencyID=".$DBGayaFusionAll->ToSQL($CurrencyID,ccsInteger),$DBGayaFusionAll));
+$Grid->lblCurrency->SetValue(CCDLookUp("Currency","tblAdminist_Currency","CurrencyID=".$DBgayafusionall->ToSQL($CurrencyID,ccsInteger),$DBgayafusionall));
 //End Custom Code
 
 //Close Grid_lblCurrency_BeforeShow @108-09E85BAB
@@ -41,9 +41,9 @@ function Grid_lblProforma_BeforeShow(& $sender)
 //End Grid_lblProforma_BeforeShow
 
 //Custom Code @138-2A29BDB7
-global $DBGayaFusionAll;
+global $DBgayafusionall;
 $Proforma_H_ID = $Grid->proforma_h_id->GetValue();
-$Grid->lblProforma->SetValue(CCDLookUp("ProformaNo","tblAdminist_Proforma_H","Proforma_H_ID=".$DBGayaFusionAll->ToSQL($Proforma_H_ID,ccsInteger),$DBGayaFusionAll));
+$Grid->lblProforma->SetValue(CCDLookUp("ProformaNo","tblAdminist_Proforma_H","Proforma_H_ID=".$DBgayafusionall->ToSQL($Proforma_H_ID,ccsInteger),$DBgayafusionall));
 //End Custom Code
 
 //Close Grid_lblProforma_BeforeShow @106-1285453C

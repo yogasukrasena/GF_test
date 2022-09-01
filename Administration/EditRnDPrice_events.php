@@ -17,7 +17,7 @@ function tblcollect_master_BeforeUpdate(& $sender)
 //End tblcollect_master_BeforeUpdate
 
 //Custom Code @9-2A29BDB7
-$db = new clsDBGayaFusionAll();
+$db = new clsDBgayafusionall();
 $id = $Container->ID->GetValue();
 $LastUpdate = $Container->LastUpdate->GetValue();
 $db->query("UPDATE SampleCeramic SET LastUpdate = ".$db->ToSQL($LastUpdate,ccsDate)." WHERE sID = ".$db->ToSQL($id,ccsInteger));

@@ -44,9 +44,9 @@ function tbldesignmatGrid_SupDesc_BeforeShow(& $sender)
 
 //Custom Code @94-2A29BDB7
 	global $tbldesignmatGrid;
-	global $DBGayaFusionAll;
+	global $DBgayafusionall;
 	$SupID = $tbldesignmatGrid->SupCompany->GetValue();
-	$tbldesignmatGrid->SupDesc->SetValue(CCDLookUp("SupCompany","tblSupplier","ID = $SupID",$DBGayaFusionAll));
+	$tbldesignmatGrid->SupDesc->SetValue(CCDLookUp("SupCompany","tblSupplier","ID = $SupID",$DBgayafusionall));
 //End Custom Code
 
 //Close tbldesignmatGrid_SupDesc_BeforeShow @93-212CC952

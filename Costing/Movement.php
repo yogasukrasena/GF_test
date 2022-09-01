@@ -205,7 +205,7 @@ class clsGridtblcosting_movement { //tblcosting_movement class @2-FEB8A488
 
 } //End tblcosting_movement Class @2-FCB6E20C
 
-class clstblcosting_movementDataSource extends clsDBGayaFusionAll {  //tblcosting_movementDataSource Class @2-20FDB84B
+class clstblcosting_movementDataSource extends clsDBgayafusionall {  //tblcosting_movementDataSource Class @2-20FDB84B
 
 //DataSource Variables @2-0DD3E172
     public $Parent = "";
@@ -519,7 +519,7 @@ function GetPrimaryKey($keyName)
 
 } //End tblcosting_movement1 Class @12-FCB6E20C
 
-class clstblcosting_movement1DataSource extends clsDBGayaFusionAll {  //tblcosting_movement1DataSource Class @12-7D2821AB
+class clstblcosting_movement1DataSource extends clsDBgayafusionall {  //tblcosting_movement1DataSource Class @12-7D2821AB
 
 //DataSource Variables @12-ECACC5F4
     public $Parent = "";
@@ -636,8 +636,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-E71C6776
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -676,7 +676,7 @@ $tblcosting_movement1->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tblcosting_movement);
     unset($tblcosting_movement1);
@@ -697,7 +697,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-41DE2A8C
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tblcosting_movement);
 unset($tblcosting_movement1);
 unset($Tpl);

@@ -991,7 +991,7 @@ class clsReporttbladminist_invoice_h_tbl { //tbladminist_invoice_h_tbl Class @2-
 
 } //End tbladminist_invoice_h_tbl Class @2-FCB6E20C
 
-class clstbladminist_invoice_h_tblDataSource extends clsDBGayaFusionAll {  //tbladminist_invoice_h_tblDataSource Class @2-6FA365FE
+class clstbladminist_invoice_h_tblDataSource extends clsDBgayafusionall {  //tbladminist_invoice_h_tblDataSource Class @2-6FA365FE
 
 //DataSource Variables @2-23038DB5
     public $Parent = "";
@@ -1226,8 +1226,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-72DADC83
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -1266,7 +1266,7 @@ $Attributes->Show();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tbladminist_invoice_h_tbl);
     unset($Tpl);
@@ -1286,7 +1286,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-F923B46D
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tbladminist_invoice_h_tbl);
 unset($Tpl);
 //End Unload Page

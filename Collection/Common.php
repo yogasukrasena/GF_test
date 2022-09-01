@@ -7,10 +7,10 @@ include(RelativePath . "/db_adapter.php");
 
 //Connection Settings @0-6AC17FC4
 $CCConnectionSettings = array (
-    "GayaFusionAll" => array(
+    "gayafusionall" => array(
         "Type" => "MySQL",
         "DBLib" => "MySQL",
-        "Database" => "GayaFusionAll",
+        "Database" => "gayafusionall",
         "Host" => "localhost",
         "Port" => "",
         "User" => "root",
@@ -90,10 +90,10 @@ $DefaultDateFormat = array("dd", "/", "mm", "/", "yyyy");
 $MainPage = new clsMainPage();
 //End Initialize Common Variables
 
-//GayaFusionAll Connection Class @-64F74B86
-class clsDBGayaFusionAll extends DB_Adapter
+//gayafusionall Connection Class @-64F74B86
+class clsDBgayafusionall extends DB_Adapter
 {
-    function clsDBGayaFusionAll()
+    function clsDBgayafusionall()
     {
         $this->Initialize();
     }
@@ -101,7 +101,7 @@ class clsDBGayaFusionAll extends DB_Adapter
     function Initialize()
     {
         global $CCConnectionSettings;
-        $this->SetProvider($CCConnectionSettings["GayaFusionAll"]);
+        $this->SetProvider($CCConnectionSettings["gayafusionall"]);
         parent::Initialize();
         $this->DateLeftDelimiter = "'";
         $this->DateRightDelimiter = "'";
@@ -120,7 +120,7 @@ class clsDBGayaFusionAll extends DB_Adapter
     }
 
 }
-//End GayaFusionAll Connection Class
+//End gayafusionall Connection Class
 
 //CCToHTML @0-93F44B0D
 function CCToHTML($Value)

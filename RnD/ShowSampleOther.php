@@ -590,7 +590,7 @@ function GetPrimaryKey($keyName)
 
 } //End AddSamplePackaging Class @2-FCB6E20C
 
-class clsAddSamplePackagingDataSource extends clsDBGayaFusionAll {  //AddSamplePackagingDataSource Class @2-12C36211
+class clsAddSamplePackagingDataSource extends clsDBgayafusionall {  //AddSamplePackagingDataSource Class @2-12C36211
 
 //DataSource Variables @2-64C9F3FD
     public $Parent = "";
@@ -970,8 +970,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-BD11ABEF
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -1009,7 +1009,7 @@ $AddSamplePackaging->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($AddSamplePackaging);
     unset($Tpl);
@@ -1028,7 +1028,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-E917D660
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($AddSamplePackaging);
 unset($Tpl);
 //End Unload Page

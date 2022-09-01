@@ -207,7 +207,7 @@ class clsGridtblunit { //tblunit class @2-9BF52DC6
 
 } //End tblunit Class @2-FCB6E20C
 
-class clstblunitDataSource extends clsDBGayaFusionAll {  //tblunitDataSource Class @2-9AC3B7D3
+class clstblunitDataSource extends clsDBgayafusionall {  //tblunitDataSource Class @2-9AC3B7D3
 
 //DataSource Variables @2-D927970A
     public $Parent = "";
@@ -521,8 +521,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-2424DB98
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -562,7 +562,7 @@ $tblunitSearch->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tblunit);
     unset($tblunitSearch);
@@ -583,7 +583,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-7DBEB018
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tblunit);
 unset($tblunitSearch);
 unset($Tpl);

@@ -251,7 +251,7 @@ function GetPrimaryKey($keyName)
 
 } //End sampleceramicSearch Class @3-FCB6E20C
 
-class clssampleceramicSearchDataSource extends clsDBGayaFusionAll {  //sampleceramicSearchDataSource Class @3-84A6F52E
+class clssampleceramicSearchDataSource extends clsDBgayafusionall {  //sampleceramicSearchDataSource Class @3-84A6F52E
 
 //DataSource Variables @3-EAC945DD
     public $Parent = "";
@@ -525,7 +525,7 @@ class clsGridsampleceramicGrid { //sampleceramicGrid class @2-A7FFB882
 
 } //End sampleceramicGrid Class @2-FCB6E20C
 
-class clssampleceramicGridDataSource extends clsDBGayaFusionAll {  //sampleceramicGridDataSource Class @2-87A098B6
+class clssampleceramicGridDataSource extends clsDBgayafusionall {  //sampleceramicGridDataSource Class @2-87A098B6
 
 //DataSource Variables @2-0018DA6C
     public $Parent = "";
@@ -907,7 +907,7 @@ function GetPrimaryKey($keyName)
 
 } //End sampleceramic1 Class @22-FCB6E20C
 
-class clssampleceramic1DataSource extends clsDBGayaFusionAll {  //sampleceramic1DataSource Class @22-DE1C5743
+class clssampleceramic1DataSource extends clsDBgayafusionall {  //sampleceramic1DataSource Class @22-DE1C5743
 
 //DataSource Variables @22-BBC2F868
     public $Parent = "";
@@ -1080,8 +1080,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-A7E4AC35
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -1131,7 +1131,7 @@ $sampleceramic1->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($sampleceramicSearch);
     unset($sampleceramicGrid);
@@ -1159,7 +1159,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-AB8A4500
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($sampleceramicSearch);
 unset($sampleceramicGrid);
 unset($sampleceramic1);

@@ -353,7 +353,7 @@ function GetPrimaryKey($keyName)
 
 } //End EditCollectGroup Class @3-FCB6E20C
 
-class clsEditCollectGroupDataSource extends clsDBGayaFusionAll {  //EditCollectGroupDataSource Class @3-F515763F
+class clsEditCollectGroupDataSource extends clsDBgayafusionall {  //EditCollectGroupDataSource Class @3-F515763F
 
 //DataSource Variables @3-9D71AA2B
     public $Parent = "";
@@ -532,8 +532,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-9C0B70BC
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -572,7 +572,7 @@ $EditCollectGroup->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($EditCollectGroup);
     unset($Tpl);
@@ -591,7 +591,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-7C4D6F76
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($EditCollectGroup);
 unset($Tpl);
 //End Unload Page

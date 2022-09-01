@@ -196,7 +196,7 @@ class clsGridInvGrid { //InvGrid class @2-6B3C3173
 
 } //End InvGrid Class @2-FCB6E20C
 
-class clsInvGridDataSource extends clsDBGayaFusionAll {  //InvGridDataSource Class @2-1C25AB17
+class clsInvGridDataSource extends clsDBgayafusionall {  //InvGridDataSource Class @2-1C25AB17
 
 //DataSource Variables @2-7D7CF179
     public $Parent = "";
@@ -512,8 +512,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-ED91C89A
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -553,7 +553,7 @@ $InvSearch->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($InvGrid);
     unset($InvSearch);
@@ -574,7 +574,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-34DFC949
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($InvGrid);
 unset($InvSearch);
 unset($Tpl);

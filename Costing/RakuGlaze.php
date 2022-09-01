@@ -188,7 +188,7 @@ class clsGridtblcosting_rakuglaze { //tblcosting_rakuglaze class @2-42780ED8
 
 } //End tblcosting_rakuglaze Class @2-FCB6E20C
 
-class clstblcosting_rakuglazeDataSource extends clsDBGayaFusionAll {  //tblcosting_rakuglazeDataSource Class @2-359698E1
+class clstblcosting_rakuglazeDataSource extends clsDBgayafusionall {  //tblcosting_rakuglazeDataSource Class @2-359698E1
 
 //DataSource Variables @2-69C33758
     var $Parent = "";
@@ -501,7 +501,7 @@ function GetPrimaryKey($keyName)
 
 } //End tblcosting_rakuglaze1 Class @12-FCB6E20C
 
-class clstblcosting_rakuglaze1DataSource extends clsDBGayaFusionAll {  //tblcosting_rakuglaze1DataSource Class @12-4B3E007D
+class clstblcosting_rakuglaze1DataSource extends clsDBgayafusionall {  //tblcosting_rakuglaze1DataSource Class @12-4B3E007D
 
 //DataSource Variables @12-DBCC5458
     var $Parent = "";
@@ -618,8 +618,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-B356C251
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -658,7 +658,7 @@ $tblcosting_rakuglaze1->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tblcosting_rakuglaze);
     unset($tblcosting_rakuglaze1);
@@ -680,7 +680,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-070A0B50
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tblcosting_rakuglaze);
 unset($tblcosting_rakuglaze1);
 unset($Tpl);

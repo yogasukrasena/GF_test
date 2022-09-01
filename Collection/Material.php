@@ -398,7 +398,7 @@ class clsGridtblcollect_material { //tblcollect_material class @2-2B8CA34B
 
 } //End tblcollect_material Class @2-FCB6E20C
 
-class clstblcollect_materialDataSource extends clsDBGayaFusionAll {  //tblcollect_materialDataSource Class @2-CA39F2F8
+class clstblcollect_materialDataSource extends clsDBgayafusionall {  //tblcollect_materialDataSource Class @2-CA39F2F8
 
 //DataSource Variables @2-17CA1D5E
     public $Parent = "";
@@ -770,7 +770,7 @@ function GetPrimaryKey($keyName)
 
 } //End tblcollect_material1 Class @17-FCB6E20C
 
-class clstblcollect_material1DataSource extends clsDBGayaFusionAll {  //tblcollect_material1DataSource Class @17-2FAA07D7
+class clstblcollect_material1DataSource extends clsDBgayafusionall {  //tblcollect_material1DataSource Class @17-2FAA07D7
 
 //DataSource Variables @17-11973C2D
     public $Parent = "";
@@ -943,8 +943,8 @@ $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
 //Initialize Objects @1-A8C96B5B
-$DBGayaFusionAll = new clsDBGayaFusionAll();
-$MainPage->Connections["GayaFusionAll"] = & $DBGayaFusionAll;
+$DBgayafusionall = new clsDBgayafusionall();
+$MainPage->Connections["gayafusionall"] = & $DBgayafusionall;
 $Attributes = new clsAttributes("page:");
 $MainPage->Attributes = & $Attributes;
 
@@ -993,7 +993,7 @@ $tblcollect_material1->Operation();
 if($Redirect)
 {
     $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-    $DBGayaFusionAll->close();
+    $DBgayafusionall->close();
     header("Location: " . $Redirect);
     unset($tblcollect_materialSearch);
     unset($tblcollect_material);
@@ -1014,7 +1014,7 @@ if ($CCSEventResult) echo $main_block;
 
 //Unload Page @1-A8F4CB78
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
-$DBGayaFusionAll->close();
+$DBgayafusionall->close();
 unset($tblcollect_materialSearch);
 unset($tblcollect_material);
 unset($tblcollect_material1);

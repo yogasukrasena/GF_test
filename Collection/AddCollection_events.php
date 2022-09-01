@@ -22,7 +22,7 @@ function AddCollect_AfterUpdate(& $sender)
 
 //Custom Code @17-2A29BDB7
 	global $AddCollect;
-	$db = new clsDBGayaFusionAll();
+	$db = new clsDBgayafusionall();
   	$CollectID=CCGetFromGet("ID",0);
   	$CollectCode=
 	$AddCollect->DesignCode->GetValue().
@@ -56,7 +56,7 @@ function AddCollect_BeforeInsert(& $sender)
 
 //Custom Code @20-2A29BDB7
 	global $AddCollect;
-  	$db = new clsDBGayaFusionAll();
+  	$db = new clsDBgayafusionall();
   	$CollectCode=
 	$AddCollect->DesignCode->GetValue().
 	$AddCollect->NameCode->GetValue().
@@ -91,7 +91,7 @@ function AddCollect_BeforeUpdate(& $sender)
 
 //Custom Code @22-2A29BDB7
 	global $AddCollect;
-  	$db = new clsDBGayaFusionAll();
+  	$db = new clsDBgayafusionall();
   	$CollectCode=
 	$AddCollect->DesignCode->GetValue().
 	$AddCollect->NameCode->GetValue().
@@ -145,7 +145,7 @@ function AddCollect_AfterInsert(& $sender)
 
 //Custom Code @26-2A29BDB7
 	global $AddCollect;
-  	$db = new clsDBGayaFusionAll();
+  	$db = new clsDBgayafusionall();
   	$CollectID= mysql_insert_id();
   	$CollectCode=
 	$AddCollect->DesignCode->GetValue().
