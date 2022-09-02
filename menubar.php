@@ -1,5 +1,7 @@
 <?php session_start();
 
+date_default_timezone_set('Asia/Makassar');
+
 include ("settings.php");
 include ("language/$cfg_language");
 include ("classes/db_functions.php");
